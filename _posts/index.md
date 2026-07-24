@@ -27,7 +27,7 @@ image_alt: "Logo of noyalib (NOYALIB), a high-performance Rust library dedicated
 image_height: "100vh"
 image_width: "100vw"
 image: "https://kura.pro/noyalib/images/logos/noyalib.webp"
-keywords: "noyalib, rust, yaml parser, simd, rayon, zero copy, webassembly, mcp, lsp, serde, json schema, skeletonic css, sebastien rousseau, enterprise data engine"
+keywords: "noyalib, rust, yaml parser, simd, rayon, zero copy, webassembly, mcp, lsp, serde, json schema, skeletonic css, sebastien rousseau, enterprise data engine, docs.rs, crates.io"
 language: "en-GB"
 layout: "index"
 locale: "en_GB"
@@ -45,7 +45,7 @@ revisit-after: "7 days"
 robots: "index, follow"
 short_name: "noyalib"
 subtitle: "Enterprise-Grade Data & YAML Engine for Rust, WebAssembly & AI."
-tags: "noyalib, rust, yaml, simd, rayon, safe-rust, mcp, lsp, webassembly, skeletonic, enterprise"
+tags: "noyalib, rust, yaml, simd, rayon, safe-rust, mcp, lsp, webassembly, skeletonic, enterprise, documentation"
 theme_color: "rgb(99, 102, 241)"
 title: "noyalib: Enterprise-Grade Data & YAML Engine for Rust, WebAssembly & AI"
 url: "https://noyalib.com/index.html"
@@ -80,75 +80,66 @@ apple-mobile-web-app-status-bar-inset: "black"
 
 # Enterprise-Grade Data & YAML Engine for Rust, WebAssembly & AI
 
-**noyalib** is an open-source, enterprise-ready data parsing engine designed for production applications where execution speed, memory safety, and cross-platform flexibility are paramount.
+Welcome to the official portal for **noyalib**, an open-source, high-performance data parsing engine engineered in 100% safe Rust. Built for production microservices, AI Model Context Protocol (MCP) pipelines, edge WebAssembly runtimes, and enterprise IDE extensions.
 
 ---
 
-## Why Leading Engineering Teams Choose noyalib
+## Architectural Deep Dive
 
-### 1. Ultra-Fast Zero-Copy SIMD Dispatch
-By leveraging multi-byte SWAR (Simd Within A Register) and SSE2/NEON vectorization primitives, noyalib scans structural YAML delimiters in single CPU passes. Large payloads are processed at **520 MB/s**, delivering a **7.6x speedup** over legacy `serde_yaml` parsers.
+### 1. Zero-Copy SIMD Dispatch Engine
+By incorporating SWAR (Simd Within A Register) and SSE2/NEON vectorization primitives, noyalib scans structural delimiters in single CPU cycles. Payload parsing reaches **520 MB/s**, delivering a **7.6x throughput improvement** over legacy `serde_yaml` implementations.
+- Read full documentation on [Docs.rs/noyalib](https://docs.rs/noyalib).
+- View published package on [Crates.io/crates/noyalib](https://crates.io/crates/noyalib).
 
 ### 2. Guaranteed Memory Safety (`#![forbid(unsafe_code)]`)
-Security-critical environments cannot afford memory corruption or buffer overrun vulnerabilities. noyalib strictly enforces `#![forbid(unsafe_code)]` across its entire codebase while outperforming unsafe C-based parser wrappers.
+Security-critical environments cannot afford memory corruption or buffer overrun risks. noyalib enforces `#![forbid(unsafe_code)]` strictly across its main crate and satellite dependencies.
+- Inspect security invariants in the [noyalib GitHub Repository](https://github.com/sebastienrousseau/noyalib).
 
 ### 3. Multi-Core Parallel Document Streaming
-Large multi-document streams are pre-scanned at boundary markers and deserialized concurrently across CPU threads via Rayon, scaling linearly with available hardware cores.
-
-### 4. Native Model Context Protocol (MCP) AI Integration
-`noyalib-mcp` exposes standardized JSON-RPC 2.0 tools to AI agents (Claude, GPT-4, Antigravity), empowering LLMs to validate, query, and generate structured YAML data safely.
-
-### 5. IDE Language Server (LSP) with Fault Recovery
-`noyalib-lsp` introduces `parse_lenient` error-recovering parsing. Code editors (VS Code, Neovim) gain real-time syntax checking, schema autocompletion, and hover diagnostics without crashing on draft code.
+Multi-document streams are pre-scanned at boundary markers (`---`) and deserialized concurrently across CPU threads via Rayon.
 
 ---
 
-## Enterprise Solutions & Use Cases
+## Complete Satellite Libraries Directory
 
-- **AI & LLM Data Pipelines**: Validate and format AI-generated structured data with zero risk of malformed outputs.
-- **Financial & Payment Infrastructure**: Process high-volume transaction payloads with strict schema validation and 100% safe memory guarantees.
-- **Edge Computing & Serverless**: Run `noyalib-wasm` inside WebAssembly runtimes (Cloudflare Workers, V8, Node.js) with zero native dependencies.
-- **Cloud-Native Kubernetes Tooling**: Parse, lint, and validate multi-megabyte Kubernetes manifests rapidly via `noya-cli`.
+### 📦 `noyalib` (Core Rust Library)
+The foundational engine for high-speed YAML and structured data parsing.
+- **Official Docs**: [Docs.rs Documentation](https://docs.rs/noyalib)
+- **Crates.io**: [noyalib on Crates.io](https://crates.io/crates/noyalib)
+- **Source Code**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib)
 
----
+### 🖥️ `noya-cli` (Command-Line Utility)
+Terminal binary for querying, formatting, schema validation, and streaming data conversion.
+- **Official Docs**: [Docs.rs Documentation](https://docs.rs/noya-cli)
+- **Crates.io**: [noya-cli on Crates.io](https://crates.io/crates/noya-cli)
+- **Source Code**: [GitHub Repository](https://github.com/sebastienrousseau/noya-cli)
 
-## The Complete Satellite Ecosystem
+### 🌐 `noyalib-wasm` (WebAssembly Runtime)
+WebAssembly package optimized for browsers, Node.js, and Cloudflare Workers.
+- **NPM Package**: [noyalib-wasm on NPM](https://www.npmjs.com/package/noyalib-wasm)
+- **Source Code**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-wasm)
 
-```text
-                               ┌───────────────────────────┐
-                               │     noyalib Core Crate    │
-                               │  (SIMD + Safe Rust Engine) │
-                               └─────────────┬─────────────┘
-                                             │
-      ┌──────────────────┬───────────────────┼───────────────────┬──────────────────┐
-      │                  │                   │                   │                  │
-┌─────▼──────┐    ┌──────▼──────┐     ┌──────▼──────┐     ┌──────▼──────┐    ┌──────▼──────┐
-│  noya-cli  │    │noyalib-wasm │     │ noyalib-mcp │     │ noyalib-lsp │    │Serde Compat │
-│(CLI Tool)  │    │(WebAssembly)│     │(AI Server)  │     │(VS Code IDE)│    │(0.9 Shim)   │
-└────────────┘    └─────────────┘     └─────────────┘     └─────────────┘    └─────────────┘
-```
+### 🤖 `noyalib-mcp` (Model Context Protocol AI Server)
+Native MCP server integration exposing data validation tools to Claude, GPT-4, and AI agents.
+- **Official Docs**: [Docs.rs Documentation](https://docs.rs/noyalib-mcp)
+- **Glama MCP Registry**: [noyalib-mcp on Glama](https://glama.ai/mcp/servers/sebastienrousseau/noyalib-mcp)
+- **Source Code**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-mcp)
 
----
-
-## Developer Ecosystem & Sister Libraries
-
-noyalib forms part of a cohesive open-source Rust library suite engineered by Sebastien Rousseau:
-
-- **`dtt`** (DateTime): Production date, time, parsing, and formatting library for Rust.
-- **`kyberlib`** (Post-Quantum Cryptography): NIST-standardized CRYSTALS-Kyber post-quantum encryption.
-- **`hsh`** (Cryptographic Hashes): High-speed cryptographic and non-cryptographic hashing primitives.
-- **`rlg`** (Structured Logging): Zero-overhead structured logging framework.
-- **`vrd`** (Random Generator): Cryptographically secure pseudo-random number generator.
-- **`libmake`** (Crate Generator): Automated Rust crate template generator.
+### ⚙️ `noyalib-lsp` (Language Server Protocol)
+LSP server powering VS Code autocompletion, schema hovers, and `parse_lenient` diagnostics.
+- **Official Docs**: [Docs.rs Documentation](https://docs.rs/noyalib-lsp)
+- **Crates.io**: [noyalib-lsp on Crates.io](https://crates.io/crates/noyalib-lsp)
+- **Source Code**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-lsp)
 
 ---
 
-## Quick Start Matrix
+## Sebastien Rousseau Open Source Rust Suite
 
-| Target | Command / Package | Guide Link |
-| :--- | :--- | :--- |
-| **Rust Library** | `cargo add noyalib --features simd,rayon` | [Getting Started](/getting-started/index.html) |
-| **Terminal CLI** | `cargo install noya-cli` | [CLI Guide](/suite/index.html) |
-| **WebAssembly** | `npm install noyalib-wasm` | [WASM Setup](/suite/index.html) |
-| **MCP AI Server** | `cargo install noyalib-mcp` | [MCP Integration](/suite/index.html) |
-| **Language Server** | `cargo install noyalib-lsp` | [LSP Extension](/suite/index.html) |
+Explore published documentation for the broader Rust ecosystem:
+
+- **`dtt`** (DateTime): [Official Site](https://dttlib.com) • [Docs.rs](https://docs.rs/dtt) • [Crates.io](https://crates.io/crates/dtt) • [GitHub](https://github.com/sebastienrousseau/dtt)
+- **`kyberlib`** (Post-Quantum Cryptography): [Official Site](https://kyberlib.com) • [Docs.rs](https://docs.rs/kyberlib) • [Crates.io](https://crates.io/crates/kyberlib) • [GitHub](https://github.com/sebastienrousseau/kyberlib)
+- **`hsh`** (Cryptographic Hashes): [Official Site](https://hshlib.com) • [Docs.rs](https://docs.rs/hsh) • [Crates.io](https://crates.io/crates/hsh) • [GitHub](https://github.com/sebastienrousseau/hsh)
+- **`rlg`** (Structured Logging): [Official Site](https://rustlogs.com) • [Docs.rs](https://docs.rs/rlg) • [Crates.io](https://crates.io/crates/rlg) • [GitHub](https://github.com/sebastienrousseau/rlg)
+- **`vrd`** (Random Generator): [Official Site](https://vrdlib.com) • [Docs.rs](https://docs.rs/vrd) • [Crates.io](https://crates.io/crates/vrd) • [GitHub](https://github.com/sebastienrousseau/vrd)
+- **`libmake`** (Crate Generator): [Official Site](https://libmake.com) • [Docs.rs](https://docs.rs/libmake) • [Crates.io](https://crates.io/crates/libmake) • [GitHub](https://github.com/sebastienrousseau/libmake)

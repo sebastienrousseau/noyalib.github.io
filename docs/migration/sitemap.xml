@@ -15,6 +15,18 @@
 <url>
   <changefreq>monthly</changefreq>
   <lastmod></lastmod>
+  <loc>https://noyalib.com/migration.html/migration/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>monthly</changefreq>
+  <lastmod></lastmod>
+  <loc>https://noyalib.com/migration.html/rust-ecosystem/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>monthly</changefreq>
+  <lastmod></lastmod>
   <loc>https://noyalib.com/migration.html/suite/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,6 +40,12 @@
   <changefreq>monthly</changefreq>
   <lastmod></lastmod>
   <loc>https://noyalib.com/migration.html/getting-started/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>monthly</changefreq>
+  <lastmod></lastmod>
+  <loc>https://noyalib.com/migration.html/use-cases/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>

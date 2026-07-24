@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Explore the full suite of satellite libraries in the noyalib ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, an",
+  "description": "Explore the full suite of satellite libraries in the noyalib ecosystem with links to published documentation on Docs.rs,",
   "display": "standalone",
   "icons": [
     {

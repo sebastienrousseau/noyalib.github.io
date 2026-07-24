@@ -15,6 +15,18 @@
 <url>
   <changefreq>weekly</changefreq>
   <lastmod></lastmod>
+  <loc>https://noyalib.com/rust-ecosystem.html/migration/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod></lastmod>
+  <loc>https://noyalib.com/rust-ecosystem.html/rust-ecosystem/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod></lastmod>
   <loc>https://noyalib.com/rust-ecosystem.html/suite/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,6 +40,12 @@
   <changefreq>weekly</changefreq>
   <lastmod></lastmod>
   <loc>https://noyalib.com/rust-ecosystem.html/getting-started/index.html</loc>
+</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod></lastmod>
+  <loc>https://noyalib.com/rust-ecosystem.html/use-cases/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>

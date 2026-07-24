@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake.",
+  "description": "Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake with direct",
   "display": "standalone",
   "icons": [
     {
