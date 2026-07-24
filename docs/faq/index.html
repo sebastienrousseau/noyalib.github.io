@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>noyalib FAQ: Frequently Asked Questions</title>
-  <meta name="description" content="Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.">
-  <meta name="keywords" content="noyalib faq, questions, serde compatibility, simd, safe rust">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib faq, questions, serde compatibility, simd, safe rust&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.">
+<meta name="keywords" content="noyalib faq, questions, serde compatibility, simd, safe rust">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +35,14 @@
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="noyalib FAQ: Frequently Asked Questions">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Frequently Asked Questions (FAQ)&amp;lt;/h1&amp;gt; &amp;lt;h3&amp;gt;What makes noyalib faster than legacy parsers?&amp;lt;/h3&amp;gt;">
+<meta property="og:description" content="Frequently Asked Questions (FAQ) General Questions What makes noyalib faster than legacy parsers? noyalib uses SWAR/SIMD vectorization for scanning delimiters">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/faq.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="noyalib FAQ: Frequently Asked Questions">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Frequently Asked Questions (FAQ)&amp;lt;/h1&amp;gt; &amp;lt;h3&amp;gt;What makes noyalib faster than legacy parsers?&amp;lt;/h3&amp;gt;">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Frequently Asked Questions (FAQ)&lt;/h1&gt; &lt;h3&gt;What makes noyalib faster than legacy parsers?&lt;/h3&gt;","inLanguage":"en-GB","name":"noyalib FAQ: Frequently Asked Questions","url":"http://127.0.0.1:8000/faq/index.html"}</script>
+<meta name="twitter:description" content="Frequently Asked Questions (FAQ) General Questions What makes noyalib faster than legacy parsers? noyalib uses SWAR/SIMD vectorization for scanning delimiters">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"Frequently Asked Questions (FAQ) General Questions What makes noyalib faster than legacy parsers? noyalib uses SWAR/SIMD vectorization for scanning delimiters","inLanguage":"en-GB","name":"noyalib FAQ: Frequently Asked Questions","url":"http://127.0.0.1:8000/faq/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/faq","name":"faq","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/faq/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,16 +80,17 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Frequently Asked Questions (FAQ)&lt;/h1&gt;
-&lt;h3&gt;What makes noyalib faster than legacy parsers?&lt;/h3&gt;
-&lt;p&gt;noyalib uses SWAR/SIMD vectorization for scanning delimiters in a single CPU cycle, coupled with Rayon multi-core streaming for multi-document parsing.&lt;/p&gt;
-&lt;h3&gt;Is noyalib compatible with serde_yaml 0.9?&lt;/h3&gt;
-&lt;p&gt;Yes! Enable the &lt;code&gt;compat-serde-yaml&lt;/code&gt; feature for a drop-in shim with zero migration friction.&lt;/p&gt;
-&lt;h3&gt;Can noyalib run in WebAssembly / Browser environments?&lt;/h3&gt;
-&lt;p&gt;Yes! The &lt;code&gt;noyalib-wasm&lt;/code&gt; package provides WebAssembly bindings optimized for browser runtimes, Node.js, and Cloudflare Workers.&lt;/p&gt;
-&lt;h3&gt;What is noyalib-mcp?&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;noyalib-mcp&lt;/code&gt; is a Model Context Protocol (MCP) server that connects LLM tools (Claude, GPT-4, Antigravity) to noyalib&#x27;s parsing and schema validation engine.&lt;/p&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>Frequently Asked Questions (FAQ)</h1>
+<h2>General Questions</h2>
+<h3>What makes noyalib faster than legacy parsers?</h3>
+<p>noyalib uses SWAR/SIMD vectorization for scanning delimiters in a single CPU cycle, coupled with Rayon multi-core streaming for multi-document parsing.</p>
+<h3>Is noyalib compatible with serde_yaml 0.9?</h3>
+<p>Yes! Enable the <code>compat-serde-yaml</code> feature for a drop-in shim with zero migration friction.</p>
+<h3>Can noyalib run in WebAssembly / Browser environments?</h3>
+<p>Yes! The <code>noyalib-wasm</code> package provides WebAssembly bindings optimized for browser runtimes, Node.js, and Cloudflare Workers.</p>
+<h3>What is noyalib-mcp?</h3>
+<p><code>noyalib-mcp</code> is a Model Context Protocol (MCP) server that connects LLM tools (Claude, GPT-4, Antigravity) to noyalib's parsing and schema validation engine.</p>
+</div>
     </div>
   </main>
 

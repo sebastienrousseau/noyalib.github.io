@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>noyalib Performance Benchmarks: SIMD &amp; Parallel Parsing</title>
-  <meta name="description" content="Detailed performance benchmarks comparing noyalib against serde_yaml, PyYAML, and standard legacy parsers.">
-  <meta name="keywords" content="noyalib benchmarks, performance, speed, simd, rayon, throughput">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Detailed performance benchmarks comparing noyalib against serde_yaml, PyYAML, and standard legacy parsers.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib benchmarks, performance, speed, simd, rayon, throughput&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Detailed performance benchmarks comparing noyalib against serde_yaml, PyYAML, and standard legacy parsers.">
+<meta name="keywords" content="noyalib benchmarks, performance, speed, simd, rayon, throughput">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +35,14 @@
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="noyalib Performance Benchmarks: SIMD &amp;amp; Parallel Parsing">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;noyalib Performance Benchmarks&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;noyalib is engineered specifically for ultra-low latency and">
+<meta property="og:description" content="noyalib Performance Benchmarks noyalib is engineered specifically for ultra-low latency and maximum throughput when deserializing complex structured documents.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/benchmarks.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="noyalib Performance Benchmarks: SIMD &amp;amp; Parallel Parsing">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;noyalib Performance Benchmarks&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;noyalib is engineered specifically for ultra-low latency and">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;noyalib Performance Benchmarks&lt;/h1&gt; &lt;p&gt;noyalib is engineered specifically for ultra-low latency and","inLanguage":"en-GB","name":"noyalib Performance Benchmarks: SIMD &amp; Parallel Parsing","url":"http://127.0.0.1:8000/benchmarks/index.html"}</script>
+<meta name="twitter:description" content="noyalib Performance Benchmarks noyalib is engineered specifically for ultra-low latency and maximum throughput when deserializing complex structured documents.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"noyalib Performance Benchmarks noyalib is engineered specifically for ultra-low latency and maximum throughput when deserializing complex structured documents.","inLanguage":"en-GB","name":"noyalib Performance Benchmarks: SIMD &amp; Parallel Parsing","url":"http://127.0.0.1:8000/benchmarks/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/benchmarks","name":"benchmarks","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/benchmarks/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,52 +80,52 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;noyalib Performance Benchmarks&lt;/h1&gt;
-&lt;p&gt;noyalib is engineered specifically for ultra-low latency and maximum throughput when deserializing complex structured documents.&lt;/p&gt;
-&lt;h2&gt;Deserialization Speed Comparison&lt;/h2&gt;
-&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table&quot;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;Engine / Library&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Mode&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Peak Throughput&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Speedup Factor&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;&lt;code&gt;noyalib&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Parallel Rayon + SIMD&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;520 MB/s&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;1.0x (Baseline)&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;&lt;code&gt;noyalib&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Single-Thread SIMD&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;380 MB/s&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;1.37x Slower&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;&lt;code&gt;serde_yaml&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Legacy Single-Thread&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;68 MB/s&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;7.64x Slower&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;&lt;code&gt;PyYAML&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Python C-Extension&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;24 MB/s&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;21.66x Slower&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;&lt;/div&gt;
-&lt;h2&gt;Benchmark Methodology&lt;/h2&gt;
-&lt;p&gt;All benchmarks were conducted using Criterion.rs on AMD EPYC 9654 processors reading a 100 MB multi-document YAML payload.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Zero extra allocations were required on hot scanning loops.&lt;/li&gt;
-&lt;li&gt;Rayon threads scales linearly with available logical CPU cores.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>noyalib Performance Benchmarks</h1>
+<p>noyalib is engineered specifically for ultra-low latency and maximum throughput when deserializing complex structured documents.</p>
+<h2>Deserialization Speed Comparison</h2>
+<div class="table-responsive"><table class="table">
+<thead>
+<tr>
+<th align="left">Engine / Library</th>
+<th align="left">Mode</th>
+<th align="left">Peak Throughput</th>
+<th align="left">Speedup Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib</code></strong></td>
+<td align="left" class="text-left">Parallel Rayon + SIMD</td>
+<td align="left" class="text-left"><strong>520 MB/s</strong></td>
+<td align="left" class="text-left"><strong>1.0x (Baseline)</strong></td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib</code></strong></td>
+<td align="left" class="text-left">Single-Thread SIMD</td>
+<td align="left" class="text-left"><strong>380 MB/s</strong></td>
+<td align="left" class="text-left"><strong>1.37x Slower</strong></td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>serde_yaml</code></strong></td>
+<td align="left" class="text-left">Legacy Single-Thread</td>
+<td align="left" class="text-left"><strong>68 MB/s</strong></td>
+<td align="left" class="text-left"><strong>7.64x Slower</strong></td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>PyYAML</code></strong></td>
+<td align="left" class="text-left">Python C-Extension</td>
+<td align="left" class="text-left"><strong>24 MB/s</strong></td>
+<td align="left" class="text-left"><strong>21.66x Slower</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Benchmark Methodology</h2>
+<p>All benchmarks were conducted using Criterion.rs on AMD EPYC 9654 processors reading a 100 MB multi-document YAML payload.</p>
+<ul>
+<li>Zero extra allocations were required on hot scanning loops.</li>
+<li>Rayon threads scales linearly with available logical CPU cores.</li>
+</ul>
+</div>
     </div>
   </main>
 

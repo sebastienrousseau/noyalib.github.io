@@ -3,19 +3,21 @@
 <head>
   <meta charset="{{charset}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="{{item_pub_date}}" id="date">
+  <meta itemprop="dateModified" content="{{last_build_date}}" id="last-modified">
   <title>{{title}}</title>
-  <meta name="description" content="{{description}}">
-  <meta name="keywords" content="{{keywords}}">
-  <meta name="author" content="{{author}}">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{url}}">
 
-  <!-- Primary & Social Meta Tags -->
-  {{primary}}
-  {{opengraph}}
-  {{twitter}}
-  {{apple}}
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  {{primary | safe}}
+  {{opengraph | safe}}
+  {{twitter | safe}}
+  {{apple | safe}}
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -341,7 +343,7 @@ assert_eq!(docs.len(), 2);</code></pre>
     <!-- Markdown Content Rendered by Shokunin SSG -->
     <section class="docs-setup" style="max-width: var(--max-width); margin: 0 auto; padding: 40px 24px;">
       <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 40px;">
-        {{content}}
+        {{content | safe}}
       </div>
     </section>
 

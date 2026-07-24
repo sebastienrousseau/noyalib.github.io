@@ -55,6 +55,8 @@ viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
 
 # Frequently Asked Questions (FAQ)
 
+## General Questions
+
 ### What makes noyalib faster than legacy parsers?
 noyalib uses SWAR/SIMD vectorization for scanning delimiters in a single CPU cycle, coupled with Rayon multi-core streaming for multi-document parsing.
 

@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>About noyalib: High Performance Data Engine Architecture</title>
-  <meta name="description" content="Learn about noyalib architecture, design principles, and safe Rust data engine performance.">
-  <meta name="keywords" content="noyalib, about, architecture, rust, zero copy, simd, safe rust">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Learn about noyalib architecture, design principles, and safe Rust data engine performance.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib, about, architecture, rust, zero copy, simd, safe rust&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Learn about noyalib architecture, design principles, and safe Rust data engine performance.">
+<meta name="keywords" content="noyalib, about, architecture, rust, zero copy, simd, safe rust">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +35,14 @@
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="About noyalib: High Performance Data Engine Architecture">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;About noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; was designed to address performance">
+<meta property="og:description" content="About noyalib noyalib was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML. Key">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/about.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About noyalib: High Performance Data Engine Architecture">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;About noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; was designed to address performance">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;About noyalib&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; was designed to address performance","inLanguage":"en-GB","name":"About noyalib: High Performance Data Engine Architecture","url":"http://127.0.0.1:8000/about/index.html"}</script>
+<meta name="twitter:description" content="About noyalib noyalib was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML. Key">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"About noyalib noyalib was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML. Key","inLanguage":"en-GB","name":"About noyalib: High Performance Data Engine Architecture","url":"http://127.0.0.1:8000/about/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/about","name":"about","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/about/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,16 +80,16 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;About noyalib&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML.&lt;/p&gt;
-&lt;h2&gt;Key Architectural Principles&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Zero Compromise Security&lt;/strong&gt;: Enforces &lt;code&gt;#![forbid(unsafe_code)]&lt;/code&gt; throughout.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SIMD &amp; SWAR Vectorization&lt;/strong&gt;: Accelerated byte scanning without unsafe blocks.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rayon Concurrency&lt;/strong&gt;: Parallelized document processing for multi-megabyte payloads.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Comprehensive Satellite Suite&lt;/strong&gt;: Native support for Rust, CLI, WASM, MCP AI, and LSP.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>About noyalib</h1>
+<p><strong>noyalib</strong> was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML.</p>
+<h2>Key Architectural Principles</h2>
+<ol>
+<li><strong>Zero Compromise Security</strong>: Enforces <code>#![forbid(unsafe_code)]</code> throughout.</li>
+<li><strong>SIMD &amp; SWAR Vectorization</strong>: Accelerated byte scanning without unsafe blocks.</li>
+<li><strong>Rayon Concurrency</strong>: Parallelized document processing for multi-megabyte payloads.</li>
+<li><strong>Comprehensive Satellite Suite</strong>: Native support for Rust, CLI, WASM, MCP AI, and LSP.</li>
+</ol>
+</div>
     </div>
   </main>
 

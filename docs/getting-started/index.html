@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>Getting Started with noyalib: Installation and Quick Start</title>
-  <meta name="description" content="Step-by-step guide to installing and using noyalib in Rust, CLI, WebAssembly, MCP, and LSP environments.">
-  <meta name="keywords" content="noyalib, getting started, rust, cli, wasm, mcp, lsp">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Step-by-step guide to installing and using noyalib in Rust, CLI, WebAssembly, MCP, and LSP environments.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib, getting started, rust, cli, wasm, mcp, lsp&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Step-by-step guide to installing and using noyalib in Rust, CLI, WebAssembly, MCP, and LSP environments.">
+<meta name="keywords" content="noyalib, getting started, rust, cli, wasm, mcp, lsp">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,15 +34,16 @@
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://127.0.0.1:8000/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="stylesheet" href="/highlight.css">
 <meta property="og:title" content="Getting Started with noyalib: Installation and Quick Start">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Getting Started with noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Follow this guide to integrate noyalib into your project">
+<meta property="og:description" content="Getting Started with noyalib Follow this guide to integrate noyalib into your project stack. 1. Rust Project Setup Add noyalib to your Cargo.toml : cargo add">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/getting-started.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting Started with noyalib: Installation and Quick Start">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Getting Started with noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Follow this guide to integrate noyalib into your project">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Getting Started with noyalib&lt;/h1&gt; &lt;p&gt;Follow this guide to integrate noyalib into your project","inLanguage":"en-GB","name":"Getting Started with noyalib: Installation and Quick Start","url":"http://127.0.0.1:8000/getting-started/index.html"}</script>
+<meta name="twitter:description" content="Getting Started with noyalib Follow this guide to integrate noyalib into your project stack. 1. Rust Project Setup Add noyalib to your Cargo.toml : cargo add">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"Getting Started with noyalib Follow this guide to integrate noyalib into your project stack. 1. Rust Project Setup Add noyalib to your Cargo.toml : cargo add","inLanguage":"en-GB","name":"Getting Started with noyalib: Installation and Quick Start","url":"http://127.0.0.1:8000/getting-started/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/getting-started","name":"getting started","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/getting-started/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,37 +81,37 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Getting Started with noyalib&lt;/h1&gt;
-&lt;p&gt;Follow this guide to integrate noyalib into your project stack.&lt;/p&gt;
-&lt;h2&gt;1. Rust Project Setup&lt;/h2&gt;
-&lt;p&gt;Add &lt;code&gt;noyalib&lt;/code&gt; to your &lt;code&gt;Cargo.toml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#c0c5ce;&quot;&gt;cargo add noyalib --features simd,rayon
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Usage in code:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#b48ead;&quot;&gt;use &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noyalib::{parallel, Value};
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
-&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;fn &lt;/span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;() -&gt; noyalib::Result&lt;()&gt; {
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; doc: Value = parallel::from_str(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;key: value&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;)?;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    println!(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Value: &lt;/span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;, doc[&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;key&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;]);
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    Ok(())
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;}
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;2. Command Line Interface (CLI)&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#c0c5ce;&quot;&gt;cargo install noya-cli
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noya validate config.yaml --schema schema.json
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;3. WebAssembly (WASM)&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#c0c5ce;&quot;&gt;npm install noyalib-wasm
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>Getting Started with noyalib</h1>
+<p>Follow this guide to integrate noyalib into your project stack.</p>
+<h2>1. Rust Project Setup</h2>
+<p>Add <code>noyalib</code> to your <code>Cargo.toml</code>:</p>
+<pre class="highlight language-shell"><code class="language-shell" data-lang="shell"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">cargo add noyalib --features simd,rayon
+</span></pre>
+</code></pre>
+<p>Usage in code:</p>
+<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><pre style="background-color:#2b303b;">
+<span style="color:#b48ead;">use </span><span style="color:#c0c5ce;">noyalib::{parallel, Value};
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span style="color:#c0c5ce;">() -&gt; noyalib::Result&lt;()&gt; {
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> doc: Value = parallel::from_str(&quot;</span><span style="color:#a3be8c;">key: value</span><span style="color:#c0c5ce;">&quot;)?;
+</span><span style="color:#c0c5ce;">    println!(&quot;</span><span style="color:#a3be8c;">Value: </span><span style="color:#d08770;">{}</span><span style="color:#c0c5ce;">&quot;, doc[&quot;</span><span style="color:#a3be8c;">key</span><span style="color:#c0c5ce;">&quot;]);
+</span><span style="color:#c0c5ce;">    Ok(())
+</span><span style="color:#c0c5ce;">}
+</span></pre>
+</code></pre>
+<h2>2. Command Line Interface (CLI)</h2>
+<pre class="highlight language-shell"><code class="language-shell" data-lang="shell"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">cargo install noya-cli
+</span><span style="color:#c0c5ce;">noya validate config.yaml --schema schema.json
+</span></pre>
+</code></pre>
+<h2>3. WebAssembly (WASM)</h2>
+<pre class="highlight language-shell"><code class="language-shell" data-lang="shell"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">npm install noyalib-wasm
+</span></pre>
+</code></pre>
+</div>
     </div>
   </main>
 

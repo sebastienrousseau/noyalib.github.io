@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>noyalib Migration Guide: Moving from serde_yaml 0.9</title>
-  <meta name="description" content="Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.">
-  <meta name="keywords" content="noyalib migration, serde_yaml, migration guide, rust, upgrade">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib migration, serde_yaml, migration guide, rust, upgrade&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.">
+<meta name="keywords" content="noyalib migration, serde_yaml, migration guide, rust, upgrade">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,15 +34,16 @@
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://127.0.0.1:8000/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="stylesheet" href="/highlight.css">
 <meta property="og:title" content="noyalib Migration Guide: Moving from serde_yaml 0.9">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Migration Guide: Moving from &amp;lt;code&amp;gt;serde_yaml&amp;lt;/code&amp;gt; to &amp;lt;code&amp;gt;noyalib&amp;lt;/code&amp;gt;&amp;lt;/h1&amp;gt;">
+<meta property="og:description" content="Migration Guide: Moving from serde_yaml to noyalib Upstream serde_yaml (0.9) has been archived. noyalib provides a drop-in compatibility feature (">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/migration.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="noyalib Migration Guide: Moving from serde_yaml 0.9">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Migration Guide: Moving from &amp;lt;code&amp;gt;serde_yaml&amp;lt;/code&amp;gt; to &amp;lt;code&amp;gt;noyalib&amp;lt;/code&amp;gt;&amp;lt;/h1&amp;gt;">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Migration Guide: Moving from &lt;code&gt;serde_yaml&lt;/code&gt; to &lt;code&gt;noyalib&lt;/code&gt;&lt;/h1&gt;","inLanguage":"en-GB","name":"noyalib Migration Guide: Moving from serde_yaml 0.9","url":"http://127.0.0.1:8000/migration/index.html"}</script>
+<meta name="twitter:description" content="Migration Guide: Moving from serde_yaml to noyalib Upstream serde_yaml (0.9) has been archived. noyalib provides a drop-in compatibility feature (">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"Migration Guide: Moving from serde_yaml to noyalib Upstream serde_yaml (0.9) has been archived. noyalib provides a drop-in compatibility feature (","inLanguage":"en-GB","name":"noyalib Migration Guide: Moving from serde_yaml 0.9","url":"http://127.0.0.1:8000/migration/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/migration","name":"migration","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/migration/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,68 +81,68 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Migration Guide: Moving from &lt;code&gt;serde_yaml&lt;/code&gt; to &lt;code&gt;noyalib&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;Upstream &lt;code&gt;serde_yaml&lt;/code&gt; (0.9) has been archived. &lt;strong&gt;noyalib&lt;/strong&gt; provides a drop-in compatibility feature (&lt;code&gt;compat-serde-yaml&lt;/code&gt;) allowing projects to migrate seamlessly with &lt;strong&gt;zero logic changes&lt;/strong&gt;.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;1-Step Cargo Migration&lt;/h2&gt;
-&lt;p&gt;Update your &lt;code&gt;Cargo.toml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-toml&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# Old dependency:
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# serde_yaml = &quot;0.9&quot;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# Replace with noyalib compatibility feature:
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noyalib = { version = &quot;0.0.16&quot;, features = [&quot;compat-serde-yaml&quot;, &quot;simd&quot;] }
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Code Import Alias&lt;/h2&gt;
-&lt;p&gt;In your Rust source code:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
-&lt;span style=&quot;color:#65737e;&quot;&gt;// Old import:
-&lt;/span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;// use serde_yaml::Value;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
-&lt;/span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;// Replace with noyalib compatibility module:
-&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;use &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noyalib::compat::serde_yaml as serde_yaml;
-&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;use &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;serde_yaml::Value;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
-&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;fn &lt;/span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;() -&gt; Result&lt;(), serde_yaml::Error&gt; {
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; val: Value = serde_yaml::from_str(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name: noyalib&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;)?;
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    println!(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Migrated: &lt;/span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;, val[&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;]);
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    Ok(())
-&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;}
-&lt;/span&gt;&lt;/pre&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;Performance Uplift Post-Migration&lt;/h2&gt;
-&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table&quot;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;left&quot;&gt;Metric&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;code&gt;serde_yaml&lt;/code&gt; 0.9&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;&lt;code&gt;noyalib&lt;/code&gt; (SIMD + Rayon)&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;Improvement&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Parsing Speed&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;68 MB/s&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;520 MB/s&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;7.6x Faster&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Safety Invariant&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Contains Unsafe&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;100% Safe (&lt;code&gt;forbid(unsafe_code)&lt;/code&gt;)&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Guaranteed Safe&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Maintenance&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Archived&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Active (2026 Core Support)&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Active Maintenance&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;&lt;/div&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>Migration Guide: Moving from <code>serde_yaml</code> to <code>noyalib</code></h1>
+<p>Upstream <code>serde_yaml</code> (0.9) has been archived. <strong>noyalib</strong> provides a drop-in compatibility feature (<code>compat-serde-yaml</code>) allowing projects to migrate seamlessly with <strong>zero logic changes</strong>.</p>
+<hr />
+<h2>1-Step Cargo Migration</h2>
+<p>Update your <code>Cargo.toml</code>:</p>
+<pre class="highlight language-toml"><code class="language-toml" data-lang="toml"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;"># Old dependency:
+</span><span style="color:#c0c5ce;"># serde_yaml = &quot;0.9&quot;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;"># Replace with noyalib compatibility feature:
+</span><span style="color:#c0c5ce;">noyalib = { version = &quot;0.0.16&quot;, features = [&quot;compat-serde-yaml&quot;, &quot;simd&quot;] }
+</span></pre>
+</code></pre>
+<h2>Code Import Alias</h2>
+<p>In your Rust source code:</p>
+<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><pre style="background-color:#2b303b;">
+<span style="color:#65737e;">// Old import:
+</span><span style="color:#65737e;">// use serde_yaml::Value;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#65737e;">// Replace with noyalib compatibility module:
+</span><span style="color:#b48ead;">use </span><span style="color:#c0c5ce;">noyalib::compat::serde_yaml as serde_yaml;
+</span><span style="color:#b48ead;">use </span><span style="color:#c0c5ce;">serde_yaml::Value;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span style="color:#c0c5ce;">() -&gt; Result&lt;(), serde_yaml::Error&gt; {
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> val: Value = serde_yaml::from_str(&quot;</span><span style="color:#a3be8c;">name: noyalib</span><span style="color:#c0c5ce;">&quot;)?;
+</span><span style="color:#c0c5ce;">    println!(&quot;</span><span style="color:#a3be8c;">Migrated: </span><span style="color:#d08770;">{}</span><span style="color:#c0c5ce;">&quot;, val[&quot;</span><span style="color:#a3be8c;">name</span><span style="color:#c0c5ce;">&quot;]);
+</span><span style="color:#c0c5ce;">    Ok(())
+</span><span style="color:#c0c5ce;">}
+</span></pre>
+</code></pre>
+<h2>Performance Uplift Post-Migration</h2>
+<div class="table-responsive"><table class="table">
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="left"><code>serde_yaml</code> 0.9</th>
+<th align="left"><code>noyalib</code> (SIMD + Rayon)</th>
+<th align="left">Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" class="text-left"><strong>Parsing Speed</strong></td>
+<td align="left" class="text-left">68 MB/s</td>
+<td align="left" class="text-left"><strong>520 MB/s</strong></td>
+<td align="left" class="text-left"><strong>7.6x Faster</strong></td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong>Safety Invariant</strong></td>
+<td align="left" class="text-left">Contains Unsafe</td>
+<td align="left" class="text-left"><strong>100% Safe (<code>forbid(unsafe_code)</code>)</strong></td>
+<td align="left" class="text-left"><strong>Guaranteed Safe</strong></td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong>Maintenance</strong></td>
+<td align="left" class="text-left">Archived</td>
+<td align="left" class="text-left"><strong>Active (2026 Core Support)</strong></td>
+<td align="left" class="text-left"><strong>Active Maintenance</strong></td>
+</tr>
+</tbody>
+</table></div>
+</div>
     </div>
   </main>
 

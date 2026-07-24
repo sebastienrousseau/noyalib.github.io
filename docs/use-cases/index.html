@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="" id="date">
+  <meta itemprop="dateModified" content="" id="last-modified">
   <title>noyalib Enterprise Use Cases: AI Pipelines, Finance &amp; Edge Runtimes</title>
-  <meta name="description" content="Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.">
-  <meta name="keywords" content="noyalib use cases, enterprise, ai pipelines, financial systems, edge computing, microservices">
-  <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
   
 
-  <!-- Primary & Social Meta Tags -->
-  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib use cases, enterprise, ai pipelines, financial systems, edge computing, microservices&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.">
+<meta name="keywords" content="noyalib use cases, enterprise, ai pipelines, financial systems, edge computing, microservices">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
   
+  
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,14 +35,14 @@
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="noyalib Enterprise Use Cases: AI Pipelines, Finance &amp;amp; Edge Runtimes">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Enterprise Solutions &amp;amp; Use Cases&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; is designed to power">
+<meta property="og:description" content="Enterprise Solutions &amp;amp; Use Cases noyalib is designed to power high-throughput, mission-critical applications across modern enterprise industries. 1. AI">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://noyalib.com/use-cases.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="noyalib Enterprise Use Cases: AI Pipelines, Finance &amp;amp; Edge Runtimes">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Enterprise Solutions &amp;amp; Use Cases&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; is designed to power">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Enterprise Solutions &amp; Use Cases&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; is designed to power","inLanguage":"en-GB","name":"noyalib Enterprise Use Cases: AI Pipelines, Finance &amp; Edge Runtimes","url":"http://127.0.0.1:8000/use-cases/index.html"}</script>
+<meta name="twitter:description" content="Enterprise Solutions &amp;amp; Use Cases noyalib is designed to power high-throughput, mission-critical applications across modern enterprise industries. 1. AI">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"Enterprise Solutions &amp; Use Cases noyalib is designed to power high-throughput, mission-critical applications across modern enterprise industries. 1. AI","inLanguage":"en-GB","name":"noyalib Enterprise Use Cases: AI Pipelines, Finance &amp; Edge Runtimes","url":"http://127.0.0.1:8000/use-cases/index.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/use-cases","name":"use cases","position":2}]}</script>
 <link rel="canonical" href="http://127.0.0.1:8000/use-cases/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
@@ -77,39 +80,39 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Enterprise Solutions &amp; Use Cases&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; is designed to power high-throughput, mission-critical applications across modern enterprise industries.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;1. AI &amp; LLM Structured Data Pipelines&lt;/h2&gt;
-&lt;p&gt;Modern AI models (Claude, GPT-4, Llama) frequently output structured JSON or YAML payloads. &lt;code&gt;noyalib-mcp&lt;/code&gt; connects AI agent workflows directly to noyalib&#x27;s validation engine:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Instant Schema Enforcement&lt;/strong&gt;: Enforce JSON Schema 2020-12 rules before ingestion.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lenient Parse Recovery&lt;/strong&gt;: Handle partial or streaming LLM outputs via &lt;code&gt;parse_lenient&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Zero Ingestion Latency&lt;/strong&gt;: Parse 520 MB/s to prevent AI pipeline bottlenecks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h2&gt;2. Financial &amp; Payment Infrastructure&lt;/h2&gt;
-&lt;p&gt;Financial institutions processing ISO 20022 messages and high-frequency transactions require memory safety guarantees:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;#![forbid(unsafe_code)]&lt;/code&gt;&lt;/strong&gt;: Eliminates memory corruption risks in payment gateways.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deterministic Serialization&lt;/strong&gt;: Prevent floating-point or integer overflow vulnerabilities via &lt;code&gt;lossless-u64&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Serde 0.9 Migration&lt;/strong&gt;: Drop-in migration path for legacy financial codebases via &lt;code&gt;compat-serde-yaml&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h2&gt;3. Edge Computing &amp; Serverless Runtimes&lt;/h2&gt;
-&lt;p&gt;With &lt;code&gt;noyalib-wasm&lt;/code&gt;, edge environments (Cloudflare Workers, Fastly Compute@Edge, AWS Lambda, Node.js) execute data validation directly at the edge:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Tiny Bundle Size&lt;/strong&gt;: Post-processed with &lt;code&gt;wasm-opt&lt;/code&gt; for sub-50 KB gzipped payloads.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;No Native Dependencies&lt;/strong&gt;: Pure WebAssembly binary running on V8 and SpiderMonkey.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h2&gt;4. Cloud-Native Kubernetes &amp; DevOps Tooling&lt;/h2&gt;
-&lt;p&gt;DevOps platforms handling multi-megabyte Kubernetes manifests use &lt;code&gt;noya-cli&lt;/code&gt; for automated linting:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Parallel Document Processing&lt;/strong&gt;: Process 100+ document manifests concurrently using Rayon.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fast CLI Formatting&lt;/strong&gt;: Instant terminal conversion between YAML, JSON, and TOML.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+      <div lang="en"><h1>Enterprise Solutions &amp; Use Cases</h1>
+<p><strong>noyalib</strong> is designed to power high-throughput, mission-critical applications across modern enterprise industries.</p>
+<hr />
+<h2>1. AI &amp; LLM Structured Data Pipelines</h2>
+<p>Modern AI models (Claude, GPT-4, Llama) frequently output structured JSON or YAML payloads. <code>noyalib-mcp</code> connects AI agent workflows directly to noyalib's validation engine:</p>
+<ul>
+<li><strong>Instant Schema Enforcement</strong>: Enforce JSON Schema 2020-12 rules before ingestion.</li>
+<li><strong>Lenient Parse Recovery</strong>: Handle partial or streaming LLM outputs via <code>parse_lenient</code>.</li>
+<li><strong>Zero Ingestion Latency</strong>: Parse 520 MB/s to prevent AI pipeline bottlenecks.</li>
+</ul>
+<hr />
+<h2>2. Financial &amp; Payment Infrastructure</h2>
+<p>Financial institutions processing ISO 20022 messages and high-frequency transactions require memory safety guarantees:</p>
+<ul>
+<li><strong><code>#![forbid(unsafe_code)]</code></strong>: Eliminates memory corruption risks in payment gateways.</li>
+<li><strong>Deterministic Serialization</strong>: Prevent floating-point or integer overflow vulnerabilities via <code>lossless-u64</code>.</li>
+<li><strong>Serde 0.9 Migration</strong>: Drop-in migration path for legacy financial codebases via <code>compat-serde-yaml</code>.</li>
+</ul>
+<hr />
+<h2>3. Edge Computing &amp; Serverless Runtimes</h2>
+<p>With <code>noyalib-wasm</code>, edge environments (Cloudflare Workers, Fastly Compute@Edge, AWS Lambda, Node.js) execute data validation directly at the edge:</p>
+<ul>
+<li><strong>Tiny Bundle Size</strong>: Post-processed with <code>wasm-opt</code> for sub-50 KB gzipped payloads.</li>
+<li><strong>No Native Dependencies</strong>: Pure WebAssembly binary running on V8 and SpiderMonkey.</li>
+</ul>
+<hr />
+<h2>4. Cloud-Native Kubernetes &amp; DevOps Tooling</h2>
+<p>DevOps platforms handling multi-megabyte Kubernetes manifests use <code>noya-cli</code> for automated linting:</p>
+<ul>
+<li><strong>Parallel Document Processing</strong>: Process 100+ document manifests concurrently using Rayon.</li>
+<li><strong>Fast CLI Formatting</strong>: Instant terminal conversion between YAML, JSON, and TOML.</li>
+</ul>
+</div>
     </div>
   </main>
 
