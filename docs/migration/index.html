@@ -80,7 +80,7 @@
   </header>
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
-    <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
+    <div class="prose" style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); backdrop-filter: blur(16px); padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
       <div lang="en"><h1>Migration Guide: Moving from <code>serde_yaml</code> to <code>noyalib</code></h1>
 <p>Upstream <code>serde_yaml</code> (0.9) has been archived. <strong>noyalib</strong> provides a drop-in compatibility feature (<code>compat-serde-yaml</code>) allowing projects to migrate seamlessly with <strong>zero logic changes</strong>.</p>
 <hr />
