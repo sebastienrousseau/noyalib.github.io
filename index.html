@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noya (NOYA) - Modern, Powerful & Efficient Library</title>
+  <meta name="description" content="Noya (NOYA) is an open-source library built for high performance, modern developer ergonomics, and rock-solid reliability.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0c10;
+      --bg-card: rgba(22, 27, 34, 0.7);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-code: 'Fira Code', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .background-glow {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 96px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.03em;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-card);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 96px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(168, 85, 247, 0.3);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-card);
+      padding: 32px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <header>
+    <a href="#" class="logo" id="brand-logo">Noya</a>
+    <nav>
+      <ul>
+        <li><a href="#features" id="nav-features">Features</a></li>
+        <li><a href="#docs" id="nav-docs">Documentation</a></li>
+        <li><a href="https://github.com/sebastienrousseau/noyalib.github.io" target="_blank" id="nav-github">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">v0.0.1 In Development</div>
+      <h1 id="hero-heading">Empowering Next-Gen Applications with <span>Noya</span></h1>
+      <p>A modern, efficient, and beautifully architected library designed to simplify workflows and elevate developer output.</p>
+      <div class="cta-group">
+        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" id="btn-get-started">Get Started</a>
+        <a href="#docs" class="btn btn-secondary" id="btn-read-docs">Read Docs</a>
+      </div>
+    </section>
+
+    <section class="features-grid" id="features">
+      <div class="feature-card" id="card-performance">
+        <div class="feature-icon">⚡</div>
+        <h3>High Performance</h3>
+        <p>Engineered from the ground up for low overhead and maximum throughput across environments.</p>
+      </div>
+
+      <div class="feature-card" id="card-developer-experience">
+        <div class="feature-icon">🛠️</div>
+        <h3>Intuitive APIs</h3>
+        <p>Built with developer experience in mind. Clean signatures, predictable behaviors, and detailed typing.</p>
+      </div>
+
+      <div class="feature-card" id="card-security">
+        <div class="feature-icon">🔒</div>
+        <h3>Robust & Reliable</h3>
+        <p>Extensively tested to ensure rock-solid stability in production-critical applications.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Sebastien Rousseau. Licensed under the Apache-2.0 License.</p>
+  </footer>
+</body>
+</html>

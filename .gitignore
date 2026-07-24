@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Files
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+
+# Dependencies / Output
+node_modules/
+dist/
+build/
+output/
