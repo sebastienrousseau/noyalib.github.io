@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>noyalib Migration Guide: Moving from serde_yaml 0.9</title>
+  <meta name="description" content="Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.">
+  <meta name="keywords" content="noyalib migration, serde_yaml, migration guide, rust, upgrade">
+  <meta name="author" content="Sebastien Rousseau">
+
+  <!-- Canonical URL -->
+  
+
+  <!-- Primary & Social Meta Tags -->
+  &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;noyalib migration, serde_yaml, migration guide, rust, upgrade&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
+  
+  
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Skeletonic CSS Framework -->
+  <link rel="stylesheet" href="assets/css/skeletonic.min.css">
+  <link rel="stylesheet" href="assets/css/skeletonic-animations.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://127.0.0.1:8000/atom.xml"/>
+  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="noyalib Migration Guide: Moving from serde_yaml 0.9">
+<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Migration Guide: Moving from &amp;lt;code&amp;gt;serde_yaml&amp;lt;/code&amp;gt; to &amp;lt;code&amp;gt;noyalib&amp;lt;/code&amp;gt;&amp;lt;/h1&amp;gt;">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noyalib.com/migration.html">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="noyalib Migration Guide: Moving from serde_yaml 0.9">
+<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Migration Guide: Moving from &amp;lt;code&amp;gt;serde_yaml&amp;lt;/code&amp;gt; to &amp;lt;code&amp;gt;noyalib&amp;lt;/code&amp;gt;&amp;lt;/h1&amp;gt;">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Migration Guide: Moving from &lt;code&gt;serde_yaml&lt;/code&gt; to &lt;code&gt;noyalib&lt;/code&gt;&lt;/h1&gt;","inLanguage":"en-GB","name":"noyalib Migration Guide: Moving from serde_yaml 0.9","url":"http://127.0.0.1:8000/migration/index.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/migration","name":"migration","position":2}]}</script>
+<link rel="canonical" href="http://127.0.0.1:8000/migration/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="brand">
+        <img src="assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
+        <span class="brand-text">noyalib</span>
+        <span class="version-tag">v0.0.16</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/getting-started/index.html">Quick Start</a></li>
+          <li><a href="/suite/index.html">Suite</a></li>
+          <li><a href="/use-cases/index.html">Use Cases</a></li>
+          <li><a href="/migration/index.html">Migration</a></li>
+          <li><a href="/benchmarks/index.html">Benchmarks</a></li>
+          <li><a href="/security/index.html">Security</a></li>
+          <li><a href="/rust-ecosystem/index.html">Rust Suite</a></li>
+          <li><a href="/faq/index.html">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">☀️</button>
+        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
+    <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
+      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;Migration Guide: Moving from &lt;code&gt;serde_yaml&lt;/code&gt; to &lt;code&gt;noyalib&lt;/code&gt;&lt;/h1&gt;
+&lt;p&gt;Upstream &lt;code&gt;serde_yaml&lt;/code&gt; (0.9) has been archived. &lt;strong&gt;noyalib&lt;/strong&gt; provides a drop-in compatibility feature (&lt;code&gt;compat-serde-yaml&lt;/code&gt;) allowing projects to migrate seamlessly with &lt;strong&gt;zero logic changes&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;1-Step Cargo Migration&lt;/h2&gt;
+&lt;p&gt;Update your &lt;code&gt;Cargo.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-toml&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# Old dependency:
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# serde_yaml = &quot;0.9&quot;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# Replace with noyalib compatibility feature:
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noyalib = { version = &quot;0.0.16&quot;, features = [&quot;compat-serde-yaml&quot;, &quot;simd&quot;] }
+&lt;/span&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Code Import Alias&lt;/h2&gt;
+&lt;p&gt;In your Rust source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;span style=&quot;color:#65737e;&quot;&gt;// Old import:
+&lt;/span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;// use serde_yaml::Value;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
+&lt;/span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;// Replace with noyalib compatibility module:
+&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;use &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;noyalib::compat::serde_yaml as serde_yaml;
+&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;use &lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;serde_yaml::Value;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;
+&lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;fn &lt;/span&gt;&lt;span style=&quot;color:#8fa1b3;&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;() -&gt; Result&lt;(), serde_yaml::Error&gt; {
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;let&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt; val: Value = serde_yaml::from_str(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name: noyalib&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;)?;
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    println!(&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;Migrated: &lt;/span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{}&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;, val[&quot;&lt;/span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;&quot;]);
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;    Ok(())
+&lt;/span&gt;&lt;span style=&quot;color:#c0c5ce;&quot;&gt;}
+&lt;/span&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Performance Uplift Post-Migration&lt;/h2&gt;
+&lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table&quot;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;left&quot;&gt;Metric&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;code&gt;serde_yaml&lt;/code&gt; 0.9&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;&lt;code&gt;noyalib&lt;/code&gt; (SIMD + Rayon)&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;Improvement&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Parsing Speed&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;68 MB/s&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;520 MB/s&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;7.6x Faster&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Safety Invariant&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Contains Unsafe&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;100% Safe (&lt;code&gt;forbid(unsafe_code)&lt;/code&gt;)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Guaranteed Safe&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Maintenance&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;Archived&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Active (2026 Core Support)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&quot;left&quot; class=&quot;text-left&quot;&gt;&lt;strong&gt;Active Maintenance&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sebastien Rousseau. Generated with Shokunin SSG. Licensed under Apache-2.0 &amp; MIT.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+<!-- SSG Search Widget -->
+<div id="ssg-search-widget">
+<link rel="stylesheet" href="/_csp/3ae64e6558e84d20.css" integrity="sha256-qrZMiHtYUDTrqu7hrA6Vyz6IZeltvQLSksKVwx3VWdE=" crossorigin="anonymous">
+<!-- Search trigger button -->
+<button id="ssg-search-btn" type="button" aria-label="Search">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>Search</span>
+<kbd>K</kbd>
+</button>
+<!-- Search modal -->
+<div id="ssg-search-overlay" role="dialog" aria-label="Search">
+<div id="ssg-search-box">
+<div id="ssg-search-header">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<input id="ssg-search-input" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search"/>
+</div>
+<div id="ssg-search-results" aria-live="polite"></div>
+<div id="ssg-sr-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="ssg-search-footer"><span><kbd>Esc</kbd> close</span><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span><span><kbd>Enter</kbd> open</span></div>
+</div>
+</div>
+<script src="/_csp/61bc2fae7f71ccad.js" integrity="sha256-rTwaMPvyYLEkvpFm0cIofI5tV5ZT8f5Y82fkvdg4zC8=" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

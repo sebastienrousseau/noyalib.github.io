@@ -8,7 +8,7 @@
           "name": "Unknown"
         }
       ],
-      "content_html": "noyalib is a high-performance data &amp; YAML engine in Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, 100% safe Rust, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.",
+      "content_html": "noyalib is an enterprise-grade data &amp; YAML engine in Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, 100% safe Rust, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.",
       "date_modified": "2026-07-24T18:00:00+00:00",
       "date_published": "2026-07-24T18:00:00+00:00",
       "id": "http://127.0.0.1:8000/rss.xml/",
