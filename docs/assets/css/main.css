@@ -19,7 +19,7 @@
     --bg-card: rgba(17, 24, 39, 0.75);
     --bg-card-hover: rgba(30, 41, 59, 0.85);
     --bg-code: #0f172a;
-    --bg-code-header: #1e293b;
+    --bg-code-header: #161e2e;
     --bg-input: #1e293b;
 
     --text-main: #f8fafc;
@@ -330,7 +330,6 @@
   }
 
   .copy-btn {
-    position: relative;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-card);
     color: var(--text-muted);
@@ -352,7 +351,7 @@
   }
 
   /* --------------------------------------------------------------------------
-     5. Polars-Style Landing Hero Section
+     5. Polars-Style Landing Hero Section & macOS Window Titlebar
      -------------------------------------------------------------------------- */
   .hero {
     max-width: var(--max-width);
@@ -415,7 +414,7 @@
     flex-wrap: wrap;
   }
 
-  /* Code Window Preview (Polars Tab Switcher - Fixed 440px Height) */
+  /* Code Window Preview (Authentic macOS Window with Header Copy Button) */
   .hero-code-window {
     background: var(--bg-code);
     border: 1px solid var(--border-card);
@@ -442,6 +441,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
+    width: 52px;
   }
 
   .dot {
@@ -456,26 +456,21 @@
   .code-tabs {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 4px;
     list-style: none;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .code-tabs::-webkit-scrollbar {
-    display: none;
+    flex: 1;
   }
 
   .code-tab-btn {
-    background: transparent;
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     color: var(--text-muted);
-    padding: 6px 14px;
-    font-size: 0.85rem;
+    padding: 4px 12px;
+    font-size: 0.8rem;
     font-family: var(--font-code);
     font-weight: 500;
-    border-radius: var(--radius-pill);
+    border-radius: 6px;
     cursor: pointer;
     transition: all var(--transition-fast);
     white-space: nowrap;
@@ -483,7 +478,8 @@
 
   .code-tab-btn:hover {
     color: var(--text-main);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 
   .code-tab-btn.active {
@@ -491,23 +487,35 @@
     background: var(--accent-gradient);
     border-color: transparent;
     font-weight: 600;
-    box-shadow: 0 2px 10px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+  }
+
+  .header-copy-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-copy-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-indigo);
   }
 
   .code-window-content {
-    padding: 24px;
+    padding: 20px 24px;
     position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-  }
-
-  .code-window-content .copy-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    z-index: 10;
   }
 
   .code-block {

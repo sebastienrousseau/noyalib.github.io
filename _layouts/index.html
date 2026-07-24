@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <!-- Hero Code Window Switcher -->
+      <!-- Hero Code Window Switcher (Authentic macOS Titlebar Layout) -->
       <div class="hero-code-window" aria-label="Interactive Code Preview">
         <div class="code-window-bar">
           <div class="window-dots" aria-hidden="true">
@@ -118,14 +118,14 @@
             <li><button class="code-tab-btn" role="tab" aria-selected="false" data-snippet="mcp">MCP</button></li>
             <li><button class="code-tab-btn" role="tab" aria-selected="false" data-snippet="lsp">LSP</button></li>
           </ul>
-        </div>
 
-        <div class="code-window-content">
-          <button class="copy-btn" aria-label="Copy code to clipboard">
+          <button class="copy-btn header-copy-btn" aria-label="Copy code to clipboard">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             <span>Copy</span>
           </button>
+        </div>
 
+        <div class="code-window-content">
           <pre class="code-block"><code id="hero-code-display"><span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.16", features = ["simd", "rayon"] }</span>
 <span class="syn-kw">use</span> noyalib::{parallel, Value, Result};
 
