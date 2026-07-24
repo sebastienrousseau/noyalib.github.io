@@ -19,7 +19,7 @@
     --bg-card: rgba(17, 24, 39, 0.75);
     --bg-card-hover: rgba(30, 41, 59, 0.85);
     --bg-code: #0f172a;
-    --bg-code-header: #161e2e;
+    --bg-code-header: #111827;
     --bg-input: #1e293b;
 
     --text-main: #f8fafc;
@@ -48,7 +48,7 @@
     --font-code: 'Fira Code', 'JetBrains Mono', SFMono-Regular, Consolas, Monaco, monospace;
 
     /* Layout & Spacing */
-    --max-width: 1240px;
+    --max-width: 1280px;
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
@@ -351,15 +351,15 @@
   }
 
   /* --------------------------------------------------------------------------
-     5. Polars-Style Landing Hero Section & macOS Window Titlebar
+     5. Polars-Style Landing Hero Section & Authentic macOS Browser Window
      -------------------------------------------------------------------------- */
   .hero {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 80px 24px 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 36px;
     align-items: center;
   }
 
@@ -414,26 +414,26 @@
     flex-wrap: wrap;
   }
 
-  /* Code Window Preview (Authentic macOS Window with Header Copy Button) */
+  /* Code Window Preview (Authentic macOS Safari / Brave Browser Window) */
   .hero-code-window {
     background: var(--bg-code);
     border: 1px solid var(--border-card);
-    border-radius: var(--radius-lg);
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    height: 440px;
+    height: 460px;
   }
 
-  .code-window-bar {
-    background: var(--bg-code-header);
-    padding: 10px 16px;
+  /* macOS Safari Top Tab Bar Track */
+  .browser-tab-bar {
+    background: #111827;
+    padding: 10px 16px 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
     border-bottom: 1px solid var(--border-subtle);
-    gap: 12px;
   }
 
   .window-dots {
@@ -441,7 +441,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
-    width: 52px;
+    padding-bottom: 10px;
   }
 
   .dot {
@@ -453,41 +453,88 @@
   .dot-yellow { background: #f59e0b; }
   .dot-green { background: #10b981; }
 
-  .code-tabs {
+  .browser-tabs {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
     gap: 4px;
-    list-style: none;
     flex: 1;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  .code-tab-btn {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: var(--text-muted);
-    padding: 4px 12px;
+  .browser-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .browser-tab {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    padding: 6px 14px;
     font-size: 0.8rem;
     font-family: var(--font-code);
-    font-weight: 500;
-    border-radius: 6px;
+    color: var(--text-muted);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 6px;
     white-space: nowrap;
+    transition: all var(--transition-fast);
   }
 
-  .code-tab-btn:hover {
+  .browser-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
     color: var(--text-main);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.15);
   }
 
-  .code-tab-btn.active {
+  .browser-tab.active {
+    background: #1e293b;
     color: #ffffff;
-    background: var(--accent-gradient);
-    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid #1e293b;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  }
+
+  /* macOS Safari Address & Toolbar Track */
+  .browser-address-bar {
+    background: #1e293b;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 12px;
+  }
+
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-subtle);
+    font-size: 1.1rem;
+    font-weight: 700;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .address-input-wrapper {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-code);
+    font-size: 0.775rem;
+    color: var(--accent-cyan);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .header-copy-btn {

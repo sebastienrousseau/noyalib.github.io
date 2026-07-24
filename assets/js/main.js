@@ -39,7 +39,7 @@ function updateThemeIcon(btn, theme) {
 }
 
 /* --------------------------------------------------------------------------
-   2. Hero Code Window Tab Switcher (Standardized Fixed 11-Line Snippets)
+   2. Hero macOS Browser Window Tab Switcher
    -------------------------------------------------------------------------- */
 const HERO_SNIPPETS = {
   rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.16", features = ["simd", "rayon"] }</span>
@@ -109,8 +109,9 @@ console.log(<span class="syn-str">'Parsed WASM:'</span>, data.server.port);`,
 };
 
 function initHeroCodeTabs() {
-  const tabs = document.querySelectorAll('.code-tabs .code-tab-btn');
+  const tabs = document.querySelectorAll('.browser-tabs .browser-tab');
   const codeDisplay = document.getElementById('hero-code-display');
+  const urlDisplay = document.getElementById('browser-url-display');
   if (!tabs.length || !codeDisplay) return;
 
   tabs.forEach(tab => {
@@ -124,8 +125,13 @@ function initHeroCodeTabs() {
       tab.setAttribute('aria-selected', 'true');
 
       const snippetKey = tab.getAttribute('data-snippet');
+      const urlPath = tab.getAttribute('data-url');
+
       if (HERO_SNIPPETS[snippetKey]) {
         codeDisplay.innerHTML = HERO_SNIPPETS[snippetKey];
+      }
+      if (urlDisplay && urlPath) {
+        urlDisplay.textContent = urlPath;
       }
     });
   });
@@ -146,7 +152,7 @@ function initCopyButtons() {
         const targetEl = document.getElementById(targetId);
         if (targetEl) textToCopy = targetEl.textContent;
       } else {
-        const codeBlock = btn.closest('.code-window-content, .eco-code')?.querySelector('code');
+        const codeBlock = btn.closest('.hero-code-window, .eco-code')?.querySelector('code');
         if (codeBlock) textToCopy = codeBlock.textContent;
       }
 
