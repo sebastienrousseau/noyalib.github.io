@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Learn about noyalib architecture, design principles, and safe Rust data engine performance.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Noya (NOYA) About",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}

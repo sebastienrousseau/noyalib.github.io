@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noyalib.github.io/sitemap.xml

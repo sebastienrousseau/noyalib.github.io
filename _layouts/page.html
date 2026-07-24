@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{language}}" data-theme="dark">
+<head>
+  <meta charset="{{charset}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="keywords" content="{{keywords}}">
+  <meta name="author" content="{{author}}">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{url}}">
+
+  <!-- Primary & Social Meta Tags -->
+  {{primary}}
+  {{opengraph}}
+  {{twitter}}
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Skeletonic CSS Framework -->
+  <link rel="stylesheet" href="assets/css/skeletonic.min.css">
+  <link rel="stylesheet" href="assets/css/skeletonic-animations.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="brand">
+        <img src="assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
+        <span class="brand-text">noyalib</span>
+        <span class="version-tag">v0.0.16</span>
+      </a>
+
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/getting-started.html">Getting Started</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn">☀️</button>
+        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
+    <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
+      {{content}}
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sebastien Rousseau. Generated with Shokunin SSG.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

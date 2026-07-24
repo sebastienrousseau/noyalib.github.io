@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Step-by-step guide to installing and using noyalib in Rust, CLI, WebAssembly, MCP, and LSP environments.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Getting Started with Noya",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}
