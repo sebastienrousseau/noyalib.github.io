@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About noyalib: High Performance Data Engine Architecture</title>
-  <meta name="description" content="Learn about noyalib architecture, design principles, and safe Rust data engine performance.">
-  <meta name="keywords" content="noyalib, about, architecture, rust, zero copy, simd, safe rust">
+  <title>noyalib Security Policy: Memory Safety &amp; Supply Chain Assurance</title>
+  <meta name="description" content="Security policy, memory safety invariants, and vulnerability reporting for noyalib.">
+  <meta name="keywords" content="noyalib security, memory safety, safe rust, vulnerability policy, sbom">
   <meta name="author" content="Sebastien Rousseau">
 
   <!-- Canonical URL -->
@@ -13,8 +13,8 @@
 
   <!-- Primary & Social Meta Tags -->
   &lt;meta name=&quot;author&quot; content=&quot;Sebastien Rousseau&quot;&gt;
-&lt;meta name=&quot;description&quot; content=&quot;Learn about noyalib architecture, design principles, and safe Rust data engine performance.&quot;&gt;
-&lt;meta name=&quot;keywords&quot; content=&quot;noyalib, about, architecture, rust, zero copy, simd, safe rust&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Security policy, memory safety invariants, and vulnerability reporting for noyalib.&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;noyalib security, memory safety, safe rust, vulnerability policy, sbom&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;
   
   
@@ -31,17 +31,17 @@
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://127.0.0.1:8000/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="About noyalib: High Performance Data Engine Architecture">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;About noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; was designed to address performance">
+<meta property="og:title" content="noyalib Security Policy: Memory Safety &amp;amp; Supply Chain Assurance">
+<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;noyalib Security Policy&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Security is a primary design goal of &amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt;.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://noyalib.com/about.html">
+<meta property="og:url" content="https://noyalib.com/security.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About noyalib: High Performance Data Engine Architecture">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;About noyalib&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt; was designed to address performance">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;About noyalib&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; was designed to address performance","inLanguage":"en-GB","name":"About noyalib: High Performance Data Engine Architecture","url":"http://127.0.0.1:8000/about/index.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/about","name":"about","position":2}]}</script>
-<link rel="canonical" href="http://127.0.0.1:8000/about/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
+<meta name="twitter:title" content="noyalib Security Policy: Memory Safety &amp;amp; Supply Chain Assurance">
+<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;noyalib Security Policy&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Security is a primary design goal of &amp;lt;strong&amp;gt;noyalib&amp;lt;/strong&amp;gt;.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"&lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;noyalib Security Policy&lt;/h1&gt; &lt;p&gt;Security is a primary design goal of &lt;strong&gt;noyalib&lt;/strong&gt;.","inLanguage":"en-GB","name":"noyalib Security Policy: Memory Safety &amp; Supply Chain Assurance","url":"http://127.0.0.1:8000/security/index.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/security","name":"security","position":2}]}</script>
+<link rel="canonical" href="http://127.0.0.1:8000/security/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -75,15 +75,14 @@
 
   <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
     <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 48px;">
-      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;About noyalib&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;noyalib&lt;/strong&gt; was designed to address performance bottlenecks, memory overhead, and security risks in parsing structured data formats like YAML.&lt;/p&gt;
-&lt;h2&gt;Key Architectural Principles&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Zero Compromise Security&lt;/strong&gt;: Enforces &lt;code&gt;#![forbid(unsafe_code)]&lt;/code&gt; throughout.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SIMD &amp; SWAR Vectorization&lt;/strong&gt;: Accelerated byte scanning without unsafe blocks.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rayon Concurrency&lt;/strong&gt;: Parallelized document processing for multi-megabyte payloads.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Comprehensive Satellite Suite&lt;/strong&gt;: Native support for Rust, CLI, WASM, MCP AI, and LSP.&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;div lang=&quot;en&quot;&gt;&lt;h1&gt;noyalib Security Policy&lt;/h1&gt;
+&lt;p&gt;Security is a primary design goal of &lt;strong&gt;noyalib&lt;/strong&gt;. The library handles untrusted user payloads in high-consequence application environments.&lt;/p&gt;
+&lt;h2&gt;Memory Safety Guarantee&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;forbid(unsafe_code)&lt;/code&gt;&lt;/strong&gt;: Enforced at the compiler level across &lt;code&gt;noyalib&lt;/code&gt; and all satellite crates.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Panic Resilience&lt;/strong&gt;: Recursive parsing depth limits prevent stack overflow vulnerabilities (&lt;code&gt;max_include_depth&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CycloneDX SBOM&lt;/strong&gt;: Automated Software Bill of Materials generated on every release.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
     </div>
   </main>

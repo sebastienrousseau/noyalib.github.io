@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Explore the full suite of satellite libraries in the noyalib ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, an",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "noyalib Suite of Libraries",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}

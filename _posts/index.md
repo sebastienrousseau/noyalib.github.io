@@ -14,7 +14,7 @@ cname: "noyalib.com"
 copyright: "© 2026 noyalib (NOYALIB). All rights reserved."
 date: "Jul 24, 2026"
 description: "noyalib is a high-performance data & YAML engine in Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, 100% safe Rust, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support."
-doc_url: "/installation/index.html"
+doc_url: "/getting-started/index.html"
 doc_title: "Installation Guide"
 download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.16.zip"
 download_title: "Download noyalib ↓"
@@ -80,51 +80,39 @@ apple-mobile-web-app-status-bar-inset: "black"
 
 # Welcome to noyalib
 
-**noyalib** is a next-generation, high-performance data and YAML parsing engine engineered in 100% safe Rust. Built for mission-critical enterprise infrastructure, cloud-native services, edge WASM environments, and AI Model Context Protocol (MCP) integrations.
+**noyalib** is a next-generation, high-performance data and YAML parsing engine engineered in 100% safe Rust. Designed for cloud-native applications, financial infrastructure, edge WASM execution, and AI Model Context Protocol (MCP) tool pipelines.
 
-## Core Architectural Capabilities
+## Architectural Highlights
 
-### Zero-Copy SIMD Dispatch
-Multi-byte SWAR, SSE2, and NEON vector scanning find structural delimiters in a single CPU pass with zero copy overhead.
+### 1. Zero-Copy SIMD Dispatch Engine
+noyalib incorporates multi-byte SWAR (Simd Within A Register), SSE2, and ARM NEON vectorization primitives. Structural tokens like colons, hyphens, brackets, and document boundaries (`---`) are located in a single CPU scan pass with zero intermediate heap allocations.
 
-### 100% Safe Rust Guarantee
-Enforces `#![forbid(unsafe_code)]` across the entire workspace codebase, delivering rock-solid memory safety for untrusted inputs.
+### 2. Guaranteed Memory Safety (`#![forbid(unsafe_code)]`)
+Unlike C-based parser shims or unsafe Rust abstractions, noyalib enforces `#![forbid(unsafe_code)]` strictly across the main crate and satellite libraries. Untrusted payloads are processed with complete panic safety and zero buffer overrun exposure.
 
-### Parallel Rayon Multi-Document Streaming
-Pre-scans document boundaries and deserializes multi-document streams concurrently across all available CPU cores.
+### 3. Multi-Core Rayon Document Streaming
+For high-volume multi-document streams, noyalib pre-scans boundary offsets in a lightweight pass and distributes document deserialization across all available CPU cores via Rayon.
 
-### JSON Schema 2020-12 Validation
-Automatic JSON Schema codegen via `schemars` and real-time schema validation via `jsonschema` engine.
+### 4. JSON Schema 2020-12 & Validation
+Built-in schema generation via `schemars` and validation via `jsonschema`. Infer schemas directly from Rust types or validate incoming data payloads on the fly.
 
-### Model Context Protocol (MCP) Server
-Native MCP AI server tool allowing LLM models (Claude, GPT-4, Antigravity) to query, parse, and validate data streams.
+## The noyalib Satellite Suite
 
-### Language Server Protocol (LSP) Engine
-Fault-tolerant `parse_lenient` error recovery engine powers live diagnostics, schema hover docs, and completion in VS Code and Neovim.
+| Satellite Crate | Environment | Primary Role |
+| :--- | :--- | :--- |
+| **`noyalib`** | Rust Library | Core parsing engine, SIMD scanning, Rayon streaming, Serde 0.9 compatibility shim. |
+| **`noya-cli`** | Terminal CLI | Fast CLI tool for format conversion, linting, schema validation, and benchmarking. |
+| **`noyalib-wasm`** | Web & Edge | WebAssembly package for browser runtimes, Node.js, and Cloudflare Workers. |
+| **`noyalib-mcp`** | AI Agents | Model Context Protocol server exposing data validation tools to Claude, GPT-4, and AI agents. |
+| **`noyalib-lsp`** | Code Editors | Language Server Protocol server powering VS Code autocompletion, schema hovers, and diagnostics. |
 
-## Quick Installation
+## Broader Rust Suite Integration
 
-Add `noyalib` to your `Cargo.toml`:
+noyalib integrates seamlessly with the open-source Rust library suite by Sebastien Rousseau:
 
-```toml
-[dependencies]
-noyalib = { version = "0.0.16", features = ["simd", "rayon"] }
-```
-
-Install the command-line utility:
-
-```shell
-cargo install noya-cli
-```
-
-Install the WebAssembly package for browser & edge runtimes:
-
-```shell
-npm install noyalib-wasm
-```
-
-Install the MCP AI Server binary:
-
-```shell
-cargo install noyalib-mcp
-```
+- **`dtt`** (DateTime): High-precision date parsing, formatting, and validation.
+- **`kyberlib`** (Post-Quantum Cryptography): NIST-standardized CRYSTALS-Kyber encryption.
+- **`hsh`** (Cryptographic Hashes): Fast, secure cryptographic hashing algorithms.
+- **`rlg`** (Structured Logging): Zero-overhead JSON and terminal logger.
+- **`vrd`** (Random Number Generation): CSPRNG pseudo-random generator.
+- **`libmake`** (Crate Generator): Automated Rust library template engine.

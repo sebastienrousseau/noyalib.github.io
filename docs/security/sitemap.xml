@@ -7,43 +7,43 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/index.html</loc>
+  <loc>https://noyalib.com/security.html/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/suite/index.html</loc>
+  <loc>https://noyalib.com/security.html/suite/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/benchmarks/index.html</loc>
+  <loc>https://noyalib.com/security.html/benchmarks/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/getting-started/index.html</loc>
+  <loc>https://noyalib.com/security.html/getting-started/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/about/index.html</loc>
+  <loc>https://noyalib.com/security.html/about/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/faq/index.html</loc>
+  <loc>https://noyalib.com/security.html/faq/index.html</loc>
 </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <url>
-  <changefreq>weekly</changefreq>
+  <changefreq>monthly</changefreq>
   <lastmod></lastmod>
-  <loc>https://noyalib.com/getting-started.html/security/index.html</loc>
+  <loc>https://noyalib.com/security.html/security/index.html</loc>
 </url></urlset>

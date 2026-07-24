@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://noyalib.com/suite.html/sitemap.xml

@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Detailed performance benchmarks comparing noyalib against serde_yaml, PyYAML, and standard legacy parsers.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "noyalib Performance Benchmarks",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}
