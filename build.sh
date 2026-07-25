@@ -23,4 +23,11 @@ find docs -type f \( -name "*.html" -o -name "*.xml" -o -name "*.json" -o -name 
 # Normalize page og:type to website
 sed -i '' 's|<meta property="og:type" content="article">|<meta property="og:type" content="website">|g' docs/index.html
 
+# Tier 0.1 CI Verification Guard: Fail build if any 127.0.0.1 URL leaks into generated docs
+if grep -rn "127.0.0.1" docs/ > /dev/null; then
+  echo "❌ ERROR: Localhost 127.0.0.1 leak detected in docs/ output!"
+  exit 1
+fi
+
+echo "✓ Verified zero localhost leaks in build output."
 echo "✓ Build complete. Output generated in docs/"

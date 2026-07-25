@@ -437,6 +437,12 @@
     box-shadow: 0 4px 20px var(--glow-indigo);
   }
 
+  .btn-hero-dominant {
+    font-size: 1.05rem !important;
+    padding: 14px 28px !important;
+    box-shadow: 0 6px 30px rgba(99, 102, 241, 0.4) !important;
+  }
+
   .btn-primary:hover {
     background: var(--btn-primary-hover) !important;
     transform: translateY(-2px);
@@ -552,7 +558,51 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
+  }
+
+  /* Tier 2.2 Hero Micro-Decision Segmenter */
+  .hero-segmenter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .segmenter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-right: 4px;
+  }
+
+  .segmenter-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    font-size: 0.825rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .segmenter-btn:hover {
+    color: var(--text-main);
+    background: var(--bg-card-hover);
+  }
+
+  .segmenter-btn.active {
+    background: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-text) !important;
+    border-color: var(--border-focus) !important;
   }
 
   /* Trust Signals Bar */
@@ -562,7 +612,7 @@
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 
   .trust-badge {
@@ -669,7 +719,48 @@
     margin-top: 32px;
   }
 
-  /* 980px Centered Full-Width macOS Window (Scalable Dynamic Height) */
+  /* Tier 1.2 & Tier 5.2 Real-World Use Cases Grid */
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  .use-case-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all var(--transition-normal);
+  }
+
+  .use-case-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-focus);
+    transform: translateY(-4px);
+  }
+
+  .use-case-icon {
+    font-size: 2rem;
+    margin-bottom: 4px;
+  }
+
+  .use-case-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .use-case-card p {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* 980px Centered Full-Width macOS Window */
   .hero-code-window {
     width: 100%;
     max-width: 980px;
@@ -993,34 +1084,42 @@
     font-weight: 600;
   }
 
-  /* Core Features Grid */
+  /* Tier 3.3 Bento-Grid Architecture Layout */
   .features {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 80px 24px;
   }
 
-  .features-grid {
+  .bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 
-  .feature-card {
+  .bento-card {
     background: var(--bg-card);
     border: 1px solid var(--border-card);
     border-radius: var(--radius-lg);
     padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: all var(--transition-normal);
   }
 
-  .feature-card:hover {
+  .bento-card:hover {
     background: var(--bg-card-hover);
     border-color: var(--accent-indigo);
     transform: translateY(-4px);
   }
 
-  .feature-icon-wrapper {
+  .bento-hero {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 41, 59, 0.6) 100%);
+  }
+
+  .bento-icon-wrapper {
     width: 58px;
     height: 38px;
     border-radius: var(--radius-sm);
@@ -1036,7 +1135,7 @@
     border: 1px solid var(--code-inline-border);
   }
 
-  .feature-card h3 {
+  .bento-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 12px;
@@ -1044,10 +1143,22 @@
     color: var(--text-main);
   }
 
-  .feature-card p {
+  .bento-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .bento-diagram {
+    background: #0f172a;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: #38bdf8;
+    overflow-x: auto;
   }
 
   /* Ecosystem Explorer */
@@ -1384,7 +1495,7 @@
   .status-valid { color: var(--accent-emerald); font-weight: 700; }
   .status-invalid { color: #ef4444; font-weight: 700; }
 
-  /* Setup Cards Side-by-Side Wrapper System (Zero Button Overlap Guaranteed) */
+  /* Setup Cards Side-by-Side Wrapper System */
   .docs-setup {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -1720,6 +1831,8 @@
   /* Responsive Media Queries */
   @media (max-width: 1024px) {
     .benchmarks-grid { grid-template-columns: 1fr; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-hero { grid-column: span 1; }
     .eco-content-panel { grid-template-columns: 1fr; }
     .demo-editor-grid { grid-template-columns: 1fr; }
     .editor-pane { border-right: none; border-bottom: 1px solid var(--border-subtle); }

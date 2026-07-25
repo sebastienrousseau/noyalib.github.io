@@ -1,12 +1,12 @@
 {
   "docs/about/index.html": 8198473945200330581,
-  "docs/getting-started/index.html": 15323993266940254134,
   "docs/migration/index.html": 10996292422216216808,
-  "docs/benchmarks/index.html": 17805798968168218500,
-  "docs/suite/index.html": 1949579643299871776,
-  "docs/security/index.html": 7255969154970101941,
   "docs/faq/index.html": 14598842974238373335,
+  "docs/index.html": 6763769198984622013,
+  "docs/security/index.html": 7255969154970101941,
+  "docs/getting-started/index.html": 15323993266940254134,
   "docs/rust-ecosystem/index.html": 15294502273068301802,
-  "docs/index.html": 11878267664520942740,
-  "docs/use-cases/index.html": 1526521343275408969
+  "docs/use-cases/index.html": 1526521343275408969,
+  "docs/benchmarks/index.html": 17805798968168218500,
+  "docs/suite/index.html": 1949579643299871776
 }

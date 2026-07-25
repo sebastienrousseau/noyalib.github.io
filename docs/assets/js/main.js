@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initHeroCodeTabs();
+  initHeroSegmenter();
   initCopyButtons();
   initEcosystemTabs();
   initLiveParserDemo();
@@ -49,7 +50,7 @@ function updateThemeIcon(btn, theme) {
 }
 
 /* --------------------------------------------------------------------------
-   2. Hero macOS Browser Window Tab Switcher
+   2. Hero macOS Browser Window Tab Switcher & Micro-Decision Segmenter
    -------------------------------------------------------------------------- */
 const HERO_SNIPPETS = {
   rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.16", features = ["simd", "rayon"] }</span>
@@ -142,6 +143,24 @@ function initHeroCodeTabs() {
       }
       if (urlDisplay && urlPath) {
         urlDisplay.textContent = urlPath;
+      }
+    });
+  });
+}
+
+function initHeroSegmenter() {
+  const segmenterBtns = document.querySelectorAll('.segmenter-btn');
+  if (!segmenterBtns.length) return;
+
+  segmenterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      segmenterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetTabKey = btn.getAttribute('data-target-tab');
+      const targetTab = document.querySelector(`.browser-tab[data-snippet="${targetTabKey}"]`);
+      if (targetTab) {
+        targetTab.click();
       }
     });
   });
