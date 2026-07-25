@@ -30,7 +30,6 @@
     --text-subtle: #a8b3cf;      /* 7.86:1 vs #111827 (AAA Pass) */
     --text-inverse: #0f172a;
 
-    --accent-gradient: linear-gradient(135deg, #3730a3 0%, #581c87 50%, #0284c7 100%);
     --btn-primary-bg: #3730a3;   /* 13.46:1 contrast with #ffffff text (AAA Pass) */
     --btn-primary-hover: #4338ca;
     --btn-primary-text: #ffffff;
@@ -40,6 +39,7 @@
     --btn-secondary-text: #ffffff;
     --btn-secondary-border: #64748b;
 
+    --accent-gradient: linear-gradient(135deg, #3730a3 0%, #581c87 50%, #0284c7 100%);
     --accent-indigo: #a5b4fc;    /* 8.50:1 vs #0b0f19 (AAA Pass) */
     --accent-purple: #d8b4fe;    /* 8.98:1 vs #111827 (AAA Pass) */
     --accent-cyan: #38bdf8;      /* 9.20:1 vs #0b0f19 (AAA Pass) */
@@ -78,7 +78,7 @@
     --bg-header: rgba(255, 255, 255, 0.95);
     --bg-card: #f8fafc;
     --bg-card-hover: #f1f5f9;
-    --bg-code: #0f172a;
+    --bg-code: #0f172a;          /* Code blocks REMAIN DARK #0f172a in Light Mode */
     --bg-code-header: #1e293b;
     --bg-table-header: #0f172a;
     --bg-table-even: #f8fafc;
@@ -90,7 +90,6 @@
     --text-subtle: #334155;      /* 11.05:1 vs #ffffff (AAA Pass) */
     --text-inverse: #ffffff;
 
-    --accent-gradient: linear-gradient(135deg, #1e1b4b 0%, #31104b 50%, #0c4a6e 100%);
     --btn-primary-bg: #1e1b4b;   /* 16.15:1 contrast with #ffffff text (AAA Pass) */
     --btn-primary-hover: #312e81;
     --btn-primary-text: #ffffff;
@@ -100,11 +99,12 @@
     --btn-secondary-text: #0f172a;
     --btn-secondary-border: #0f172a;
 
+    --accent-gradient: linear-gradient(135deg, #1e1b4b 0%, #31104b 50%, #0c4a6e 100%);
     --accent-indigo: #312e81;    /* 14.00:1 vs #ffffff (AAA Pass) */
     --accent-purple: #581c87;    /* 12.80:1 vs #ffffff (AAA Pass) */
-    --accent-cyan: #0c4a6e;      /* 8.89:1 vs #ffffff (AAA Pass) */
-    --accent-emerald: #064e3b;   /* 9.37:1 vs #ffffff (AAA Pass) */
-    --accent-amber: #78350f;     /* 8.90:1 vs #ffffff (AAA Pass) */
+    --accent-cyan: #0c4a6e;      /* 8.89:1 vs #ffffff on LIGHT backgrounds */
+    --accent-emerald: #064e3b;   /* 9.37:1 vs #ffffff on LIGHT backgrounds */
+    --accent-amber: #78350f;     /* 8.90:1 vs #ffffff on LIGHT backgrounds */
 
     --border-subtle: rgba(0, 0, 0, 0.18);
     --border-card: rgba(0, 0, 0, 0.28);
@@ -605,26 +605,26 @@
   }
 
   .migration-diff-box {
-    background: var(--bg-code);
+    background: #0f172a;
     border: 1px solid var(--border-card);
     border-radius: var(--radius-md);
     overflow: hidden;
   }
 
   .diff-header {
-    background: var(--bg-code-header);
+    background: #111827;
     padding: 10px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 0.825rem;
     font-family: var(--font-code);
-    color: var(--text-muted);
+    color: #cbd5e1;
     border-bottom: 1px solid var(--border-subtle);
   }
 
   .migration-link {
-    color: var(--accent-cyan);
+    color: #38bdf8 !important;
     text-decoration: none;
     font-weight: 700;
   }
@@ -641,6 +641,8 @@
     white-space: pre;
     font-family: var(--font-code);
     font-size: 0.85rem;
+    color: #f8fafc !important;
+    background: #0f172a !important;
   }
 
   .diff-del { color: #fca5a5 !important; background: rgba(239, 68, 68, 0.2) !important; display: block; padding: 2px 6px; border-radius: 3px; font-weight: 700; }
@@ -660,7 +662,7 @@
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
-    background: var(--bg-code);
+    background: #0f172a;
     border: 1px solid var(--border-card);
     border-radius: 14px;
     overflow: hidden;
@@ -810,12 +812,14 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    background: #0f172a !important;
   }
 
   .code-block {
     font-family: var(--font-code);
     font-size: 0.875rem;
-    color: #f8fafc;
+    color: #f8fafc !important;
+    background: #0f172a !important;
     line-height: 1.7;
     overflow-x: auto;
     overflow-y: auto;
@@ -1009,7 +1013,7 @@
     height: 38px;
     border-radius: var(--radius-sm);
     background: var(--code-inline-bg);
-    color: var(--accent-cyan);
+    color: var(--code-inline-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1122,6 +1126,23 @@
     font-weight: 800;
   }
 
+  /* Ecosystem Code Boxes - Guaranteed Bright Cyan/White Text on Dark Slate Background */
+  #eco-install-cmd {
+    background: #0f172a !important;
+    color: #38bdf8 !important;
+    border: 1px solid var(--border-card) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 12px 16px !important;
+    font-family: var(--font-code) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+  }
+
+  #eco-snippet {
+    color: #f8fafc !important;
+    background: #0f172a !important;
+  }
+
   /* Playground Simulator */
   .interactive-demo {
     max-width: var(--max-width);
@@ -1215,8 +1236,8 @@
     flex: 1;
     width: 100%;
     height: 100%;
-    background: var(--bg-code);
-    color: #38bdf8;
+    background: #0f172a !important;
+    color: #38bdf8 !important;
     font-family: var(--font-code);
     font-size: 0.9rem;
     padding: 20px;
@@ -1227,7 +1248,7 @@
   }
 
   .code-output {
-    color: #34d399;
+    color: #34d399 !important;
     white-space: pre-wrap;
     overflow-y: auto;
   }
@@ -1276,7 +1297,7 @@
   }
 
   .bench-comparison-box {
-    background: var(--bg-code);
+    background: #0f172a;
     border: 1px solid var(--border-card);
     border-radius: var(--radius-md);
     padding: 24px;
@@ -1387,12 +1408,12 @@
   }
 
   .setup-card pre {
-    background: var(--bg-code);
+    background: #0f172a !important;
     padding: 12px 50px 12px 14px;
     border-radius: var(--radius-sm);
     font-family: var(--font-code);
     font-size: 0.85rem;
-    color: var(--accent-cyan);
+    color: #38bdf8 !important;
     overflow-x: auto;
     width: 100%;
     margin: 0;
@@ -1500,7 +1521,7 @@
   }
 
   .prose pre {
-    background: var(--bg-code);
+    background: #0f172a !important;
     border: 1px solid var(--border-card);
     border-radius: var(--radius-md);
     padding: 20px;
