@@ -5,4 +5,53 @@
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-    </urlset>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-25</lastmod>
+  <loc>https://noyalib.com/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-25</lastmod>
+  <loc>https://noyalib.com/migration/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-24</lastmod>
+  <loc>https://noyalib.com/rust-ecosystem/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-24</lastmod>
+  <loc>https://noyalib.com/suite/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-25</lastmod>
+  <loc>https://noyalib.com/benchmarks/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-25</lastmod>
+  <loc>https://noyalib.com/getting-started/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-25</lastmod>
+  <loc>https://noyalib.com/use-cases/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-24</lastmod>
+  <loc>https://noyalib.com/about/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-24</lastmod>
+  <loc>https://noyalib.com/faq/</loc>
+</url>
+<url>
+  <changefreq>weekly</changefreq>
+  <lastmod>2026-07-24</lastmod>
+  <loc>https://noyalib.com/security/</loc>
+</url></urlset>

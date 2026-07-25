@@ -47,7 +47,7 @@
     "description": "High-performance data & YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.",
     "url": "https://noyalib.com/",
     "downloadUrl": "https://crates.io/crates/noyalib",
-    "softwareVersion": "0.0.16",
+    "softwareVersion": "0.0.17",
     "author": {
       "@type": "Person",
       "name": "Sebastien Rousseau",
@@ -90,7 +90,7 @@
       <a href="/" class="brand" aria-label="noyalib Homepage">
         <img src="assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
         <span class="brand-text">noyalib</span>
-        <span class="version-tag">v0.0.16</span>
+        <span class="version-tag">v0.0.17</span>
       </a>
 
       <nav class="main-nav" role="navigation" aria-label="Main Navigation">
@@ -125,7 +125,7 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-header">
         <a href="https://crates.io/crates/noyalib" target="_blank" rel="noopener" class="badge-announcement">
-          <span>noyalib v0.0.16 Production Release</span>
+          <span>noyalib v0.0.17 Production Release</span>
           <span aria-hidden="true">&rarr;</span>
         </a>
 
@@ -140,7 +140,7 @@
         <!-- Tier 2.1 Single Dominant CTA Hierarchy -->
         <div class="hero-ctas">
           <a href="https://crates.io/crates/noyalib" target="_blank" rel="noopener" class="btn btn-primary btn-hero-dominant">
-            <span>crates.io v0.0.16</span>
+            <span>crates.io v0.0.17</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
 
@@ -158,7 +158,7 @@
         <div class="trust-signals-bar">
           <a href="https://crates.io/crates/noyalib" target="_blank" rel="noopener" class="trust-badge">
             <span class="badge-label">crates.io</span>
-            <span class="badge-val">v0.0.16</span>
+            <span class="badge-val">v0.0.17</span>
           </a>
           <a href="https://docs.rs/noyalib" target="_blank" rel="noopener" class="trust-badge">
             <span class="badge-label">docs.rs</span>
@@ -244,13 +244,13 @@
 
         <!-- Code Window Content -->
         <div class="code-window-content">
-          <pre class="code-block"><code id="hero-code-display"><span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.16", features = ["simd", "rayon"] }</span>
+          <pre class="code-block"><code id="hero-code-display"><span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.17", features = ["simd", "rayon"] }</span>
 <span class="syn-kw">use</span> noyalib::{parallel, Value, Result};
 
 <span class="syn-kw">fn</span> <span class="syn-fn">main</span>() -> Result&lt;()&gt; {
     <span class="syn-kw">let</span> yaml_data = <span class="syn-str">r#"
     name: noyalib Engine
-    version: 0.0.16
+    version: 0.0.17
     features: [SIMD, Rayon, SafeRust, MCP, LSP]
     performance: 520MB/s
     "#</span>;
@@ -282,7 +282,7 @@
           </div>
           <pre class="code-block"><code class="diff-code"><span class="syn-comment">// Cargo.toml</span>
 <span class="diff-del">- serde_yaml = "0.9"</span>
-<span class="diff-add">+ noyalib = { version = "0.0.16", features = ["compat-serde-yaml", "simd"] }</span>
+<span class="diff-add">+ noyalib = { version = "0.0.17", features = ["compat-serde-yaml", "simd"] }</span>
 
 <span class="syn-comment">// src/main.rs</span>
 <span class="diff-del">- use serde_yaml;</span>
@@ -607,7 +607,7 @@ assert_eq!(docs.len(), 2);</code></pre>
           <div class="editor-pane">
             <span class="pane-label">YAML Input</span>
             <textarea id="demo-yaml-input" class="code-input" aria-label="YAML Input Textarea">name: noyalib
-version: 0.0.16
+version: 0.0.17
 architecture: [SIMD, Rayon, SafeRust]
 performance:
   speed: 520MB/s
@@ -618,7 +618,7 @@ performance:
             <span class="pane-label">Formatted JSON Output</span>
             <pre id="demo-json-output" class="code-output" aria-label="JSON Output Display">{
   "name": "noyalib",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "architecture": [
     "SIMD",
     "Rayon",

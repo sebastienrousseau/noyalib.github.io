@@ -53,7 +53,7 @@ function updateThemeIcon(btn, theme) {
    2. Hero macOS Browser Window Tab Switcher & Micro-Decision Segmenter
    -------------------------------------------------------------------------- */
 const HERO_SNIPPETS = {
-  rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.16", features = ["simd", "rayon"] }</span>
+  rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.17", features = ["simd", "rayon"] }</span>
 <span class="syn-kw">use</span> noyalib::{parallel, Value, Result};
 
 <span class="syn-kw">fn</span> <span class="syn-fn">main</span>() -> Result&lt;()&gt; {

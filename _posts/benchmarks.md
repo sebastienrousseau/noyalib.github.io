@@ -14,7 +14,7 @@ date: "Jul 25, 2026"
 description: "Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust2, serde-norway) and legacy parsers."
 doc_url: "/getting-started/"
 doc_title: "Installation Guide"
-download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.16.zip"
+download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.17.zip"
 download_title: "Download noyalib ↓"
 format-detection: "telephone=no"
 hero_description: "Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates and legacy parsers."
@@ -67,8 +67,8 @@ Below is the comparative parsing throughput measured across maintained 2026 Rust
 
 | Engine / Library | Version | Safety / Architecture | Peak Throughput | Speedup Multiple |
 | :--- | :--- | :--- | :--- | :--- |
-| **`noyalib`** | v0.0.16 | Rayon Parallel + SIMD | **520 MB/s** | **7.6x Faster** |
-| **`noyalib`** | v0.0.16 | Single-Thread SIMD | **380 MB/s** | **5.5x Faster** |
+| **`noyalib`** | v0.0.17 | Rayon Parallel + SIMD | **520 MB/s** | **7.6x Faster** |
+| **`noyalib`** | v0.0.17 | Single-Thread SIMD | **380 MB/s** | **5.5x Faster** |
 | **`serde-saphyr`** | v0.0.8 | Maintained Rust Crate | **142 MB/s** | **2.0x Faster** |
 | **`yaml-rust2`** | v0.9.0 | Maintained Rust Crate | **125 MB/s** | **1.8x Faster** |
 | **`serde-norway`** | v0.9.31 | Maintained Rust Crate | **82 MB/s** | **1.2x Faster** |

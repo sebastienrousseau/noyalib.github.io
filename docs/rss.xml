@@ -1,1 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>noyalib: Drop-In Rust &amp; WebAssembly YAML Engine</title><link>https://noyalib.com/</link><description>noyalib is a high-performance data &amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support. 100% YAML Test Suite compliant.</description><language>en-GB</language><pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate><lastBuildDate>Sat, 25 Jul 2026 00:00:00 +0000</lastBuildDate><docs>https://validator.w3.org/feed/docs/rss2.html</docs><generator>Static Site Generator (SSG) (version 0.0.46)</generator><managingEditor>contact@sebastienrousseau.com (Sebastien Rousseau)</managingEditor><webMaster>contact@sebastienrousseau.com</webMaster><category>Technology</category><ttl>60</ttl><atom:link href="https://noyalib.com/rss.xml" rel="self" type="application/rss+xml"/><item><title>noyalib: Drop-In Rust &amp; WebAssembly YAML Engine</title><link>https://noyalib.com/rss.xml</link><description>noyalib is a high-performance data &amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support. 100% YAML Test Suite compliant.</description><guid>https://noyalib.com/rss.xml</guid><pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>noyalib: Drop-In Rust &amp; WebAssembly YAML Engine</title>
+    <link>https://noyalib.com/</link>
+    <description>noyalib is a high-performance data &amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support. 100% YAML Test Suite compliant.</description>
+    <atom:link href="http://127.0.0.1:8000/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <lastBuildDate>Sat, 25 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <copyright>© Copyright 2026 - Sebastien Rousseau. All rights reserved.</copyright>
+    <item>
+      <title>Getting Started with noyalib</title>
+      <link>http://127.0.0.1:8000/getting-started/</link>
+      <description>Comprehensive quick start guide for noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/getting-started/</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      <author>contact@sebastienrousseau.com (Sebastien Rousseau)</author>
+      <enclosure url="https://noyalib.com/assets/images/og-image.svg" type="image/jpeg" length="0"/>
+      <category>Documentation</category>
+      <category>noyalib</category>
+      <category>getting started</category>
+      <category>installation</category>
+      <category>rust</category>
+      <category>cargo</category>
+      <category>wasm</category>
+      <category>mcp</category>
+      <category>lsp</category>
+    </item>
+    <item>
+      <title>The noyalib Library Suite</title>
+      <link>http://127.0.0.1:8000/suite/</link>
+      <description>Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/suite/</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate>
+      <author>contact@sebastienrousseau.com (Sebastien Rousseau)</author>
+      <enclosure url="https://noyalib.com/assets/images/og-image.svg" type="image/jpeg" length="0"/>
+      <category>Documentation</category>
+      <category>noyalib</category>
+      <category>suite</category>
+      <category>crates</category>
+      <category>rust</category>
+      <category>cli</category>
+      <category>wasm</category>
+      <category>mcp</category>
+      <category>lsp</category>
+    </item>
+    <item>
+      <title>About noyalib: High Performance Data Engine Architecture</title>
+      <link>http://127.0.0.1:8000/about/</link>
+      <description>Learn about noyalib architecture, design principles, and safe Rust data engine performance.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/about/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>about</category>
+      <category>noyalib</category>
+      <category>rust</category>
+      <category>architecture</category>
+    </item>
+    <item>
+      <title>The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub</title>
+      <link>http://127.0.0.1:8000/rust-ecosystem/</link>
+      <description>Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake with direct links to Docs.rs and Crates.io documentation.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/rust-ecosystem/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>rust-ecosystem</category>
+      <category>dtt</category>
+      <category>kyberlib</category>
+      <category>hsh</category>
+      <category>rlg</category>
+      <category>vrd</category>
+      <category>libmake</category>
+      <category>sebastien-rousseau</category>
+      <category>docs.rs</category>
+    </item>
+    <item>
+      <title>noyalib Enterprise Use Cases: AI Pipelines, Finance & Edge Runtimes</title>
+      <link>http://127.0.0.1:8000/use-cases/</link>
+      <description>Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/use-cases/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>use-cases</category>
+      <category>enterprise</category>
+      <category>noyalib</category>
+      <category>ai</category>
+      <category>finance</category>
+      <category>edge</category>
+    </item>
+    <item>
+      <title>noyalib FAQ: Frequently Asked Questions</title>
+      <link>http://127.0.0.1:8000/faq/</link>
+      <description>Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/faq/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>faq</category>
+      <category>noyalib</category>
+      <category>rust</category>
+      <category>questions</category>
+    </item>
+    <item>
+      <title>noyalib Migration Guide: Moving from serde_yaml 0.9</title>
+      <link>http://127.0.0.1:8000/migration/</link>
+      <description>Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/migration/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>migration</category>
+      <category>serde_yaml</category>
+      <category>noyalib</category>
+      <category>rust</category>
+      <category>upgrade</category>
+    </item>
+    <item>
+      <title>noyalib Performance Benchmarks: SIMD & Parallel Parsing</title>
+      <link>http://127.0.0.1:8000/benchmarks/</link>
+      <description>Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust2, serde-norway) and legacy parsers.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/benchmarks/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://noyalib.com/assets/images/og-image.png" type="image/png" length="0"/>
+      <category>benchmarks</category>
+      <category>noyalib</category>
+      <category>performance</category>
+      <category>rust</category>
+      <category>speed</category>
+    </item>
+    <item>
+      <title>noyalib Security Policy: Memory Safety & Supply Chain Assurance</title>
+      <link>http://127.0.0.1:8000/security/</link>
+      <description>Security policy, memory safety invariants, and vulnerability reporting for noyalib.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/security/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="https://kura.pro/noyalib/images/github/github-noyalib.webp" type="image/webp" length="0"/>
+      <category>security</category>
+      <category>noyalib</category>
+      <category>memory-safety</category>
+      <category>sbom</category>
+      <category>safe-rust</category>
+    </item>
+  </channel>
+</rss>

@@ -1,20 +1,204 @@
 {
-  "feed_url": "https://noyalib.com/feed.json",
-  "home_page_url": "https://noyalib.com/",
+  "feed_url": "http://127.0.0.1:8000/feed.json",
+  "home_page_url": "http://127.0.0.1:8000/",
   "items": [
     {
       "authors": [
         {
-          "name": "Unknown"
+          "name": "contact@sebastienrousseau.com (Sebastien Rousseau)"
         }
       ],
-      "content_html": "noyalib is a high-performance data &amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support. 100% YAML Test Suite compliant.",
+      "content_html": "Comprehensive quick start guide for noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
       "date_modified": "2026-07-25T00:00:00+00:00",
       "date_published": "2026-07-25T00:00:00+00:00",
-      "id": "https://noyalib.com/rss.xml/",
-      "tags": [],
-      "title": "noyalib: Drop-In Rust &amp; WebAssembly YAML Engine",
-      "url": "https://noyalib.com/rss.xml/"
+      "id": "http://127.0.0.1:8000/getting-started/",
+      "language": "en-GB",
+      "tags": [
+        "noyalib",
+        "getting started",
+        "installation",
+        "rust",
+        "cargo",
+        "wasm",
+        "mcp",
+        "lsp"
+      ],
+      "title": "Getting Started with noyalib",
+      "url": "http://127.0.0.1:8000/getting-started/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@sebastienrousseau.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
+      "date_modified": "2026-07-25T00:00:00+00:00",
+      "date_published": "2026-07-25T00:00:00+00:00",
+      "id": "http://127.0.0.1:8000/suite/",
+      "language": "en-GB",
+      "tags": [
+        "noyalib",
+        "suite",
+        "crates",
+        "rust",
+        "cli",
+        "wasm",
+        "mcp",
+        "lsp"
+      ],
+      "title": "The noyalib Library Suite",
+      "url": "http://127.0.0.1:8000/suite/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Learn about noyalib architecture, design principles, and safe Rust data engine performance.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/about/",
+      "language": "en-GB",
+      "tags": [
+        "about",
+        "noyalib",
+        "rust",
+        "architecture"
+      ],
+      "title": "About noyalib: High Performance Data Engine Architecture",
+      "url": "http://127.0.0.1:8000/about/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust2, serde-norway) and legacy parsers.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/benchmarks/",
+      "language": "en-GB",
+      "tags": [
+        "benchmarks",
+        "noyalib",
+        "performance",
+        "rust",
+        "speed"
+      ],
+      "title": "noyalib Performance Benchmarks: SIMD & Parallel Parsing",
+      "url": "http://127.0.0.1:8000/benchmarks/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/faq/",
+      "language": "en-GB",
+      "tags": [
+        "faq",
+        "noyalib",
+        "rust",
+        "questions"
+      ],
+      "title": "noyalib FAQ: Frequently Asked Questions",
+      "url": "http://127.0.0.1:8000/faq/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/migration/",
+      "language": "en-GB",
+      "tags": [
+        "migration",
+        "serde_yaml",
+        "noyalib",
+        "rust",
+        "upgrade"
+      ],
+      "title": "noyalib Migration Guide: Moving from serde_yaml 0.9",
+      "url": "http://127.0.0.1:8000/migration/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake with direct links to Docs.rs and Crates.io documentation.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/rust-ecosystem/",
+      "language": "en-GB",
+      "tags": [
+        "rust-ecosystem",
+        "dtt",
+        "kyberlib",
+        "hsh",
+        "rlg",
+        "vrd",
+        "libmake",
+        "sebastien-rousseau",
+        "docs.rs"
+      ],
+      "title": "The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub",
+      "url": "http://127.0.0.1:8000/rust-ecosystem/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Security policy, memory safety invariants, and vulnerability reporting for noyalib.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/security/",
+      "language": "en-GB",
+      "tags": [
+        "security",
+        "noyalib",
+        "memory-safety",
+        "sbom",
+        "safe-rust"
+      ],
+      "title": "noyalib Security Policy: Memory Safety & Supply Chain Assurance",
+      "url": "http://127.0.0.1:8000/security/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/use-cases/",
+      "language": "en-GB",
+      "tags": [
+        "use-cases",
+        "enterprise",
+        "noyalib",
+        "ai",
+        "finance",
+        "edge"
+      ],
+      "title": "noyalib Enterprise Use Cases: AI Pipelines, Finance & Edge Runtimes",
+      "url": "http://127.0.0.1:8000/use-cases/"
     }
   ],
   "language": "en-GB",

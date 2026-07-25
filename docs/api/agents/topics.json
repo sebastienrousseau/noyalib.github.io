@@ -1,0 +1,166 @@
+{
+  "about": [
+    "http://127.0.0.1:8000/about/"
+  ],
+  "ai": [
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "architecture": [
+    "http://127.0.0.1:8000/about/"
+  ],
+  "benchmarks": [
+    "http://127.0.0.1:8000/benchmarks/"
+  ],
+  "cargo": [
+    "http://127.0.0.1:8000/getting-started/"
+  ],
+  "cli": [
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "crates": [
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "docs.rs": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "dtt": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "edge": [
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "enterprise": [
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "faq": [
+    "http://127.0.0.1:8000/faq/"
+  ],
+  "finance": [
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "getting started": [
+    "http://127.0.0.1:8000/getting-started/"
+  ],
+  "hsh": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "installation": [
+    "http://127.0.0.1:8000/getting-started/"
+  ],
+  "json schema": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "kyberlib": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "libmake": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "lsp": [
+    "http://127.0.0.1:8000/getting-started/",
+    "http://127.0.0.1:8000/index.html",
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "mcp": [
+    "http://127.0.0.1:8000/getting-started/",
+    "http://127.0.0.1:8000/index.html",
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "memory-safety": [
+    "http://127.0.0.1:8000/security/"
+  ],
+  "migration": [
+    "http://127.0.0.1:8000/migration/"
+  ],
+  "noyalib": [
+    "http://127.0.0.1:8000/about/",
+    "http://127.0.0.1:8000/benchmarks/",
+    "http://127.0.0.1:8000/faq/",
+    "http://127.0.0.1:8000/getting-started/",
+    "http://127.0.0.1:8000/index.html",
+    "http://127.0.0.1:8000/migration/",
+    "http://127.0.0.1:8000/security/",
+    "http://127.0.0.1:8000/suite/",
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "performance": [
+    "http://127.0.0.1:8000/benchmarks/"
+  ],
+  "questions": [
+    "http://127.0.0.1:8000/faq/"
+  ],
+  "rayon": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "rlg": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "rust": [
+    "http://127.0.0.1:8000/about/",
+    "http://127.0.0.1:8000/benchmarks/",
+    "http://127.0.0.1:8000/faq/",
+    "http://127.0.0.1:8000/getting-started/",
+    "http://127.0.0.1:8000/index.html",
+    "http://127.0.0.1:8000/migration/",
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "rust-ecosystem": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "safe-rust": [
+    "http://127.0.0.1:8000/security/"
+  ],
+  "sbom": [
+    "http://127.0.0.1:8000/security/"
+  ],
+  "sebastien rousseau": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "sebastien-rousseau": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "security": [
+    "http://127.0.0.1:8000/security/"
+  ],
+  "serde": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "serde_yaml": [
+    "http://127.0.0.1:8000/index.html",
+    "http://127.0.0.1:8000/migration/"
+  ],
+  "simd": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "skeletonic css": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "speed": [
+    "http://127.0.0.1:8000/benchmarks/"
+  ],
+  "suite": [
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "upgrade": [
+    "http://127.0.0.1:8000/migration/"
+  ],
+  "use-cases": [
+    "http://127.0.0.1:8000/use-cases/"
+  ],
+  "vrd": [
+    "http://127.0.0.1:8000/rust-ecosystem/"
+  ],
+  "wasm": [
+    "http://127.0.0.1:8000/getting-started/",
+    "http://127.0.0.1:8000/suite/"
+  ],
+  "webassembly": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "yaml": [
+    "http://127.0.0.1:8000/index.html"
+  ],
+  "zero copy": [
+    "http://127.0.0.1:8000/index.html"
+  ]
+}

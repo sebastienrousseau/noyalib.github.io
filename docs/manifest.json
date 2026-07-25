@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "noyalib is a high-performance data & YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel...",
+  "description": "noyalib is a high-performance data & YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and...",
   "display": "standalone",
   "icons": [
     {

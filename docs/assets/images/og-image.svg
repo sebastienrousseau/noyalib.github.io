@@ -22,7 +22,7 @@
       <path d="M34 68 L34 32 L46 32 L60 56 L60 32 L68 32 L68 68 L56 68 L42 44 L42 68 Z" fill="url(#accent)" />
     </g>
     <text x="100" y="65" font-family="'Inter', sans-serif" font-weight="800" font-size="54" fill="#ffffff" letter-spacing="-1">noyalib</text>
-    <text x="310" y="65" font-family="'Inter', sans-serif" font-weight="600" font-size="28" fill="#a855f7">v0.0.16</text>
+    <text x="310" y="65" font-family="'Inter', sans-serif" font-weight="600" font-size="28" fill="#a855f7">v0.0.17</text>
     
     <text x="0" y="160" font-family="'Inter', sans-serif" font-weight="800" font-size="52" fill="#ffffff" letter-spacing="-1.5">
       Lightning-Fast Data &amp; YAML Engine

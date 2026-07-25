@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  <url>
-    <loc></loc>
-    <news:news>
-      <news:publication>
-        <news:name>Unnamed Publication</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-25T08:24:56.775922Z</news:publication_date>
-      <news:title>Untitled Article</news:title>
-    </news:news>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url>
+  <loc>http://127.0.0.1:8000/about/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>About noyalib: High Performance Data Engine Architecture</news:title>
+    <news:keywords>noyalib, about, architecture, rust, zero copy, simd, safe rust</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/benchmarks/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>noyalib Performance Benchmarks: SIMD & Parallel Parsing</news:title>
+    <news:keywords>noyalib benchmarks, performance, speed, simd, rayon, throughput, criterion, serde-saphyr, yaml-rust2, serde-norway</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/faq/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>noyalib FAQ: Frequently Asked Questions</news:title>
+    <news:keywords>noyalib faq, questions, serde compatibility, simd, safe rust</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/getting-started/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@sebastienrousseau.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date>2026-07-25T00:00:00+00:00</news:publication_date>
+    <news:title>Getting Started with noyalib</news:title>
+    <news:keywords>noyalib, getting started, installation, rust, cargo, wasm, mcp, lsp, cli</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/migration/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>noyalib Migration Guide: Moving from serde_yaml 0.9</news:title>
+    <news:keywords>noyalib migration, serde_yaml, migration guide, rust, upgrade</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/rust-ecosystem/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub</news:title>
+    <news:keywords>rust ecosystem, dtt, kyberlib, hsh, rlg, vrd, libmake, sebastien rousseau, open source, docs.rs, crates.io</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/security/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>noyalib Security Policy: Memory Safety & Supply Chain Assurance</news:title>
+    <news:keywords>noyalib security, memory safety, safe rust, vulnerability policy, sbom</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/suite/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@sebastienrousseau.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date>2026-07-25T00:00:00+00:00</news:publication_date>
+    <news:title>The noyalib Library Suite</news:title>
+    <news:keywords>noyalib, suite, crates, rust, cli, wasm, mcp, lsp, serde, json schema</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/use-cases/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>noyalib Enterprise Use Cases: AI Pipelines, Finance & Edge Runtimes</news:title>
+    <news:keywords>noyalib use cases, enterprise, ai pipelines, financial systems, edge computing, microservices</news:keywords>
+  </news:news>
+</url>
 </urlset>

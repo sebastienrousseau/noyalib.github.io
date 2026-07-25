@@ -16,7 +16,7 @@ date: "Jul 24, 2026"
 description: "Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes."
 doc_url: "/getting-started/index.html"
 doc_title: "Installation Guide"
-download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.16.zip"
+download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.17.zip"
 download_title: "Download noyalib ↓"
 format-detection: "telephone=no"
 hero_description: "Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes."
@@ -68,7 +68,7 @@ Update your `Cargo.toml`:
 # serde_yaml = "0.9"
 
 # Replace with noyalib compatibility feature:
-noyalib = { version = "0.0.16", features = ["compat-serde-yaml", "simd"] }
+noyalib = { version = "0.0.17", features = ["compat-serde-yaml", "simd"] }
 ```
 
 ## Code Import Alias

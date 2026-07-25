@@ -109,7 +109,7 @@ Add `noyalib` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-noyalib = { version = "0.0.16", features = ["simd", "rayon"] }
+noyalib = { version = "0.0.17", features = ["simd", "rayon"] }
 ```
 
 ### Basic Single-Document Parsing
