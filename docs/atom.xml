@@ -4,14 +4,14 @@
   <link href="http://127.0.0.1:8000/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="http://127.0.0.1:8000"/>
   <id>http://127.0.0.1:8000</id>
-  <updated>2026-07-24T18:00:00+00:00</updated>
+  <updated>2026-07-25T00:00:00+00:00</updated>
   <entry>
-    <title>Shokunin - RSS Feed</title>
+    <title>noyalib: Enterprise-Grade Data &amp;amp; YAML Engine for Rust, WebAssembly &amp;amp; AI</title>
     <link href="http://127.0.0.1:8000/rss.xml/"/>
     <id>http://127.0.0.1:8000/rss.xml/</id>
-    <updated>2026-07-24T18:00:00+00:00</updated>
-    <published>2026-07-24T18:00:00+00:00</published>
-    <summary>noyalib is an enterprise-grade data &amp;amp; YAML engine in Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, 100% safe Rust, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.</summary>
+    <updated>2026-07-25T00:00:00+00:00</updated>
+    <published>2026-07-25T00:00:00+00:00</published>
+    <summary>noyalib is an enterprise-grade data &amp;amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.</summary>
     <author><name>Unknown</name></author>
   </entry>
 </feed>

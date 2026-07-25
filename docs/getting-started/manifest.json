@@ -1,19 +1,19 @@
 {
   "background_color": "#ffffff",
-  "description": "Step-by-step guide to installing and using noyalib in Rust, CLI, WebAssembly, MCP, and LSP environments.",
+  "description": "Comprehensive quick start guide for noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
   "display": "standalone",
   "icons": [
     {
       "purpose": "any maskable",
       "sizes": "512x512",
-      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "src": "/assets/images/logo.svg",
       "type": "image/svg+xml"
     }
   ],
-  "name": "Getting Started with noyalib",
+  "name": "noyalib Getting Started",
   "orientation": "portrait-primary",
   "scope": "/",
   "short_name": "noyalib",
   "start_url": ".",
-  "theme_color": null
+  "theme_color": "#ffffff"
 }

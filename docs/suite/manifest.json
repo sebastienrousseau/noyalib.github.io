@@ -1,19 +1,19 @@
 {
   "background_color": "#ffffff",
-  "description": "Explore the full suite of satellite libraries in the noyalib ecosystem with links to published documentation on Docs.rs,",
+  "description": "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-m",
   "display": "standalone",
   "icons": [
     {
       "purpose": "any maskable",
       "sizes": "512x512",
-      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "src": "/assets/images/logo.svg",
       "type": "image/svg+xml"
     }
   ],
-  "name": "noyalib Suite of Libraries",
+  "name": "noyalib Suite Ecosystem",
   "orientation": "portrait-primary",
   "scope": "/",
   "short_name": "noyalib",
   "start_url": ".",
-  "theme_color": null
+  "theme_color": "#ffffff"
 }

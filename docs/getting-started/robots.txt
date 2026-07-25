@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://noyalib.com/getting-started.html/sitemap.xml
+Sitemap: https://noyalib.com/getting-started/sitemap.xml

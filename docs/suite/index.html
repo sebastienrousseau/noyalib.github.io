@@ -1,134 +1,270 @@
 <!DOCTYPE html>
 <html lang="en-GB" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta itemprop="datePublished" content="" id="date">
-  <meta itemprop="dateModified" content="" id="last-modified">
-  <title>noyalib Suite of Satellite Libraries: Documentation &amp; Package Directory</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta itemprop="datePublished" content="Sat, 25 Jul 2026 00:00:00 +0000" id="date">
+  <meta itemprop="dateModified" content="Sat, 25 Jul 2026 00:00:00 +0000" id="last-modified">
+  <title>The noyalib Library Suite</title>
 
-  <!-- Canonical URL -->
-  
-
-  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
-  <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Explore the full suite of satellite libraries in the noyalib ecosystem with links to published documentation on Docs.rs, Crates.io, and NPM.">
-<meta name="keywords" content="noyalib suite, noya-cli, noyalib-wasm, noyalib-mcp, noyalib-lsp, rust, crates, docs.rs">
+  <!-- Automated Shokunin SSG Meta Tags -->
+  <meta name="author" content="contact@sebastienrousseau.com (Sebastien Rousseau)">
+<meta name="description" content="Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.">
+<meta name="keywords" content="noyalib, suite, crates, rust, cli, wasm, mcp, lsp, serde, json schema">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-  
-  
-
-  <!-- Accessibility Meta Tags -->
   <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="noyalib Suite">
+  
+  
 
-  <!-- Google Fonts -->
+  <!-- Strict Security Headers & CSP -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+
+  <!-- Canonical & Alternate Links -->
+  
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml">
+  <link rel="alternate" type="application/feed+json" href="/feed.json" title="JSON Feed">
+
+  <!-- Fonts & Skeletonic CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/skeletonic.min.css">
+  <link rel="stylesheet" href="/assets/css/skeletonic-animations.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
 
-  <!-- Skeletonic CSS Framework -->
-  <link rel="stylesheet" href="assets/css/skeletonic.min.css">
-  <link rel="stylesheet" href="assets/css/skeletonic-animations.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- Schema.org Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "The noyalib Library Suite",
+    "description": "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
+    "url": "https://noyalib.com/suite/",
+    "author": {
+      "@type": "Person",
+      "name": "Sebastien Rousseau",
+      "url": "https://sebastienrousseau.com"
+    }
+  }
+  </script>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="http://127.0.0.1:8000/atom.xml"/>
-  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="http://127.0.0.1:8000/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="noyalib Suite of Satellite Libraries: Documentation &amp;amp; Package Directory">
-<meta property="og:description" content="noyalib Suite of Satellite Libraries The noyalib ecosystem is designed as a set of synchronized satellite tools that deliver identical data parsing,">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://noyalib.com/suite.html">
+<link rel="stylesheet" href="/highlight.css">
+<meta property="og:title" content="The noyalib Library Suite">
+<meta property="og:description" content="The noyalib Library Suite The noyalib suite consists of five synchronized satellite packages designed for specific runtime environments and use cases. Package">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://noyalib.com/suite/">
+<meta property="og:image" content="/assets/images/logo.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="noyalib Suite of Satellite Libraries: Documentation &amp;amp; Package Directory">
-<meta name="twitter:description" content="noyalib Suite of Satellite Libraries The noyalib ecosystem is designed as a set of synchronized satellite tools that deliver identical data parsing,">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Sebastien Rousseau"},"description":"noyalib Suite of Satellite Libraries The noyalib ecosystem is designed as a set of synchronized satellite tools that deliver identical data parsing,","inLanguage":"en-GB","name":"noyalib Suite of Satellite Libraries: Documentation &amp; Package Directory","url":"http://127.0.0.1:8000/suite/index.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"http://127.0.0.1:8000/","name":"Home","position":1},{"@type":"ListItem","item":"http://127.0.0.1:8000/suite","name":"suite","position":2}]}</script>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The noyalib Library Suite">
+<meta name="twitter:description" content="The noyalib Library Suite The noyalib suite consists of five synchronized satellite packages designed for specific runtime environments and use cases. Package">
+<meta name="twitter:image" content="/assets/images/logo.svg">
 <link rel="canonical" href="http://127.0.0.1:8000/suite/index.html"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 <body>
+  <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Ambient Glow Decorators -->
+  <div class="bg-glow-container" aria-hidden="true">
+    <div class="glow-top-center"></div>
+    <div class="glow-top-right"></div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a href="/index.html" class="brand">
-        <img src="assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
+      <a href="/" class="brand" aria-label="noyalib Homepage">
+        <img src="/assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
         <span class="brand-text">noyalib</span>
         <span class="version-tag">v0.0.16</span>
       </a>
 
       <nav class="main-nav" role="navigation" aria-label="Main Navigation">
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/getting-started/index.html">Quick Start</a></li>
-          <li><a href="/suite/index.html">Suite</a></li>
-          <li><a href="/use-cases/index.html">Use Cases</a></li>
-          <li><a href="/migration/index.html">Migration</a></li>
-          <li><a href="/benchmarks/index.html">Benchmarks</a></li>
-          <li><a href="/security/index.html">Security</a></li>
-          <li><a href="/rust-ecosystem/index.html">Rust Suite</a></li>
-          <li><a href="/faq/index.html">FAQ</a></li>
+          <li><a href="/getting-started/">Getting Started</a></li>
+          <li><a href="/suite/">Suite</a></li>
+          <li><a href="/use-cases/">Use Cases</a></li>
+          <li><a href="/migration/">Migration</a></li>
+          <li><a href="/benchmarks/">Benchmarks</a></li>
+          <li><a href="/security/">Security</a></li>
+          <li><a href="/faq/">FAQ</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">☀️</button>
-        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">Theme</button>
+        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">
+          <span>GitHub</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
       </div>
     </div>
   </header>
 
-  <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
-    <div class="prose" style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); backdrop-filter: blur(16px); padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-      <div lang="en"><h1>noyalib Suite of Satellite Libraries</h1>
-<p>The <strong>noyalib</strong> ecosystem is designed as a set of synchronized satellite tools that deliver identical data parsing, validation, and serialization behaviors across every developer environment.</p>
+  <!-- Main Content Area -->
+  <main id="main-content" role="main" class="prose-container" style="max-width: 1000px; margin: 60px auto; padding: 0 24px;">
+    <article class="prose">
+      <div lang="en"><h1>The noyalib Library Suite</h1>
+<p>The noyalib suite consists of five synchronized satellite packages designed for specific runtime environments and use cases.</p>
+<h2>Package Matrix Overview</h2>
+<div class="table-responsive"><table class="table">
+<thead>
+<tr>
+<th align="left">Crate</th>
+<th align="left">Primary Target</th>
+<th align="left">Main Capability</th>
+<th align="left">Key Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib</code></strong></td>
+<td align="left" class="text-left">Core Rust Libraries</td>
+<td align="left" class="text-left">Single/Parallel Deserialization</td>
+<td align="left" class="text-left">520 MB/s SIMD + Rayon</td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>noya-cli</code></strong></td>
+<td align="left" class="text-left">Command Line / DevOps</td>
+<td align="left" class="text-left">Linting, Formatting, Schema</td>
+<td align="left" class="text-left">Zero-Dependency Binary</td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib-wasm</code></strong></td>
+<td align="left" class="text-left">Browser &amp; Edge Runtimes</td>
+<td align="left" class="text-left">JavaScript / WebAssembly API</td>
+<td align="left" class="text-left">In-Browser Vector Scanning</td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib-mcp</code></strong></td>
+<td align="left" class="text-left">AI Tools &amp; LLM Servers</td>
+<td align="left" class="text-left">Model Context Protocol Tool</td>
+<td align="left" class="text-left">Structured Data AI Interface</td>
+</tr>
+<tr>
+<td align="left" class="text-left"><strong><code>noyalib-lsp</code></strong></td>
+<td align="left" class="text-left">IDE Runtimes</td>
+<td align="left" class="text-left">Language Server Protocol</td>
+<td align="left" class="text-left">Real-time Errors &amp; Schema Hovers</td>
+</tr>
+</tbody>
+</table></div>
 <hr />
-<h2>1. <code>noyalib</code> (Core Crate)</h2>
-<p>The core Rust library for data deserialization and serialization.</p>
-<ul>
-<li><strong>Official Documentation</strong>: <a href="https://docs.rs/noyalib">Docs.rs/noyalib</a></li>
-<li><strong>Crates.io Package</strong>: <a href="https://crates.io/crates/noyalib">crates.io/crates/noyalib</a></li>
-<li><strong>Source Repository</strong>: <a href="https://github.com/sebastienrousseau/noyalib">GitHub Repository</a></li>
-</ul>
-<h2>2. <code>noya-cli</code> (Command Line Utility)</h2>
-<p>High-performance terminal binary for data transformation.</p>
-<ul>
-<li><strong>Official Documentation</strong>: <a href="https://docs.rs/noya-cli">Docs.rs/noya-cli</a></li>
-<li><strong>Crates.io Package</strong>: <a href="https://crates.io/crates/noya-cli">crates.io/crates/noya-cli</a></li>
-<li><strong>Source Repository</strong>: <a href="https://github.com/sebastienrousseau/noya-cli">GitHub Repository</a></li>
-</ul>
+<h2>1. <code>noyalib</code> (Core Engine)</h2>
+<p>The core crate provides zero-copy SIMD SWAR/SSE2 parsing, multi-document Rayon parallel streaming, and 100% memory safety.</p>
+<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><pre style="background-color:#2b303b;">
+<span style="color:#b48ead;">use </span><span style="color:#c0c5ce;">noyalib::{from_str, Value, Result};
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span style="color:#c0c5ce;">() -&gt; Result&lt;()&gt; {
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> doc: Value = </span><span style="color:#96b5b4;">from_str</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">server: localhost</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">port: 8085</span><span style="color:#c0c5ce;">&quot;)?;
+</span><span style="color:#c0c5ce;">    assert_eq!(doc[&quot;</span><span style="color:#a3be8c;">port</span><span style="color:#c0c5ce;">&quot;], </span><span style="color:#d08770;">8085</span><span style="color:#c0c5ce;">);
+</span><span style="color:#c0c5ce;">    Ok(())
+</span><span style="color:#c0c5ce;">}
+</span></pre>
+</code></pre>
+<hr />
+<h2>2. <code>noya-cli</code> (Terminal Binary)</h2>
+<p>Command-line tool for formatting, validating, and converting structured data streams.</p>
+<pre class="highlight language-bash"><code class="language-bash" data-lang="bash"><pre style="background-color:#2b303b;">
+<span style="color:#8fa1b3;">noya-cli</span><span style="color:#c0c5ce;"> lint config.yaml
+</span><span style="color:#8fa1b3;">noya-cli</span><span style="color:#c0c5ce;"> convert input.yaml</span><span style="color:#bf616a;"> --to</span><span style="color:#c0c5ce;"> json</span><span style="color:#bf616a;"> --pretty
+</span></pre>
+</code></pre>
+<hr />
 <h2>3. <code>noyalib-wasm</code> (WebAssembly Runtime)</h2>
-<p>WebAssembly package optimized for browser and edge environments.</p>
-<ul>
-<li><strong>NPM Package</strong>: <a href="https://www.npmjs.com/package/noyalib-wasm">npmjs.com/package/noyalib-wasm</a></li>
-<li><strong>Source Repository</strong>: <a href="https://github.com/sebastienrousseau/noyalib-wasm">GitHub Repository</a></li>
-</ul>
+<p>NPM package compiled to WebAssembly via <code>wasm-bindgen</code> for Web applications and Cloudflare Workers.</p>
+<pre class="highlight language-typescript"><code class="language-typescript" data-lang="typescript"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">import { parseYaml } from &#39;noyalib-wasm&#39;;
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">const json = parseYaml(&quot;key: value&quot;);
+</span></pre>
+</code></pre>
+<hr />
 <h2>4. <code>noyalib-mcp</code> (Model Context Protocol AI Server)</h2>
-<p>Native MCP server for AI models and LLM agent integration.</p>
-<ul>
-<li><strong>Official Documentation</strong>: <a href="https://docs.rs/noyalib-mcp">Docs.rs/noyalib-mcp</a></li>
-<li><strong>Glama MCP Registry</strong>: <a href="https://glama.ai/mcp/servers/sebastienrousseau/noyalib-mcp">Glama Server Registry</a></li>
-<li><strong>Crates.io Package</strong>: <a href="https://crates.io/crates/noyalib-mcp">crates.io/crates/noyalib-mcp</a></li>
-<li><strong>Source Repository</strong>: <a href="https://github.com/sebastienrousseau/noyalib-mcp">GitHub Repository</a></li>
-</ul>
+<p>Native MCP server enabling AI agents (Claude, GPT-4, Antigravity) to query and validate data streams.</p>
+<pre class="highlight language-bash"><code class="language-bash" data-lang="bash"><pre style="background-color:#2b303b;">
+<span style="color:#8fa1b3;">cargo</span><span style="color:#c0c5ce;"> install noyalib-mcp
+</span><span style="color:#8fa1b3;">noyalib-mcp</span><span style="color:#bf616a;"> --stdio
+</span></pre>
+</code></pre>
+<hr />
 <h2>5. <code>noyalib-lsp</code> (Language Server Protocol)</h2>
-<p>LSP server for code editors (VS Code, Neovim, Emacs, Zed).</p>
-<ul>
-<li><strong>Official Documentation</strong>: <a href="https://docs.rs/noyalib-lsp">Docs.rs/noyalib-lsp</a></li>
-<li><strong>Crates.io Package</strong>: <a href="https://crates.io/crates/noyalib-lsp">crates.io/crates/noyalib-lsp</a></li>
-<li><strong>Source Repository</strong>: <a href="https://github.com/sebastienrousseau/noyalib-lsp">GitHub Repository</a></li>
-</ul>
+<p>IDE language server providing syntax diagnostics, schema hover cards, and autocomplete in VS Code and Neovim.</p>
+<pre class="highlight language-json"><code class="language-json" data-lang="json"><pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;">{
+</span><span style="color:#c0c5ce;">  &quot;</span><span style="color:#a3be8c;">yaml.schemas</span><span style="color:#c0c5ce;">&quot;: {
+</span><span style="color:#c0c5ce;">    &quot;</span><span style="color:#a3be8c;">https://json.schemastore.org/github-workflow</span><span style="color:#c0c5ce;">&quot;: &quot;</span><span style="color:#a3be8c;">.github/workflows/*.yml</span><span style="color:#c0c5ce;">&quot;
+</span><span style="color:#c0c5ce;">  }
+</span><span style="color:#c0c5ce;">}
+</span></pre>
+</code></pre>
 </div>
-    </div>
+    </article>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom: 12px;">
+          <img src="/assets/images/logo.svg" alt="noyalib logo" width="32" height="32">
+          <span class="brand-text">noyalib</span>
+        </a>
+        <p>
+          Lightning-fast data and YAML engine written in 100% safe Rust with SIMD, Rayon, WebAssembly, MCP AI server, and LSP support. Generated with Shokunin SSG.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">noyalib Suite</div>
+        <ul>
+          <li><a href="/suite/">noyalib (Core Crate)</a></li>
+          <li><a href="/suite/">noya-cli (CLI Tool)</a></li>
+          <li><a href="/suite/">noyalib-wasm (WASM)</a></li>
+          <li><a href="/suite/">noyalib-mcp (MCP AI Server)</a></li>
+          <li><a href="/suite/">noyalib-lsp (LSP Server)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Documentation</div>
+        <ul>
+          <li><a href="/getting-started/">Getting Started</a></li>
+          <li><a href="/use-cases/">Use Cases</a></li>
+          <li><a href="/migration/">Migration Guide</a></li>
+          <li><a href="/benchmarks/">Benchmarks</a></li>
+          <li><a href="/security/">Security &amp; Policy</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Community &amp; Legal</div>
+        <ul>
+          <li><a href="/rust-ecosystem/">Rust Ecosystem</a></li>
+          <li><a href="https://skeletonic.com" target="_blank" rel="noopener">Skeletonic CSS Framework</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib.github.io" target="_blank" rel="noopener">GitHub Repository</a></li>
+          <li><a href="https://sebastienrousseau.github.io" target="_blank" rel="noopener">Sebastien Rousseau</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <p>&copy; 2026 Sebastien Rousseau. Generated with Shokunin SSG. Licensed under Apache-2.0 &amp; MIT.</p>
+      <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top of page">Back to Top</button>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
 
 <!-- SSG Search Widget -->
 <div id="ssg-search-widget">

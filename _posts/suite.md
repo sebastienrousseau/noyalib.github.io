@@ -1,90 +1,168 @@
 ---
-
-# Front Matter (YAML)
-
-author: "Sebastien Rousseau"
-banner_alt: "noyalib Suite of Libraries"
-banner_height: "100vh"
-banner_width: "100vw"
-banner: "https://kura.pro/noyalib/images/github/github-noyalib.webp"
-cdn: "https://kura.pro"
+# Front Matter (YAML) - Matching sebastienrousseau.github.io Standard Schema
+author: "contact@sebastienrousseau.com (Sebastien Rousseau)"
+banner_alt: "noyalib Suite Ecosystem Overview"
+banner_height: "571"
+banner_width: "1425"
+banner: "https://noyalib.com/assets/images/og-image.svg"
 changefreq: "weekly"
-charset: "utf-8"
+charset: "UTF-8"
+cdn: "https://cloudcdn.pro/clients"
 cname: "noyalib.com"
-copyright: "© 2026 noyalib (NOYALIB). All rights reserved."
-date: "Jul 24, 2026"
-description: "Explore the full suite of satellite libraries in the noyalib ecosystem with links to published documentation on Docs.rs, Crates.io, and NPM."
-doc_url: "/getting-started/index.html"
-doc_title: "Installation Guide"
-download_url: "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.16.zip"
-download_title: "Download noyalib ↓"
+copyright: "© Copyright 2026 - Sebastien Rousseau. All rights reserved."
+date: "2026-07-25"
+description: "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp."
 format-detection: "telephone=no"
-hero_description: "Explore the full suite of satellite libraries in the noyalib ecosystem with links to published documentation on Docs.rs, Crates.io, and NPM."
 hreflang: "en"
-icon: "https://kura.pro/noyalib/images/favicon.ico"
-id: "https://noyalib.com/suite.html"
-image_alt: "Logo of noyalib (NOYALIB)"
-image_height: "100vh"
-image_width: "100vw"
-image: "https://kura.pro/noyalib/images/logos/noyalib.webp"
-keywords: "noyalib suite, noya-cli, noyalib-wasm, noyalib-mcp, noyalib-lsp, rust, crates, docs.rs"
+icon: "/assets/images/logo.svg"
+id: "https://noyalib.com/suite/"
+image_alt: "noyalib Logo"
+image_height: "162"
+image_width: "162"
+image: "/assets/images/logo.svg"
+keywords: "noyalib, suite, crates, rust, cli, wasm, mcp, lsp, serde, json schema"
+last_reviewed: "2026-07-25"
 language: "en-GB"
 layout: "page"
 locale: "en_GB"
-logo_alt: "noyalib (NOYALIB)"
+logo_alt: "Logo for noyalib"
 logo_height: "44"
 logo_width: "44"
-logo: "https://kura.pro/noyalib/images/logos/noyalib.webp"
+logo: "/assets/images/logo.svg"
 menu: "active"
-measurementID: "G-6SN6WET0X1"
-name: "noyalib Suite of Libraries"
-permalink: "https://noyalib.com/suite.html"
+name: "noyalib Suite Ecosystem"
+permalink: "https://noyalib.com/suite/"
 rating: "general"
 referrer: "no-referrer"
 revisit-after: "7 days"
 robots: "index, follow"
 short_name: "noyalib"
-subtitle: "The Complete Satellite Ecosystem for noyalib"
-tags: "suite, noyalib, ecosystem, satellites, rust, docs.rs, crates.io"
-theme_color: "rgb(99, 102, 241)"
-title: "noyalib Suite of Satellite Libraries: Documentation & Package Directory"
-url: "https://noyalib.com/suite.html"
+subtitle: "Comprehensive overview of all 5 satellite crates comprising the noyalib enterprise data engine."
+tags: "noyalib, suite, crates, rust, cli, wasm, mcp, lsp"
+theme-color: "99, 102, 241"
+title: "The noyalib Library Suite"
+url: "https://noyalib.com/suite/"
 viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
 
+# RSS Parameters
+atom_link: "https://noyalib.com/rss.xml"
+category: "Documentation"
+docs: "https://validator.w3.org/feed/docs/rss2.html"
+generator: "Static Site Generator (SSG) (version 0.0.46)"
+item_description: "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem."
+item_guid: "https://noyalib.com/suite/"
+item_link: "https://noyalib.com/suite/"
+item_pub_date: "Sat, 25 Jul 2026 00:00:00 +0000"
+item_title: "The noyalib Library Suite"
+last_build_date: "Sat, 25 Jul 2026 00:00:00 +0000"
+managing_editor: "contact@sebastienrousseau.com (Sebastien Rousseau)"
+pub_date: "Sat, 25 Jul 2026 00:00:00 +0000"
+ttl: "60"
+type: "article"
+webmaster: "contact@sebastienrousseau.com"
+
+# Apple Meta Tags
+apple_mobile_web_app_orientations: "portrait"
+apple_touch_icon_sizes: "192x192"
+apple-mobile-web-app-capable: "yes"
+apple-mobile-web-app-status-bar-inset: "black"
+apple-mobile-web-app-status-bar-style: "black-translucent"
+apple-mobile-web-app-title: "noyalib Suite"
+apple-touch-fullscreen: "yes"
+
+# MS Application
+msapplication-navbutton-color: "99, 102, 241"
+
+# Twitter Card Parameters
+twitter_card: "summary_large_image"
+twitter_creator: "@wwdseb"
+twitter_description: "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem."
+twitter_image: "https://noyalib.com/assets/images/og-image.png"
+twitter_image_alt: "noyalib Suite Overview"
+twitter_site: "@wwdseb"
+twitter_title: "The noyalib Library Suite"
+twitter_url: "https://noyalib.com/suite/"
+
+# Humans.txt Metadata
+author_website: "https://sebastienrousseau.com"
+author_twitter: "@wwdseb"
+author_location: "London, UK"
 ---
 
-# noyalib Suite of Satellite Libraries
+# The noyalib Library Suite
 
-The **noyalib** ecosystem is designed as a set of synchronized satellite tools that deliver identical data parsing, validation, and serialization behaviors across every developer environment.
+The noyalib suite consists of five synchronized satellite packages designed for specific runtime environments and use cases.
+
+## Package Matrix Overview
+
+| Crate | Primary Target | Main Capability | Key Feature |
+| :--- | :--- | :--- | :--- |
+| **`noyalib`** | Core Rust Libraries | Single/Parallel Deserialization | 520 MB/s SIMD + Rayon |
+| **`noya-cli`** | Command Line / DevOps | Linting, Formatting, Schema | Zero-Dependency Binary |
+| **`noyalib-wasm`** | Browser &amp; Edge Runtimes | JavaScript / WebAssembly API | In-Browser Vector Scanning |
+| **`noyalib-mcp`** | AI Tools &amp; LLM Servers | Model Context Protocol Tool | Structured Data AI Interface |
+| **`noyalib-lsp`** | IDE Runtimes | Language Server Protocol | Real-time Errors &amp; Schema Hovers |
 
 ---
 
-## 1. `noyalib` (Core Crate)
-The core Rust library for data deserialization and serialization.
-- **Official Documentation**: [Docs.rs/noyalib](https://docs.rs/noyalib)
-- **Crates.io Package**: [crates.io/crates/noyalib](https://crates.io/crates/noyalib)
-- **Source Repository**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib)
+## 1. `noyalib` (Core Engine)
 
-## 2. `noya-cli` (Command Line Utility)
-High-performance terminal binary for data transformation.
-- **Official Documentation**: [Docs.rs/noya-cli](https://docs.rs/noya-cli)
-- **Crates.io Package**: [crates.io/crates/noya-cli](https://crates.io/crates/noya-cli)
-- **Source Repository**: [GitHub Repository](https://github.com/sebastienrousseau/noya-cli)
+The core crate provides zero-copy SIMD SWAR/SSE2 parsing, multi-document Rayon parallel streaming, and 100% memory safety.
+
+```rust
+use noyalib::{from_str, Value, Result};
+
+fn main() -> Result<()> {
+    let doc: Value = from_str("server: localhost\nport: 8085")?;
+    assert_eq!(doc["port"], 8085);
+    Ok(())
+}
+```
+
+---
+
+## 2. `noya-cli` (Terminal Binary)
+
+Command-line tool for formatting, validating, and converting structured data streams.
+
+```bash
+noya-cli lint config.yaml
+noya-cli convert input.yaml --to json --pretty
+```
+
+---
 
 ## 3. `noyalib-wasm` (WebAssembly Runtime)
-WebAssembly package optimized for browser and edge environments.
-- **NPM Package**: [npmjs.com/package/noyalib-wasm](https://www.npmjs.com/package/noyalib-wasm)
-- **Source Repository**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-wasm)
+
+NPM package compiled to WebAssembly via `wasm-bindgen` for Web applications and Cloudflare Workers.
+
+```typescript
+import { parseYaml } from 'noyalib-wasm';
+
+const json = parseYaml("key: value");
+```
+
+---
 
 ## 4. `noyalib-mcp` (Model Context Protocol AI Server)
-Native MCP server for AI models and LLM agent integration.
-- **Official Documentation**: [Docs.rs/noyalib-mcp](https://docs.rs/noyalib-mcp)
-- **Glama MCP Registry**: [Glama Server Registry](https://glama.ai/mcp/servers/sebastienrousseau/noyalib-mcp)
-- **Crates.io Package**: [crates.io/crates/noyalib-mcp](https://crates.io/crates/noyalib-mcp)
-- **Source Repository**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-mcp)
+
+Native MCP server enabling AI agents (Claude, GPT-4, Antigravity) to query and validate data streams.
+
+```bash
+cargo install noyalib-mcp
+noyalib-mcp --stdio
+```
+
+---
 
 ## 5. `noyalib-lsp` (Language Server Protocol)
-LSP server for code editors (VS Code, Neovim, Emacs, Zed).
-- **Official Documentation**: [Docs.rs/noyalib-lsp](https://docs.rs/noyalib-lsp)
-- **Crates.io Package**: [crates.io/crates/noyalib-lsp](https://crates.io/crates/noyalib-lsp)
-- **Source Repository**: [GitHub Repository](https://github.com/sebastienrousseau/noyalib-lsp)
+
+IDE language server providing syntax diagnostics, schema hover cards, and autocomplete in VS Code and Neovim.
+
+```json
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow": ".github/workflows/*.yml"
+  }
+}
+```
