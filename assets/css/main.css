@@ -5,8 +5,8 @@
    100% WCAG 2.1 AAA Contrast Ratio Compliant (>= 7:1 for normal text)
    ========================================================================== */
 
-/* Native Cascade Layers */
-@layer skeletonic.base, skeletonic.layout, skeletonic.components, skeletonic.utilities, noyalib.theme, noyalib.components;
+/* Native Cascade Layers — skeletonic.elements MUST be first so noyalib overrides it */
+@layer skeletonic.elements, skeletonic.base, skeletonic.layout, skeletonic.components, skeletonic.utilities, noyalib.theme, noyalib.components;
 
 @layer noyalib.theme {
   /* --------------------------------------------------------------------------
@@ -166,6 +166,61 @@
     border-radius: 4px;
   }
 
+  /* SSG Search Widget Integration Fix */
+  #ssg-search-btn {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    inset: auto !important;
+    z-index: 10 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 8px 16px !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-card) !important;
+    border-radius: var(--radius-sm) !important;
+    color: var(--text-main) !important;
+    font-family: var(--font-main) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    transition: all var(--transition-fast) !important;
+    text-transform: none !important;
+  }
+
+  #ssg-search-btn:hover {
+    background: var(--bg-card-hover) !important;
+    border-color: var(--border-focus) !important;
+  }
+
+  #ssg-search-btn kbd {
+    background: var(--bg-code) !important;
+    border: 1px solid var(--border-subtle) !important;
+    color: var(--text-muted) !important;
+    font-family: var(--font-code) !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-size: 0.75rem !important;
+  }
+
+  #ssg-search-overlay {
+    background: rgba(11, 15, 25, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  #ssg-search-box {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-card) !important;
+    color: var(--text-main) !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  #ssg-search-input {
+    color: var(--text-main) !important;
+  }
+
   /* Toast Feedback Notification */
   .toast-notification {
     position: fixed;
@@ -314,6 +369,7 @@
     font-size: 0.875rem;
     font-weight: 600;
     transition: all var(--transition-fast);
+    text-transform: none !important;
   }
 
   .theme-toggle-btn:hover {
@@ -336,11 +392,12 @@
     transition: all var(--transition-fast);
     border: none;
     white-space: nowrap;
+    text-transform: none !important;
   }
 
   .btn-primary {
     background: var(--accent-gradient);
-    color: #ffffff;
+    color: #ffffff !important;
     box-shadow: 0 4px 20px var(--glow-indigo);
   }
 
@@ -351,7 +408,7 @@
 
   .btn-secondary {
     background: var(--bg-card);
-    color: var(--text-main);
+    color: var(--text-main) !important;
     border: 1px solid var(--border-card);
   }
 
@@ -374,6 +431,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    text-transform: none !important;
   }
 
   .copy-btn:hover {
@@ -641,6 +699,7 @@
     white-space: nowrap;
     flex-shrink: 0;
     transition: all var(--transition-fast);
+    text-transform: none !important;
   }
 
   .browser-tab:hover {
@@ -976,6 +1035,7 @@
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     flex-shrink: 0;
+    text-transform: none !important;
   }
 
   .eco-tab-btn:hover {
@@ -1075,6 +1135,7 @@
     white-space: nowrap;
     flex-shrink: 0;
     transition: all var(--transition-fast);
+    text-transform: none !important;
   }
 
   .demo-tab-btn:hover {
@@ -1172,6 +1233,7 @@
     font-size: 0.825rem;
     cursor: pointer;
     transition: all var(--transition-fast);
+    text-transform: none !important;
   }
 
   .payload-btn.active {
@@ -1316,6 +1378,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.75rem;
+    text-transform: none !important;
   }
 
   .setup-card .card-copy-btn:hover {
@@ -1437,22 +1500,22 @@
     padding: 14px 18px;
     text-align: left;
     border-bottom: 1px solid var(--border-subtle);
-    color: var(--text-main);
+    color: var(--text-main) !important;
     font-size: 0.95rem;
     white-space: normal;
   }
 
   .prose th {
-    background: var(--bg-table-header);
+    background: var(--bg-table-header) !important;
     font-weight: 700;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
   .prose td strong {
-    color: var(--text-main);
+    color: var(--text-main) !important;
     font-weight: 700;
   }
 
@@ -1554,6 +1617,7 @@
     cursor: pointer;
     font-size: 0.85rem;
     transition: all var(--transition-fast);
+    text-transform: none !important;
   }
 
   .back-to-top:hover {
