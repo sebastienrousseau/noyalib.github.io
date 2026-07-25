@@ -1,13 +1,15 @@
-.PHONY: build serve clean verify
+# Makefile for noyalib.github.io
 
-# Default target — build static site using Shokunin SSG
+# Default target — build static site using Static Site Generator SSG
+.PHONY: build
 build:
+	@chmod +x build.sh
 	@./build.sh
 
-# Serve public/ locally
-serve:
-	@python3 -m http.server 8085 --directory docs
-
-# Clean build artifacts
+.PHONY: clean
 clean:
-	@rm -rf docs public output
+	rm -rf docs public
+
+.PHONY: serve
+serve: build
+	python3 -m http.server 8085 --directory docs

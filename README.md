@@ -1,45 +1,38 @@
-<!-- markdownlint-disable MD033 MD041 -->
+# noyalib.github.io
 
-# noyalib.github.io - Official Website
+Official digital portal for **noyalib**, an enterprise-grade data and YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.
 
-Welcome to the official repository for **noyalib.github.io**, the digital home of **Noya (NOYA)**.
+Built with **Static Site Generator SSG** (`ssg` v0.0.46) and **Skeletonic CSS Framework** (v2.0.0).
 
-## Quick Start Guide
+## Features
 
-Setting up and running the website locally is fast and straightforward.
+- **Content-First SSG Architecture**: Markdown source files in `_posts/` with full YAML frontmatter metadata compiled via Tera templates in `_layouts/`.
+- **Skeletonic CSS & OKLCH Theme Engine**: 100% WCAG 2.1 AAA color contrast compliance in both dark and light modes.
+- **macOS Safari Browser Code Showcase**: Interactive hero code preview window with authentic top tabs and dynamic address bar updates.
+- **Interactive Playground Simulator**: Client-side YAML-to-JSON parser and schema validator running live in the browser.
+- **100% WCAG AAA Accessibility**: Keyboard navigation, screen-reader skip links, and ARIA landmarks.
+- **Automated GitHub Actions Deployment**: Continuous deployment targeting custom domain [`noyalib.com`](https://noyalib.com).
 
-### Prerequisites
+## Local Development & Build
 
-Ensure you have a modern web browser and local HTTP server tool installed (e.g. `python3 -m http.server`, `npx serve`, or Live Server).
+Ensure `ssg` is installed:
 
-### Installation & Usage
-
-1. **Clone the repository:**
-
-```shell
-git clone https://github.com/sebastienrousseau/noyalib.github.io.git
+```bash
+cargo install ssg
 ```
 
-2. **Change into the repository directory:**
+Build the static site:
 
-```shell
-cd noyalib.github.io
+```bash
+./build.sh
 ```
 
-3. **Checkout the working feature branch:**
+Or using Makefile:
 
-```shell
-git checkout feat/v0.0.1
+```bash
+make serve
 ```
-
-4. **Serve locally:**
-
-```shell
-python3 -m http.server 8085
-```
-
-Open your browser and navigate to `http://localhost:8085`.
 
 ## License
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for details.
+Licensed under Apache-2.0 & MIT.

@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# build.sh — Build noyalib.github.io using Shokunin SSG (ssg build)
-# Compiles Markdown content in _posts/ with Tera templates in _layouts/ into docs/ and public/
+# build.sh — Build noyalib.github.io using Static Site Generator SSG (ssg build)
+# Modern SSG Pipeline supporting _posts, _layouts, and docs output
 
-echo "==> Building noyalib.github.io with Shokunin SSG..."
+echo "==> Building noyalib.github.io with Static Site Generator SSG..."
 
-# Execute Shokunin SSG build subcommand
+# Execute Static Site Generator SSG build subcommand
 ssg build -c=_posts -t=_layouts -o=docs
 
-# Copy built assets (CSS, JS, Images) to docs/
-mkdir -p docs/assets
-cp -R assets/* docs/assets/ 2>/dev/null || true
+# Copy assets directory to docs output
+cp -r assets docs/
 
-# Copy static assets (robots.txt, sitemap.xml)
-cp robots.txt docs/ 2>/dev/null || true
-cp sitemap.xml docs/ 2>/dev/null || true
+# Create CNAME in docs output directory for GitHub Pages
+echo "noyalib.com" > docs/CNAME
 
 echo "✓ Build complete. Output generated in docs/"

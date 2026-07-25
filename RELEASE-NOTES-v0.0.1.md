@@ -4,12 +4,12 @@ We are pleased to announce the official release of noyalib.github.io v0.0.1, the
 
 ## Overview
 
-noyalib.github.io is built on the Shokunin Static Site Generator (SSG v0.0.46) and the Skeletonic CSS Framework (v2.0.0). The portal presents the technical capabilities, architecture, benchmarks, WebAssembly runtimes, Model Context Protocol (MCP) AI integration, and Language Server Protocol (LSP) tooling of the noyalib engine.
+noyalib.github.io is built on the Static Site Generator (SSG v0.0.46) and the Skeletonic CSS Framework (v2.0.0). The portal presents the technical capabilities, architecture, benchmarks, WebAssembly runtimes, Model Context Protocol (MCP) AI integration, and Language Server Protocol (LSP) tooling of the noyalib engine.
 
 ## Key Features and Improvements
 
-### Shokunin SSG Architecture and Markdown Pipeline
-- Content-first static compilation powered by Shokunin SSG (`ssg build`).
+### Static Site Generator SSG Architecture and Markdown Pipeline
+- Content-first static compilation powered by Static Site Generator SSG (`ssg build`).
 - Markdown source files located in `_posts/` with complete YAML frontmatter metadata (author, description, keywords, layout, language, permalink, RSS parameters, OpenGraph parameters, and Apple meta tags).
 - Modular Tera layout templates in `_layouts/` (`index.html`, `page.html`).
 - Automated compilation output targeting `docs/` for GitHub Pages deployment.
