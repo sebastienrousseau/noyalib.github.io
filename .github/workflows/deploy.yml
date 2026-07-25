@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -24,17 +24,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Rust Toolchain
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Install Shokunin SSG CLI
-        run: |
-          cargo install ssg || true
-
-      - name: Build Static Site with Shokunin SSG
-        run: |
-          chmod +x build.sh
-          ./build.sh
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
