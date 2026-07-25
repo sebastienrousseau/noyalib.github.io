@@ -10,7 +10,7 @@
       "rust"
     ],
     "title": "About noyalib: High Performance Data Engine Architecture",
-    "url": "http://127.0.0.1:8000/about/",
+    "url": "https://noyalib.com/about/",
     "wordCount": 67
   },
   {
@@ -25,7 +25,7 @@
       "speed"
     ],
     "title": "noyalib Performance Benchmarks: SIMD & Parallel Parsing",
-    "url": "http://127.0.0.1:8000/benchmarks/",
+    "url": "https://noyalib.com/benchmarks/",
     "wordCount": 261
   },
   {
@@ -39,7 +39,7 @@
       "rust"
     ],
     "title": "noyalib FAQ: Frequently Asked Questions",
-    "url": "http://127.0.0.1:8000/faq/",
+    "url": "https://noyalib.com/faq/",
     "wordCount": 106
   },
   {
@@ -57,7 +57,7 @@
       "wasm"
     ],
     "title": "Getting Started with noyalib",
-    "url": "http://127.0.0.1:8000/getting-started/",
+    "url": "https://noyalib.com/getting-started/",
     "wordCount": 324
   },
   {
@@ -81,7 +81,7 @@
       "zero copy"
     ],
     "title": "noyalib: Drop-In Rust & WebAssembly YAML Engine",
-    "url": "http://127.0.0.1:8000/index.html",
+    "url": "https://noyalib.com/index.html",
     "wordCount": 46
   },
   {
@@ -96,7 +96,7 @@
       "upgrade"
     ],
     "title": "noyalib Migration Guide: Moving from serde_yaml 0.9",
-    "url": "http://127.0.0.1:8000/migration/",
+    "url": "https://noyalib.com/migration/",
     "wordCount": 176
   },
   {
@@ -115,7 +115,7 @@
       "vrd"
     ],
     "title": "The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub",
-    "url": "http://127.0.0.1:8000/rust-ecosystem/",
+    "url": "https://noyalib.com/rust-ecosystem/",
     "wordCount": 165
   },
   {
@@ -130,7 +130,7 @@
       "security"
     ],
     "title": "noyalib Security Policy: Memory Safety & Supply Chain Assurance",
-    "url": "http://127.0.0.1:8000/security/",
+    "url": "https://noyalib.com/security/",
     "wordCount": 63
   },
   {
@@ -148,7 +148,7 @@
       "wasm"
     ],
     "title": "The noyalib Library Suite",
-    "url": "http://127.0.0.1:8000/suite/",
+    "url": "https://noyalib.com/suite/",
     "wordCount": 296
   },
   {
@@ -164,7 +164,7 @@
       "use-cases"
     ],
     "title": "noyalib Enterprise Use Cases: AI Pipelines, Finance & Edge Runtimes",
-    "url": "http://127.0.0.1:8000/use-cases/",
+    "url": "https://noyalib.com/use-cases/",
     "wordCount": 230
   }
 ]

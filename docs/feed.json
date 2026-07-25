@@ -1,6 +1,6 @@
 {
-  "feed_url": "http://127.0.0.1:8000/feed.json",
-  "home_page_url": "http://127.0.0.1:8000/",
+  "feed_url": "https://noyalib.com/feed.json",
+  "home_page_url": "https://noyalib.com/",
   "items": [
     {
       "authors": [
@@ -11,7 +11,7 @@
       "content_html": "Comprehensive quick start guide for noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
       "date_modified": "2026-07-25T00:00:00+00:00",
       "date_published": "2026-07-25T00:00:00+00:00",
-      "id": "http://127.0.0.1:8000/getting-started/",
+      "id": "https://noyalib.com/getting-started/",
       "language": "en-GB",
       "tags": [
         "noyalib",
@@ -24,7 +24,7 @@
         "lsp"
       ],
       "title": "Getting Started with noyalib",
-      "url": "http://127.0.0.1:8000/getting-started/"
+      "url": "https://noyalib.com/getting-started/"
     },
     {
       "authors": [
@@ -35,7 +35,7 @@
       "content_html": "Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.",
       "date_modified": "2026-07-25T00:00:00+00:00",
       "date_published": "2026-07-25T00:00:00+00:00",
-      "id": "http://127.0.0.1:8000/suite/",
+      "id": "https://noyalib.com/suite/",
       "language": "en-GB",
       "tags": [
         "noyalib",
@@ -48,7 +48,7 @@
         "lsp"
       ],
       "title": "The noyalib Library Suite",
-      "url": "http://127.0.0.1:8000/suite/"
+      "url": "https://noyalib.com/suite/"
     },
     {
       "authors": [
@@ -59,7 +59,7 @@
       "content_html": "Learn about noyalib architecture, design principles, and safe Rust data engine performance.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/about/",
+      "id": "https://noyalib.com/about/",
       "language": "en-GB",
       "tags": [
         "about",
@@ -68,7 +68,7 @@
         "architecture"
       ],
       "title": "About noyalib: High Performance Data Engine Architecture",
-      "url": "http://127.0.0.1:8000/about/"
+      "url": "https://noyalib.com/about/"
     },
     {
       "authors": [
@@ -79,7 +79,7 @@
       "content_html": "Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust2, serde-norway) and legacy parsers.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/benchmarks/",
+      "id": "https://noyalib.com/benchmarks/",
       "language": "en-GB",
       "tags": [
         "benchmarks",
@@ -89,7 +89,7 @@
         "speed"
       ],
       "title": "noyalib Performance Benchmarks: SIMD & Parallel Parsing",
-      "url": "http://127.0.0.1:8000/benchmarks/"
+      "url": "https://noyalib.com/benchmarks/"
     },
     {
       "authors": [
@@ -100,7 +100,7 @@
       "content_html": "Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/faq/",
+      "id": "https://noyalib.com/faq/",
       "language": "en-GB",
       "tags": [
         "faq",
@@ -109,7 +109,7 @@
         "questions"
       ],
       "title": "noyalib FAQ: Frequently Asked Questions",
-      "url": "http://127.0.0.1:8000/faq/"
+      "url": "https://noyalib.com/faq/"
     },
     {
       "authors": [
@@ -120,7 +120,7 @@
       "content_html": "Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/migration/",
+      "id": "https://noyalib.com/migration/",
       "language": "en-GB",
       "tags": [
         "migration",
@@ -130,7 +130,7 @@
         "upgrade"
       ],
       "title": "noyalib Migration Guide: Moving from serde_yaml 0.9",
-      "url": "http://127.0.0.1:8000/migration/"
+      "url": "https://noyalib.com/migration/"
     },
     {
       "authors": [
@@ -141,7 +141,7 @@
       "content_html": "Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake with direct links to Docs.rs and Crates.io documentation.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/rust-ecosystem/",
+      "id": "https://noyalib.com/rust-ecosystem/",
       "language": "en-GB",
       "tags": [
         "rust-ecosystem",
@@ -155,7 +155,7 @@
         "docs.rs"
       ],
       "title": "The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub",
-      "url": "http://127.0.0.1:8000/rust-ecosystem/"
+      "url": "https://noyalib.com/rust-ecosystem/"
     },
     {
       "authors": [
@@ -166,7 +166,7 @@
       "content_html": "Security policy, memory safety invariants, and vulnerability reporting for noyalib.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/security/",
+      "id": "https://noyalib.com/security/",
       "language": "en-GB",
       "tags": [
         "security",
@@ -176,7 +176,7 @@
         "safe-rust"
       ],
       "title": "noyalib Security Policy: Memory Safety & Supply Chain Assurance",
-      "url": "http://127.0.0.1:8000/security/"
+      "url": "https://noyalib.com/security/"
     },
     {
       "authors": [
@@ -187,7 +187,7 @@
       "content_html": "Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.",
       "date_modified": "",
       "date_published": "",
-      "id": "http://127.0.0.1:8000/use-cases/",
+      "id": "https://noyalib.com/use-cases/",
       "language": "en-GB",
       "tags": [
         "use-cases",
@@ -198,10 +198,10 @@
         "edge"
       ],
       "title": "noyalib Enterprise Use Cases: AI Pipelines, Finance & Edge Runtimes",
-      "url": "http://127.0.0.1:8000/use-cases/"
+      "url": "https://noyalib.com/use-cases/"
     }
   ],
   "language": "en-GB",
-  "title": "MySsgSite",
+  "title": "noyalib",
   "version": "https://jsonfeed.org/version/1.1"
 }

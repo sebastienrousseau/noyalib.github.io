@@ -5,17 +5,17 @@
     "topics": 48
   },
   "links": {
-    "index": "http://127.0.0.1:8000/api/agents/index.json",
-    "person": "http://127.0.0.1:8000/api/agents/person.json",
-    "posts": "http://127.0.0.1:8000/api/agents/posts.json",
-    "topics": "http://127.0.0.1:8000/api/agents/topics.json"
+    "index": "https://noyalib.com/api/agents/index.json",
+    "person": "https://noyalib.com/api/agents/person.json",
+    "posts": "https://noyalib.com/api/agents/posts.json",
+    "topics": "https://noyalib.com/api/agents/topics.json"
   },
   "site": {
-    "description": "A site built with SSG",
+    "description": "High-performance data and YAML engine written in 100% safe Rust with SIMD vector scanning, Rayon multi-document parallel parsing, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.",
     "language": "en-GB",
-    "name": "MySsgSite",
-    "title": "My SSG Site",
-    "url": "http://127.0.0.1:8000"
+    "name": "noyalib",
+    "title": "noyalib: High-Performance Data & YAML Engine for Rust, WebAssembly & AI",
+    "url": "https://noyalib.com"
   },
   "version": "0.0.47"
 }

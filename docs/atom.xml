@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>MySsgSite</title>
-  <link href="http://127.0.0.1:8000/atom.xml" rel="self" type="application/atom+xml"/>
-  <link href="http://127.0.0.1:8000"/>
-  <id>http://127.0.0.1:8000</id>
+  <title>noyalib</title>
+  <link href="https://noyalib.com/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://noyalib.com"/>
+  <id>https://noyalib.com</id>
   <updated>2026-07-25T00:00:00+00:00</updated>
   <entry>
     <title>Getting Started with noyalib</title>
-    <link href="http://127.0.0.1:8000/getting-started/"/>
-    <id>http://127.0.0.1:8000/getting-started/</id>
+    <link href="https://noyalib.com/getting-started/"/>
+    <id>https://noyalib.com/getting-started/</id>
     <updated>2026-07-25T00:00:00+00:00</updated>
     <published>2026-07-25T00:00:00+00:00</published>
     <summary>Comprehensive quick start guide for noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.</summary>
@@ -16,8 +16,8 @@
   </entry>
   <entry>
     <title>The noyalib Library Suite</title>
-    <link href="http://127.0.0.1:8000/suite/"/>
-    <id>http://127.0.0.1:8000/suite/</id>
+    <link href="https://noyalib.com/suite/"/>
+    <id>https://noyalib.com/suite/</id>
     <updated>2026-07-25T00:00:00+00:00</updated>
     <published>2026-07-25T00:00:00+00:00</published>
     <summary>Detailed breakdown of all 5 satellite crates in the noyalib engine ecosystem: noyalib, noya-cli, noyalib-wasm, noyalib-mcp, and noyalib-lsp.</summary>
@@ -25,8 +25,8 @@
   </entry>
   <entry>
     <title>About noyalib: High Performance Data Engine Architecture</title>
-    <link href="http://127.0.0.1:8000/about/"/>
-    <id>http://127.0.0.1:8000/about/</id>
+    <link href="https://noyalib.com/about/"/>
+    <id>https://noyalib.com/about/</id>
     <updated></updated>
     <published></published>
     <summary>Learn about noyalib architecture, design principles, and safe Rust data engine performance.</summary>
@@ -34,8 +34,8 @@
   </entry>
   <entry>
     <title>noyalib Performance Benchmarks: SIMD &amp; Parallel Parsing</title>
-    <link href="http://127.0.0.1:8000/benchmarks/"/>
-    <id>http://127.0.0.1:8000/benchmarks/</id>
+    <link href="https://noyalib.com/benchmarks/"/>
+    <id>https://noyalib.com/benchmarks/</id>
     <updated></updated>
     <published></published>
     <summary>Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust2, serde-norway) and legacy parsers.</summary>
@@ -43,8 +43,8 @@
   </entry>
   <entry>
     <title>noyalib FAQ: Frequently Asked Questions</title>
-    <link href="http://127.0.0.1:8000/faq/"/>
-    <id>http://127.0.0.1:8000/faq/</id>
+    <link href="https://noyalib.com/faq/"/>
+    <id>https://noyalib.com/faq/</id>
     <updated></updated>
     <published></published>
     <summary>Frequently Asked Questions about noyalib features, Serde compatibility, SIMD speedups, and satellite libraries.</summary>
@@ -52,8 +52,8 @@
   </entry>
   <entry>
     <title>noyalib Migration Guide: Moving from serde_yaml 0.9</title>
-    <link href="http://127.0.0.1:8000/migration/"/>
-    <id>http://127.0.0.1:8000/migration/</id>
+    <link href="https://noyalib.com/migration/"/>
+    <id>https://noyalib.com/migration/</id>
     <updated></updated>
     <published></published>
     <summary>Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.</summary>
@@ -61,8 +61,8 @@
   </entry>
   <entry>
     <title>The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub</title>
-    <link href="http://127.0.0.1:8000/rust-ecosystem/"/>
-    <id>http://127.0.0.1:8000/rust-ecosystem/</id>
+    <link href="https://noyalib.com/rust-ecosystem/"/>
+    <id>https://noyalib.com/rust-ecosystem/</id>
     <updated></updated>
     <published></published>
     <summary>Discover the open-source Rust library suite by Sebastien Rousseau: dtt, kyberlib, hsh, rlg, vrd, and libmake with direct links to Docs.rs and Crates.io documentation.</summary>
@@ -70,8 +70,8 @@
   </entry>
   <entry>
     <title>noyalib Security Policy: Memory Safety &amp; Supply Chain Assurance</title>
-    <link href="http://127.0.0.1:8000/security/"/>
-    <id>http://127.0.0.1:8000/security/</id>
+    <link href="https://noyalib.com/security/"/>
+    <id>https://noyalib.com/security/</id>
     <updated></updated>
     <published></published>
     <summary>Security policy, memory safety invariants, and vulnerability reporting for noyalib.</summary>
@@ -79,8 +79,8 @@
   </entry>
   <entry>
     <title>noyalib Enterprise Use Cases: AI Pipelines, Finance &amp; Edge Runtimes</title>
-    <link href="http://127.0.0.1:8000/use-cases/"/>
-    <id>http://127.0.0.1:8000/use-cases/</id>
+    <link href="https://noyalib.com/use-cases/"/>
+    <id>https://noyalib.com/use-cases/</id>
     <updated></updated>
     <published></published>
     <summary>Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native microservices.</summary>

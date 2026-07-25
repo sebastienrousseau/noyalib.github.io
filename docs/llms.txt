@@ -1,5 +1,5 @@
-# MySsgSite
+# noyalib
 
-> A site built with SSG
+> High-performance data and YAML engine written in 100% safe Rust with SIMD vector scanning, Rayon multi-document parallel parsing, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.
 
 Language: en-GB

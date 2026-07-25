@@ -6,8 +6,8 @@ set -euo pipefail
 
 echo "==> Building noyalib.github.io with Static Site Generator SSG..."
 
-# Execute Static Site Generator SSG build subcommand
-ssg build -c=_posts -t=_layouts -o=docs
+# Execute Static Site Generator SSG build subcommand with config.toml
+ssg build -c=_posts -t=_layouts -o=docs -f=config.toml
 
 # Copy assets directory to docs output
 cp -r assets docs/

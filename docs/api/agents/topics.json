@@ -1,166 +1,166 @@
 {
   "about": [
-    "http://127.0.0.1:8000/about/"
+    "https://noyalib.com/about/"
   ],
   "ai": [
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/use-cases/"
   ],
   "architecture": [
-    "http://127.0.0.1:8000/about/"
+    "https://noyalib.com/about/"
   ],
   "benchmarks": [
-    "http://127.0.0.1:8000/benchmarks/"
+    "https://noyalib.com/benchmarks/"
   ],
   "cargo": [
-    "http://127.0.0.1:8000/getting-started/"
+    "https://noyalib.com/getting-started/"
   ],
   "cli": [
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/suite/"
   ],
   "crates": [
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/suite/"
   ],
   "docs.rs": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "dtt": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "edge": [
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/use-cases/"
   ],
   "enterprise": [
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/use-cases/"
   ],
   "faq": [
-    "http://127.0.0.1:8000/faq/"
+    "https://noyalib.com/faq/"
   ],
   "finance": [
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/use-cases/"
   ],
   "getting started": [
-    "http://127.0.0.1:8000/getting-started/"
+    "https://noyalib.com/getting-started/"
   ],
   "hsh": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "installation": [
-    "http://127.0.0.1:8000/getting-started/"
+    "https://noyalib.com/getting-started/"
   ],
   "json schema": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "kyberlib": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "libmake": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "lsp": [
-    "http://127.0.0.1:8000/getting-started/",
-    "http://127.0.0.1:8000/index.html",
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/getting-started/",
+    "https://noyalib.com/index.html",
+    "https://noyalib.com/suite/"
   ],
   "mcp": [
-    "http://127.0.0.1:8000/getting-started/",
-    "http://127.0.0.1:8000/index.html",
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/getting-started/",
+    "https://noyalib.com/index.html",
+    "https://noyalib.com/suite/"
   ],
   "memory-safety": [
-    "http://127.0.0.1:8000/security/"
+    "https://noyalib.com/security/"
   ],
   "migration": [
-    "http://127.0.0.1:8000/migration/"
+    "https://noyalib.com/migration/"
   ],
   "noyalib": [
-    "http://127.0.0.1:8000/about/",
-    "http://127.0.0.1:8000/benchmarks/",
-    "http://127.0.0.1:8000/faq/",
-    "http://127.0.0.1:8000/getting-started/",
-    "http://127.0.0.1:8000/index.html",
-    "http://127.0.0.1:8000/migration/",
-    "http://127.0.0.1:8000/security/",
-    "http://127.0.0.1:8000/suite/",
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/about/",
+    "https://noyalib.com/benchmarks/",
+    "https://noyalib.com/faq/",
+    "https://noyalib.com/getting-started/",
+    "https://noyalib.com/index.html",
+    "https://noyalib.com/migration/",
+    "https://noyalib.com/security/",
+    "https://noyalib.com/suite/",
+    "https://noyalib.com/use-cases/"
   ],
   "performance": [
-    "http://127.0.0.1:8000/benchmarks/"
+    "https://noyalib.com/benchmarks/"
   ],
   "questions": [
-    "http://127.0.0.1:8000/faq/"
+    "https://noyalib.com/faq/"
   ],
   "rayon": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "rlg": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "rust": [
-    "http://127.0.0.1:8000/about/",
-    "http://127.0.0.1:8000/benchmarks/",
-    "http://127.0.0.1:8000/faq/",
-    "http://127.0.0.1:8000/getting-started/",
-    "http://127.0.0.1:8000/index.html",
-    "http://127.0.0.1:8000/migration/",
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/about/",
+    "https://noyalib.com/benchmarks/",
+    "https://noyalib.com/faq/",
+    "https://noyalib.com/getting-started/",
+    "https://noyalib.com/index.html",
+    "https://noyalib.com/migration/",
+    "https://noyalib.com/suite/"
   ],
   "rust-ecosystem": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "safe-rust": [
-    "http://127.0.0.1:8000/security/"
+    "https://noyalib.com/security/"
   ],
   "sbom": [
-    "http://127.0.0.1:8000/security/"
+    "https://noyalib.com/security/"
   ],
   "sebastien rousseau": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "sebastien-rousseau": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "security": [
-    "http://127.0.0.1:8000/security/"
+    "https://noyalib.com/security/"
   ],
   "serde": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "serde_yaml": [
-    "http://127.0.0.1:8000/index.html",
-    "http://127.0.0.1:8000/migration/"
+    "https://noyalib.com/index.html",
+    "https://noyalib.com/migration/"
   ],
   "simd": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "skeletonic css": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "speed": [
-    "http://127.0.0.1:8000/benchmarks/"
+    "https://noyalib.com/benchmarks/"
   ],
   "suite": [
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/suite/"
   ],
   "upgrade": [
-    "http://127.0.0.1:8000/migration/"
+    "https://noyalib.com/migration/"
   ],
   "use-cases": [
-    "http://127.0.0.1:8000/use-cases/"
+    "https://noyalib.com/use-cases/"
   ],
   "vrd": [
-    "http://127.0.0.1:8000/rust-ecosystem/"
+    "https://noyalib.com/rust-ecosystem/"
   ],
   "wasm": [
-    "http://127.0.0.1:8000/getting-started/",
-    "http://127.0.0.1:8000/suite/"
+    "https://noyalib.com/getting-started/",
+    "https://noyalib.com/suite/"
   ],
   "webassembly": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "yaml": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ],
   "zero copy": [
-    "http://127.0.0.1:8000/index.html"
+    "https://noyalib.com/index.html"
   ]
 }
