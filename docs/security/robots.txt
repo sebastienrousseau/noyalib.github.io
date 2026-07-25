@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://noyalib.com/security.html/sitemap.xml

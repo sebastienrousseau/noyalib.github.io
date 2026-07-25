@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 
-# noyalib.github.io - Official Website 🌏
+# noyalib.github.io - Official Website
 
 Welcome to the official repository for **noyalib.github.io**, the digital home of **Noya (NOYA)**.
 
@@ -35,10 +35,10 @@ git checkout feat/v0.0.1
 4. **Serve locally:**
 
 ```shell
-python3 -m http.server 8000
+python3 -m http.server 8085
 ```
 
-Open your browser and navigate to `http://localhost:8000`.
+Open your browser and navigate to `http://localhost:8085`.
 
 ## License
 

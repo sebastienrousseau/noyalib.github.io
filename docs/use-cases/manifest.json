@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Discover enterprise use cases for noyalib: AI data pipelines, financial systems, edge computing, and cloud-native micros",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "noyalib Enterprise Use Cases",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}

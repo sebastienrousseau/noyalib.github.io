@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://noyalib.com/migration.html/sitemap.xml

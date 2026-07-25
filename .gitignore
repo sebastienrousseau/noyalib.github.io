@@ -12,8 +12,9 @@
 .vscode/
 .idea/
 
-# Dependencies / Output
+# Dependencies / SSG Build Output
 node_modules/
 dist/
 build/
 output/
+public/

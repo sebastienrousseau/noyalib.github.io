@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{language}}" data-theme="dark">
+<head>
+  <meta charset="{{charset}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta itemprop="datePublished" content="{{item_pub_date}}" id="date">
+  <meta itemprop="dateModified" content="{{last_build_date}}" id="last-modified">
+  <title>{{title}}</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{url}}">
+
+  <!-- Shokunin SSG Automated Meta Tags (raw safe html rendering) -->
+  {{primary | safe}}
+  {{opengraph | safe}}
+  {{twitter | safe}}
+  {{apple | safe}}
+
+  <!-- Accessibility Meta Tags -->
+  <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Skeletonic CSS Framework -->
+  <link rel="stylesheet" href="assets/css/skeletonic.min.css">
+  <link rel="stylesheet" href="assets/css/skeletonic-animations.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/index.html" class="brand">
+        <img src="assets/images/logo.svg" alt="noyalib logo" class="brand-icon" width="36" height="36">
+        <span class="brand-text">noyalib</span>
+        <span class="version-tag">v0.0.16</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/getting-started/index.html">Quick Start</a></li>
+          <li><a href="/suite/index.html">Suite</a></li>
+          <li><a href="/use-cases/index.html">Use Cases</a></li>
+          <li><a href="/migration/index.html">Migration</a></li>
+          <li><a href="/benchmarks/index.html">Benchmarks</a></li>
+          <li><a href="/security/index.html">Security</a></li>
+          <li><a href="/rust-ecosystem/index.html">Rust Suite</a></li>
+          <li><a href="/faq/index.html">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">☀️</button>
+        <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" role="main" style="max-width: var(--max-width); margin: 0 auto; padding: 64px 24px;">
+    <div class="prose" style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); backdrop-filter: blur(16px); padding: 48px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+      {{content | safe}}
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Sebastien Rousseau. Generated with Shokunin SSG. Licensed under Apache-2.0 &amp; MIT.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

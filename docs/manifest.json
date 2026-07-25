@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "noyalib is an enterprise-grade data & YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel...",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "noyalib (NOYALIB)",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "noyalib",
+  "start_url": ".",
+  "theme_color": null
+}
