@@ -38,7 +38,14 @@ function initThemeToggle() {
 
 function updateThemeIcon(btn, theme) {
   btn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-  btn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+  const iconSpan = btn.querySelector('.theme-icon');
+  const labelSpan = btn.querySelector('.theme-label');
+  if (iconSpan && labelSpan) {
+    iconSpan.textContent = theme === 'dark' ? '🌙' : '☀️';
+    labelSpan.textContent = theme === 'dark' ? 'Dark' : 'Light';
+  } else {
+    btn.innerHTML = theme === 'dark' ? '<span class="theme-icon">🌙</span> <span class="theme-label">Dark</span>' : '<span class="theme-icon">☀️</span> <span class="theme-label">Light</span>';
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -242,7 +249,7 @@ cat input.yaml | noya convert --format json --pretty`
     snippet: `import { parseYaml, validateSchema } from 'noyalib-wasm';
 
 const data = parseYaml('server: { port: 8080 }');
-console.log('Parsed Port:', data.server.port);`
+console.log('Parsed WASM:', data.server.port);`
   },
   'noyalib-mcp': {
     title: 'noyalib-mcp (MCP AI Server)',

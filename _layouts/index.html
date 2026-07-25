@@ -27,7 +27,7 @@
   <!-- Fonts & Skeletonic CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/skeletonic.min.css">
   <link rel="stylesheet" href="assets/css/skeletonic-animations.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -89,7 +89,10 @@
       </nav>
 
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">Theme</button>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-label">Dark</span>
+        </button>
         <a href="https://github.com/sebastienrousseau/noyalib.github.io" class="btn btn-primary" target="_blank" rel="noopener">
           <span>GitHub</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -450,9 +453,9 @@
             </ul>
 
             <div style="margin-top: 24px;">
-              <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 6px;">Install Command:</span>
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <pre style="background: var(--bg-code); padding: 12px 16px; border-radius: var(--radius-sm); font-family: var(--font-code); color: var(--accent-cyan); flex: 1;" id="eco-install-cmd">cargo add noyalib --features simd,rayon</pre>
+              <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 6px; font-weight: 700;">Install Command:</span>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <pre id="eco-install-cmd" style="flex: 1; margin: 0;">cargo add noyalib --features simd,rayon</pre>
                 <button class="copy-btn" data-copy-target="eco-install-cmd" aria-label="Copy install command">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                   <span>Copy</span>
@@ -468,7 +471,7 @@
                 <span>Copy</span>
               </button>
             </div>
-            <pre class="code-block" style="background: var(--bg-code); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-card);"><code id="eco-snippet">use noyalib::{parallel, Value};
+            <pre class="code-block" style="background: #0f172a; padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-card);"><code id="eco-snippet">use noyalib::{parallel, Value};
 
 let docs = parallel::values("--- doc1: val --- doc2: val")?;
 assert_eq!(docs.len(), 2);</code></pre>
@@ -696,7 +699,7 @@ performance:
           <p style="color: var(--text-muted); font-size: 0.9rem;">Add to Cargo project with SIMD and Rayon acceleration.</p>
           <div class="setup-card-pre-wrapper">
             <pre id="cmd-cargo-add">cargo add noyalib --features simd,rayon</pre>
-            <button class="card-copy-btn" data-copy-target="cmd-cargo-add" aria-label="Copy cargo command">Copy</button>
+            <button class="copy-btn card-copy-btn" data-copy-target="cmd-cargo-add" aria-label="Copy cargo command">Copy</button>
           </div>
         </div>
 
@@ -705,7 +708,7 @@ performance:
           <p style="color: var(--text-muted); font-size: 0.9rem;">Install command-line parser &amp; validator binary.</p>
           <div class="setup-card-pre-wrapper">
             <pre id="cmd-cargo-cli">cargo install noya-cli</pre>
-            <button class="card-copy-btn" data-copy-target="cmd-cargo-cli" aria-label="Copy CLI command">Copy</button>
+            <button class="copy-btn card-copy-btn" data-copy-target="cmd-cargo-cli" aria-label="Copy CLI command">Copy</button>
           </div>
         </div>
 
@@ -714,7 +717,7 @@ performance:
           <p style="color: var(--text-muted); font-size: 0.9rem;">Install NPM package for Web &amp; Cloudflare Workers.</p>
           <div class="setup-card-pre-wrapper">
             <pre id="cmd-npm-wasm">npm install noyalib-wasm</pre>
-            <button class="card-copy-btn" data-copy-target="cmd-npm-wasm" aria-label="Copy WASM command">Copy</button>
+            <button class="copy-btn card-copy-btn" data-copy-target="cmd-npm-wasm" aria-label="Copy WASM command">Copy</button>
           </div>
         </div>
 
@@ -723,15 +726,17 @@ performance:
           <p style="color: var(--text-muted); font-size: 0.9rem;">Run native MCP server for AI tools &amp; LLMs.</p>
           <div class="setup-card-pre-wrapper">
             <pre id="cmd-cargo-mcp">cargo install noyalib-mcp</pre>
-            <button class="card-copy-btn" data-copy-target="cmd-cargo-mcp" aria-label="Copy MCP command">Copy</button>
+            <button class="copy-btn card-copy-btn" data-copy-target="cmd-cargo-mcp" aria-label="Copy MCP command">Copy</button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Additional Markdown Post Body -->
-    <div class="prose-container" style="max-width: 1000px; margin: 40px auto; padding: 0 24px;">
-      {{content | safe}}
+    <div class="prose-container">
+      <div class="prose-container-card">
+        {{content | safe}}
+      </div>
     </div>
 
   </main>

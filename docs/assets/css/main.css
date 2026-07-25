@@ -75,9 +75,9 @@
   /* Light Theme Override - STRICT 100% WCAG AAA Compliant (>= 7:1) */
   [data-theme="light"] {
     --bg-main: #ffffff;
-    --bg-header: rgba(255, 255, 255, 0.95);
-    --bg-card: #f8fafc;
-    --bg-card-hover: #f1f5f9;
+    --bg-header: rgba(255, 255, 255, 0.96);
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
     --bg-code: #0f172a;          /* Code blocks REMAIN DARK #0f172a in Light Mode */
     --bg-code-header: #1e293b;
     --bg-table-header: #0f172a;
@@ -106,8 +106,8 @@
     --accent-emerald: #064e3b;   /* 9.37:1 vs #ffffff on LIGHT backgrounds */
     --accent-amber: #78350f;     /* 8.90:1 vs #ffffff on LIGHT backgrounds */
 
-    --border-subtle: rgba(0, 0, 0, 0.18);
-    --border-card: rgba(0, 0, 0, 0.28);
+    --border-subtle: rgba(15, 23, 42, 0.16);
+    --border-card: rgba(15, 23, 42, 0.22);
     --border-focus: #0284c7;
 
     --code-inline-bg: #f1f5f9;
@@ -141,6 +141,13 @@
     overflow-x: hidden;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hide any extra auto-injected floating search widgets at the bottom of body */
+  body > #ssg-search-btn:not(.site-header #ssg-search-btn),
+  #ssg-search-widget,
+  .ssg-search-floating {
+    display: none !important;
   }
 
   /* Skip Link (WCAG AAA Requirement) */
@@ -182,11 +189,13 @@
     border-radius: 4px;
   }
 
-  /* SSG Search Widget Integration Fix (100% WCAG AAA Compliant) */
-  #ssg-search-btn {
+  /* SSG Search Widget Header Integration (100% WCAG AAA Compliant) */
+  .site-header #ssg-search-btn {
     position: relative !important;
     top: auto !important;
     right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
     inset: auto !important;
     z-index: 10 !important;
     display: inline-flex !important;
@@ -206,12 +215,12 @@
     text-transform: none !important;
   }
 
-  #ssg-search-btn:hover {
+  .site-header #ssg-search-btn:hover {
     background: var(--btn-secondary-hover) !important;
     border-color: var(--border-focus) !important;
   }
 
-  #ssg-search-btn kbd {
+  .site-header #ssg-search-btn kbd {
     background: var(--bg-code) !important;
     border: 1px solid var(--border-subtle) !important;
     color: #38bdf8 !important;
@@ -379,20 +388,23 @@
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
 
   .theme-toggle-btn {
     background: var(--btn-secondary-bg);
     border: 1px solid var(--btn-secondary-border);
     color: var(--btn-secondary-text);
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: 0.875rem;
     font-weight: 700;
     transition: all var(--transition-fast);
     text-transform: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .theme-toggle-btn:hover {
@@ -1135,7 +1147,8 @@
     padding: 12px 16px !important;
     font-family: var(--font-code) !important;
     font-size: 0.875rem !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    overflow-x: auto;
   }
 
   #eco-snippet {
@@ -1371,7 +1384,7 @@
   .status-valid { color: var(--accent-emerald); font-weight: 700; }
   .status-invalid { color: #ef4444; font-weight: 700; }
 
-  /* Setup Cards */
+  /* Setup Cards Side-by-Side Wrapper System (Zero Button Overlap Guaranteed) */
   .docs-setup {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -1380,7 +1393,7 @@
 
   .setup-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
   }
 
@@ -1392,7 +1405,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    position: relative;
   }
 
   .setup-card h4 {
@@ -1402,14 +1414,17 @@
   }
 
   .setup-card-pre-wrapper {
-    position: relative;
     display: flex;
     align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
   }
 
   .setup-card pre {
+    flex: 1;
     background: #0f172a !important;
-    padding: 12px 50px 12px 14px;
+    padding: 10px 12px !important;
     border-radius: var(--radius-sm);
     font-family: var(--font-code);
     font-size: 0.85rem;
@@ -1417,27 +1432,50 @@
     overflow-x: auto;
     width: 100%;
     margin: 0;
+    border: 1px solid var(--border-card);
   }
 
   .setup-card .card-copy-btn {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static !important;
+    transform: none !important;
+    inset: auto !important;
+    flex-shrink: 0;
+    height: 100%;
+    padding: 10px 14px !important;
     background: var(--btn-secondary-bg) !important;
     border: 1px solid var(--btn-secondary-border) !important;
     color: var(--btn-secondary-text) !important;
-    padding: 4px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.75rem;
-    text-transform: none !important;
     font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    border-radius: var(--radius-sm) !important;
   }
 
   .setup-card .card-copy-btn:hover {
     background: var(--btn-secondary-hover) !important;
     border-color: var(--border-focus) !important;
+  }
+
+  /* Post Body Callout Card */
+  .prose-container {
+    max-width: var(--max-width);
+    margin: 40px auto 0;
+    padding: 0 24px;
+  }
+
+  .prose-container-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 32px 40px;
+    text-align: center;
+  }
+
+  .prose-container-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 840px;
+    margin: 0 auto;
   }
 
   /* --------------------------------------------------------------------------
