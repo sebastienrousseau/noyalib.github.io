@@ -424,9 +424,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.03em;
     margin-bottom: 20px;
     color: var(--text-main);
@@ -460,7 +460,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     margin-bottom: 48px;
   }
@@ -469,8 +469,8 @@
     background: var(--bg-card);
     border: 1px solid var(--border-card);
     border-radius: var(--radius-pill);
-    padding: 4px 12px;
-    font-size: 0.8rem;
+    padding: 6px 14px;
+    font-size: 0.825rem;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -499,10 +499,10 @@
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.08) 100%);
     border: 1px solid var(--accent-indigo);
     border-radius: var(--radius-lg);
-    padding: 40px;
+    padding: 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 32px;
     align-items: center;
   }
 
@@ -549,10 +549,14 @@
     padding: 16px 20px;
     display: block;
     line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: var(--font-code);
+    font-size: 0.85rem;
   }
 
-  .diff-del { color: #f87171; background: rgba(239, 68, 68, 0.15); display: block; padding: 2px 4px; border-radius: 3px; }
-  .diff-add { color: #34d399; background: rgba(52, 211, 153, 0.15); display: block; padding: 2px 4px; border-radius: 3px; }
+  .diff-del { color: #f87171; background: rgba(239, 68, 68, 0.15); display: block; padding: 2px 6px; border-radius: 3px; }
+  .diff-add { color: #34d399; background: rgba(52, 211, 153, 0.15); display: block; padding: 2px 6px; border-radius: 3px; }
 
   /* Benchmark Methodology Card */
   .benchmark-methodology-card {
@@ -563,7 +567,7 @@
     margin-top: 32px;
   }
 
-  /* 980px Centered Full-Width macOS Window */
+  /* 980px Centered Full-Width macOS Window (Scalable Dynamic Height) */
   .hero-code-window {
     width: 100%;
     max-width: 980px;
@@ -575,7 +579,9 @@
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
-    height: 440px;
+    min-height: 380px;
+    max-height: 520px;
+    height: auto;
     text-align: left;
   }
 
@@ -633,6 +639,7 @@
     align-items: center;
     gap: 6px;
     white-space: nowrap;
+    flex-shrink: 0;
     transition: all var(--transition-fast);
   }
 
@@ -888,7 +895,7 @@
 
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
   }
 
@@ -907,7 +914,7 @@
   }
 
   .feature-icon-wrapper {
-    width: 52px;
+    width: 58px;
     height: 38px;
     border-radius: var(--radius-sm);
     background: var(--code-inline-bg);
@@ -915,7 +922,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
+    font-size: 0.825rem;
     font-family: var(--font-code);
     font-weight: 700;
     margin-bottom: 20px;
@@ -968,6 +975,7 @@
     transition: all var(--transition-fast);
     border-bottom: 2px solid transparent;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .eco-tab-btn:hover {
@@ -1052,6 +1060,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    overflow-x: auto;
   }
 
   .demo-tab-btn {
@@ -1063,6 +1072,8 @@
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: all var(--transition-fast);
   }
 
@@ -1148,6 +1159,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .payload-btn {
@@ -1191,6 +1203,8 @@
     justify-content: space-between;
     font-size: 0.9rem;
     font-weight: 600;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .bench-meter-bar {
@@ -1280,7 +1294,7 @@
 
   .setup-card pre {
     background: var(--bg-code);
-    padding: 12px 40px 12px 14px;
+    padding: 12px 50px 12px 14px;
     border-radius: var(--radius-sm);
     font-family: var(--font-code);
     font-size: 0.85rem;
@@ -1407,13 +1421,14 @@
     font-size: 0.9rem;
   }
 
-  /* Table Contrast System (100% WCAG AAA Compliant in Light & Dark) */
+  /* Table Contrast & Overflow System (100% WCAG AAA Compliant) */
   .prose table {
     width: 100%;
+    display: block;
+    overflow-x: auto;
     border-collapse: collapse;
     margin-bottom: 32px;
     border-radius: var(--radius-md);
-    overflow: hidden;
     border: 1px solid var(--border-card);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
@@ -1424,6 +1439,7 @@
     border-bottom: 1px solid var(--border-subtle);
     color: var(--text-main);
     font-size: 0.95rem;
+    white-space: normal;
   }
 
   .prose th {
@@ -1559,7 +1575,7 @@
   @media (max-width: 640px) {
     .main-nav { display: none; }
     .footer-inner { grid-template-columns: 1fr; }
-    .hero-title { font-size: 2.25rem; }
+    .hero-title { font-size: 2.1rem; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
   }
 }
