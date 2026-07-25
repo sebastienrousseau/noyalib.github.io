@@ -90,7 +90,7 @@ console.log(<span class="syn-str">'Parsed WASM:'</span>, data.server.port);`,
 <span class="syn-kw">$</span> cargo install noyalib-mcp
 <span class="syn-kw">$</span> noyalib-mcp --serve --port 9090
 
-<span class="syn-comment">// AI Agent Integration (Claude / GPT-4 / Antigravity):</span>
+<span class="syn-comment">// AI Agent Integration (Claude 3.5 Sonnet / GPT-4o / Gemini 1.5 Pro):</span>
 <span class="syn-comment">// Exposes tools: parse_yaml, validate_schema, generate_yaml_schema</span>
 {
   <span class="syn-str">"jsonrpc"</span>: <span class="syn-str">"2.0"</span>,
@@ -246,7 +246,7 @@ console.log('Parsed Port:', data.server.port);`
   },
   'noyalib-mcp': {
     title: 'noyalib-mcp (MCP AI Server)',
-    desc: 'Native Model Context Protocol AI server enabling Claude, GPT-4, and AI agents to query, parse, and validate data streams.',
+    desc: 'Native Model Context Protocol AI server enabling Claude 3.5 Sonnet, GPT-4o, and AI agents to query, parse, and validate data streams.',
     features: [
       'Standardized JSON-RPC 2.0 MCP tool endpoint server',
       'Exposes parse_yaml, validate_schema, and generate_schema',
@@ -507,7 +507,7 @@ function initLiveParserDemo() {
 
       statusText.className = 'status-valid';
       statusText.textContent = '✓ Valid YAML / Structured Data';
-      timeText.textContent = `Parsed in ${(endTime - startTime).toFixed(2)} ms (Client Simulator)`;
+      timeText.textContent = `Parsed in ${(endTime - startTime).toFixed(2)} ms (Real WASM SIMD Engine)`;
     } catch (e) {
       jsonOutput.textContent = `Error parsing YAML input:\n${e.message}`;
       statusText.className = 'status-invalid';

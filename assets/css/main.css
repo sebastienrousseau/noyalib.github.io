@@ -281,14 +281,14 @@
   .main-nav ul {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
     list-style: none;
   }
 
   .main-nav a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.925rem;
     font-weight: 600;
     transition: color var(--transition-fast);
   }
@@ -386,7 +386,7 @@
   .hero {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 80px 24px 60px;
+    padding: 60px 24px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -394,7 +394,7 @@
   }
 
   .hero-header {
-    max-width: 840px;
+    max-width: 860px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -424,7 +424,7 @@
   }
 
   .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
@@ -439,11 +439,11 @@
   }
 
   .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-muted);
     line-height: 1.6;
-    margin: 0 auto 36px;
-    max-width: 680px;
+    margin: 0 auto 32px;
+    max-width: 720px;
   }
 
   .hero-ctas {
@@ -452,7 +452,115 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  /* Trust Signals Bar */
+  .trust-signals-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-bottom: 48px;
+  }
+
+  .trust-badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-pill);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+  }
+
+  .trust-badge:hover {
+    border-color: var(--accent-indigo);
+    color: var(--text-main);
+  }
+
+  .badge-label { font-weight: 600; color: var(--text-subtle); }
+  .badge-val { font-family: var(--font-code); font-weight: 700; color: var(--text-main); }
+  .badge-pass { color: var(--accent-emerald); }
+
+  /* Migration Banner Section ("Coming from serde_yaml?") */
+  .migration-banner-section {
+    max-width: var(--max-width);
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+
+  .migration-container {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.08) 100%);
+    border: 1px solid var(--accent-indigo);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .migration-header .section-title {
+    font-size: 1.85rem;
+    margin-bottom: 12px;
+  }
+
+  .migration-header .section-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .migration-diff-box {
+    background: var(--bg-code);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .diff-header {
+    background: var(--bg-code-header);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.825rem;
+    font-family: var(--font-code);
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .migration-link {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .migration-link:hover {
+    text-decoration: underline;
+  }
+
+  .diff-code {
+    padding: 16px 20px;
+    display: block;
+    line-height: 1.6;
+  }
+
+  .diff-del { color: #f87171; background: rgba(239, 68, 68, 0.15); display: block; padding: 2px 4px; border-radius: 3px; }
+  .diff-add { color: #34d399; background: rgba(52, 211, 153, 0.15); display: block; padding: 2px 4px; border-radius: 3px; }
+
+  /* Benchmark Methodology Card */
+  .benchmark-methodology-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-top: 32px;
   }
 
   /* 980px Centered Full-Width macOS Window */
@@ -1445,6 +1553,7 @@
     .demo-editor-grid { grid-template-columns: 1fr; }
     .editor-pane { border-right: none; border-bottom: 1px solid var(--border-subtle); }
     .footer-inner { grid-template-columns: 1fr 1fr; }
+    .migration-container { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 640px) {
