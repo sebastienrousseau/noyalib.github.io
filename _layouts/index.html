@@ -55,6 +55,12 @@
   <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Global Copy Feedback Toast Notification -->
+  <div id="copy-toast" class="toast-notification" role="status" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="copy-toast-msg">Copied snippet to clipboard!</span>
+  </div>
+
   <!-- Ambient Glow Decorators -->
   <div class="bg-glow-container" aria-hidden="true">
     <div class="glow-top-center"></div>
@@ -111,9 +117,8 @@
         </p>
 
         <div class="hero-ctas">
-          <button class="btn btn-primary copy-btn" data-copy-target="cargo-cmd-text">
+          <button class="btn btn-primary copy-btn" data-copy-text="cargo add noyalib --features simd,rayon">
             <span>cargo add noyalib</span>
-            <span id="cargo-cmd-text" class="sr-only">cargo add noyalib</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           </button>
 
@@ -373,11 +378,23 @@
 
             <div style="margin-top: 24px;">
               <span style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 6px;">Install Command:</span>
-              <pre style="background: var(--bg-code); padding: 12px 16px; border-radius: var(--radius-sm); font-family: var(--font-code); color: var(--accent-cyan);" id="eco-install-cmd">cargo add noyalib</pre>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <pre style="background: var(--bg-code); padding: 12px 16px; border-radius: var(--radius-sm); font-family: var(--font-code); color: var(--accent-cyan); flex: 1;" id="eco-install-cmd">cargo add noyalib --features simd,rayon</pre>
+                <button class="copy-btn" data-copy-target="eco-install-cmd" aria-label="Copy install command">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="eco-code">
+          <div class="eco-code" style="position: relative;">
+            <div style="position: absolute; right: 12px; top: 12px; z-index: 10;">
+              <button class="copy-btn" data-copy-target="eco-snippet" aria-label="Copy code snippet">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Copy</span>
+              </button>
+            </div>
             <pre class="code-block" style="background: var(--bg-code); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-card);"><code id="eco-snippet">use noyalib::{parallel, Value};
 
 let docs = parallel::values("--- doc1: val --- doc2: val")?;
@@ -436,21 +453,31 @@ assert_eq!(docs.len(), 2);</code></pre>
       </div>
     </section>
 
-    <!-- Interactive Live Parser & Validator Demo -->
+    <!-- Interactive Live Parser, Benchmark Matrix & Schema Explorer -->
     <section id="demo" class="interactive-demo" aria-labelledby="demo-title">
       <div class="section-header">
-        <span class="section-tag">Browser Playground</span>
-        <h2 class="section-title">Test the Simulator Live</h2>
+        <span class="section-tag">Interactive Engine Playground</span>
+        <h2 class="section-title">Test the Engine Simulator &amp; Validator Live</h2>
         <p class="section-desc">
-          Paste YAML or structured data below to parse, validate, and convert in real-time.
+          Convert YAML, benchmark WASM parsing throughput live, and explore JSON Schema 2020-12 real-time diagnostics.
         </p>
       </div>
 
       <div class="demo-box">
+        <!-- Interactive Mode Toolbar -->
         <div class="demo-toolbar">
-          <div class="demo-title">
-            <span>Interactive YAML to JSON Converter</span>
+          <div class="demo-tabs" role="tablist" aria-label="Playground Mode Tabs">
+            <button id="tab-mode-converter" class="demo-tab-btn active" role="tab" aria-selected="true" data-mode="converter">
+              YAML to JSON Converter
+            </button>
+            <button id="tab-mode-benchmark" class="demo-tab-btn" role="tab" aria-selected="false" data-mode="benchmark">
+              ⚡ WASM Throughput Benchmark
+            </button>
+            <button id="tab-mode-schema" class="demo-tab-btn" role="tab" aria-selected="false" data-mode="schema">
+              🔍 Schema 2020-12 &amp; LSP Diagnostics
+            </button>
           </div>
+
           <div class="demo-controls">
             <button id="demo-btn-format" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.875rem;">
               Format &amp; Convert
@@ -458,7 +485,8 @@ assert_eq!(docs.len(), 2);</code></pre>
           </div>
         </div>
 
-        <div class="demo-editor-grid">
+        <!-- Mode 1: YAML to JSON Converter -->
+        <div id="panel-mode-converter" class="demo-editor-grid">
           <div class="editor-pane">
             <span class="pane-label">YAML Input</span>
             <textarea id="demo-yaml-input" class="code-input" aria-label="YAML Input Textarea">name: noyalib
@@ -487,8 +515,95 @@ performance:
           </div>
         </div>
 
+        <!-- Mode 2: Live WASM Throughput Comparison Matrix -->
+        <div id="panel-mode-benchmark" class="demo-bench-panel" style="display: none;">
+          <div class="bench-controls">
+            <div>
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Payload Size Matrix</h4>
+              <p style="color: var(--text-muted); font-size: 0.875rem;">Select structured data stream size to benchmark live in your browser window.</p>
+            </div>
+
+            <div class="payload-picker">
+              <button class="payload-btn active" data-size="100kb">100 KB Stream</button>
+              <button class="payload-btn" data-size="1mb">1 MB Enterprise Chunk</button>
+              <button class="payload-btn" data-size="10mb">10 MB Telemetry Feed</button>
+              <button id="btn-run-bench" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.85rem;">Run Live WASM Benchmark</button>
+            </div>
+          </div>
+
+          <div class="bench-comparison-box">
+            <div class="bench-meter-row">
+              <div class="bench-meter-header">
+                <span style="color: var(--text-main);">noyalib WASM Engine (SIMD + Zero-Copy Byte Dispatch)</span>
+                <span id="bench-val-noya" style="color: var(--accent-cyan); font-family: var(--font-code); font-weight: 700;">520 MB/s (0.19 ms) — 7.6x FASTER</span>
+              </div>
+              <div class="bench-meter-bar">
+                <div id="bench-bar-noya" class="bench-meter-fill fill-noya-parallel" style="width: 100%;"></div>
+              </div>
+            </div>
+
+            <div class="bench-meter-row">
+              <div class="bench-meter-header">
+                <span style="color: var(--text-muted);">Standard Client JS / JSON Parser (Legacy Fallback)</span>
+                <span id="bench-val-standard" style="color: var(--text-muted); font-family: var(--font-code);">68 MB/s (1.47 ms)</span>
+              </div>
+              <div class="bench-meter-bar">
+                <div id="bench-bar-standard" class="bench-meter-fill fill-serde" style="width: 13%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode 3: JSON Schema 2020-12 & LSP Diagnostics Explorer -->
+        <div id="panel-mode-schema" class="demo-editor-grid" style="display: none;">
+          <div class="editor-pane">
+            <div class="pane-label">
+              <span>YAML Document (LSP Live Diagnostics)</span>
+              <button id="btn-toggle-schema-error" class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.75rem;">Trigger Schema Error</button>
+            </div>
+            <textarea id="schema-yaml-input" class="code-input" aria-label="YAML Document Textarea">server:
+  name: noyalib-gateway
+  port: 8080
+  security:
+    post_quantum: true
+    algorithms: [Kyber1024, Dilithium5]
+  mcp_server:
+    enabled: true</textarea>
+          </div>
+
+          <div class="editor-pane">
+            <span class="pane-label">JSON Schema 2020-12 &amp; Diagnostic Log</span>
+            <div style="padding: 16px; flex: 1; overflow-y: auto; background: var(--bg-code);">
+              <pre id="schema-json-def" style="background: transparent; padding: 0; margin-bottom: 16px; font-family: var(--font-code); font-size: 0.825rem; color: #38bdf8;">{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "noyalib Config Schema",
+  "type": "object",
+  "required": ["server"],
+  "properties": {
+    "server": {
+      "type": "object",
+      "required": ["name", "port"],
+      "properties": {
+        "name": { "type": "string" },
+        "port": { "type": "integer", "minimum": 1024 }
+      }
+    }
+  }
+}</pre>
+
+              <div id="lsp-diagnostic-status" class="lsp-diagnostics-box" style="background: rgba(52, 211, 153, 0.1); border-color: var(--accent-emerald); color: var(--accent-emerald);">
+                <div class="lsp-diag-header" style="color: var(--accent-emerald);">
+                  <span>✓ LSP Diagnostic Engine: 0 Errors / 0 Warnings</span>
+                </div>
+                <div>Schema validation passed cleanly. Strict type contracts satisfied.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Bar -->
         <div class="demo-status-bar">
-          <span id="demo-status-text" class="status-valid">Valid YAML / Structured Data</span>
+          <span id="demo-status-text" class="status-valid">✓ Valid YAML / Structured Data</span>
           <span id="demo-time-text">Parsed in 0.18 ms (Client Simulator)</span>
         </div>
       </div>
@@ -506,25 +621,37 @@ performance:
         <div class="setup-card">
           <h4>Rust Library</h4>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Add to Cargo project with SIMD and Rayon acceleration.</p>
-          <pre>cargo add noyalib --features simd,rayon</pre>
+          <div class="setup-card-pre-wrapper">
+            <pre id="cmd-cargo-add">cargo add noyalib --features simd,rayon</pre>
+            <button class="card-copy-btn" data-copy-target="cmd-cargo-add" aria-label="Copy cargo command">Copy</button>
+          </div>
         </div>
 
         <div class="setup-card">
           <h4>Terminal CLI</h4>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Install command-line parser &amp; validator binary.</p>
-          <pre>cargo install noya-cli</pre>
+          <div class="setup-card-pre-wrapper">
+            <pre id="cmd-cargo-cli">cargo install noya-cli</pre>
+            <button class="card-copy-btn" data-copy-target="cmd-cargo-cli" aria-label="Copy CLI command">Copy</button>
+          </div>
         </div>
 
         <div class="setup-card">
           <h4>WebAssembly</h4>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Install NPM package for Web &amp; Cloudflare Workers.</p>
-          <pre>npm install noyalib-wasm</pre>
+          <div class="setup-card-pre-wrapper">
+            <pre id="cmd-npm-wasm">npm install noyalib-wasm</pre>
+            <button class="card-copy-btn" data-copy-target="cmd-npm-wasm" aria-label="Copy WASM command">Copy</button>
+          </div>
         </div>
 
         <div class="setup-card">
           <h4>Model Context Protocol</h4>
           <p style="color: var(--text-muted); font-size: 0.9rem;">Run native MCP server for AI tools &amp; LLMs.</p>
-          <pre>cargo install noyalib-mcp</pre>
+          <div class="setup-card-pre-wrapper">
+            <pre id="cmd-cargo-mcp">cargo install noyalib-mcp</pre>
+            <button class="card-copy-btn" data-copy-target="cmd-cargo-mcp" aria-label="Copy MCP command">Copy</button>
+          </div>
         </div>
       </div>
     </section>
