@@ -1,12 +1,12 @@
 {
   "background_color": "#ffffff",
-  "description": "Detailed performance benchmarks comparing noyalib against serde_yaml, PyYAML, and standard legacy parsers.",
+  "description": "Verifiable Criterion.rs performance benchmarks comparing noyalib against maintained Rust crates (serde-saphyr, yaml-rust",
   "display": "standalone",
   "icons": [
     {
       "purpose": "any maskable",
       "sizes": "512x512",
-      "src": "https://kura.pro/noyalib/images/favicon.ico",
+      "src": "assets/images/logo.svg",
       "type": "image/svg+xml"
     }
   ],

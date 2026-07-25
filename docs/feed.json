@@ -1,6 +1,6 @@
 {
-  "feed_url": "http://127.0.0.1:8000/feed.json",
-  "home_page_url": "http://127.0.0.1:8000/",
+  "feed_url": "https://noyalib.com/feed.json",
+  "home_page_url": "https://noyalib.com/",
   "items": [
     {
       "authors": [
@@ -11,10 +11,10 @@
       "content_html": "noyalib is a high-performance data &amp; YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support. 100% YAML Test Suite compliant.",
       "date_modified": "2026-07-25T00:00:00+00:00",
       "date_published": "2026-07-25T00:00:00+00:00",
-      "id": "http://127.0.0.1:8000/rss.xml/",
+      "id": "https://noyalib.com/rss.xml/",
       "tags": [],
-      "title": "noyalib: High-Performance Data &amp; YAML Engine for Rust, WebAssembly &amp; AI",
-      "url": "http://127.0.0.1:8000/rss.xml/"
+      "title": "noyalib: Drop-In Rust &amp; WebAssembly YAML Engine",
+      "url": "https://noyalib.com/rss.xml/"
     }
   ],
   "language": "en-GB",

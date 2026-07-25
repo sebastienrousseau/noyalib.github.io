@@ -15,9 +15,12 @@ cp -r assets docs/
 # Create CNAME in docs output directory for GitHub Pages
 echo "noyalib.com" > docs/CNAME
 
-# Fix localhost canonical URLs and og:type in generated output
-find docs -name "*.html" -exec sed -i '' 's|http://127.0.0.1:8000/index.html|https://noyalib.com/|g' {} +
-find docs -name "*.html" -exec sed -i '' 's|http://127.0.0.1:8000/|https://noyalib.com/|g' {} +
+# Fix all localhost canonical URLs, RSS/Atom/JSON feed links, and og:type in generated output
+find docs -type f \( -name "*.html" -o -name "*.xml" -o -name "*.json" -o -name "*.txt" \) -exec sed -i '' 's|http://127.0.0.1:8000/index.html|https://noyalib.com/|g' {} +
+find docs -type f \( -name "*.html" -o -name "*.xml" -o -name "*.json" -o -name "*.txt" \) -exec sed -i '' 's|http://127.0.0.1:8000/|https://noyalib.com/|g' {} +
+find docs -type f \( -name "*.html" -o -name "*.xml" -o -name "*.json" -o -name "*.txt" \) -exec sed -i '' 's|http://127.0.0.1:8000|https://noyalib.com|g' {} +
+
+# Normalize page og:type to website
 sed -i '' 's|<meta property="og:type" content="article">|<meta property="og:type" content="website">|g' docs/index.html
 
 echo "✓ Build complete. Output generated in docs/"
