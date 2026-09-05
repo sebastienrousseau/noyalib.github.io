@@ -229,6 +229,24 @@ export function parse(yaml) {
 }
 
 /**
+ * Parse YAML and return the JSON data model: like [`parse`], but every
+ * tag is stripped recursively, so the result is exactly what the YAML
+ * test suite's expected JSON is and what a JSON consumer expects.
+ * `parse` keeps tags as `{"!tag": value}` for callers that need them.
+ * @param {string} yaml
+ * @returns {any}
+ */
+export function parseJson(yaml) {
+    const ptr0 = passStringToWasm0(yaml, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ret = wasm.parseJson(ptr0, len0);
+    if (ret[2]) {
+        throw takeFromExternrefTable0(ret[1]);
+    }
+    return takeFromExternrefTable0(ret[0]);
+}
+
+/**
  * Serialize a JS object to a YAML string.
  * @param {any} value
  * @returns {string}

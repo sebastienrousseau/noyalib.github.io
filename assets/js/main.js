@@ -536,7 +536,7 @@ function initLiveParserDemo() {
       const noyalib = await loadEngine();
       if (ticket !== pending) return;
       const startTime = performance.now();
-      const parsed = noyalib.parse(rawVal);
+      const parsed = noyalib.parseJson(rawVal);
       const elapsed = performance.now() - startTime;
       jsonOutput.textContent = JSON.stringify(parsed, null, 2);
       statusText.className = 'status-valid';
