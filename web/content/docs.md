@@ -23,7 +23,7 @@ lead: "Every entry point, what it needs, and how to fit it into your project, yo
 
 ```toml
 [dependencies]
-noyalib = "0.0.33"
+noyalib = "0.0.34"
 ```
 
 noyalib needs Rust 1.86 or newer and builds on every tier-1 platform. With
@@ -55,9 +55,9 @@ docs.rs.
 ```rust
 use noyalib::cst::parse_document;
 
-let mut doc = parse_document("# release\nversion: 0.0.32\n")?;
-doc.set("version", "0.0.33")?;
-assert_eq!(doc.to_string(), "# release\nversion: 0.0.33\n");
+let mut doc = parse_document("# release\nversion: 0.0.33\n")?;
+doc.set("version", "0.0.34")?;
+assert_eq!(doc.to_string(), "# release\nversion: 0.0.34\n");
 ```
 
 The lossless tree keeps comments, blank lines and indentation. It can rename

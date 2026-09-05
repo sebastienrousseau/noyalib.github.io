@@ -25,7 +25,7 @@ Rename the package in Cargo.toml and change nothing else:
 
 ```toml
 [dependencies]
-serde_yaml = { package = "noyalib-serde-yaml", version = "=0.0.33" }
+serde_yaml = { package = "noyalib-serde-yaml", version = "=0.0.34" }
 ```
 
 Your code still says `serde_yaml::from_str` and `serde_yaml::to_string`, and
@@ -35,7 +35,7 @@ it renders errors in the same words. An 18-case contract suite, captured live
 from `serde_yaml` 0.9, pins that behaviour on every release.
 
 The pin is exact on purpose. The shim releases in lockstep with the core at
-the same version, so `=0.0.33` names one known pair.
+the same version, so `=0.0.34` names one known pair.
 
 ## What stays the same, and what does not
 
