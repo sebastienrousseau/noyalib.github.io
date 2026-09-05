@@ -1,0 +1,34 @@
+# noyalib.com — Shokunin SSG configuration.
+#
+# Paths are relative to the directory ssg is invoked from, which is the
+# repository root (see `make web`). The output directory is the artefact
+# GitHub Pages publishes; the WebAssembly bundle and the theme assets are
+# copied in after the content build, because ssg does not copy its
+# template-directory assets into the output.
+
+site_name = "noyalib"
+site_title = "noyalib — YAML 1.2 for Rust, WebAssembly and AI agents"
+site_description = "A YAML 1.2 parser and serialiser for Rust with full serde integration and zero unsafe code, plus a drop-in serde_yaml replacement, a CLI, a language server, an MCP server and a WebAssembly build."
+base_url = "https://noyalib.com"
+language = "en-GB"
+
+content_dir = "web/content"
+template_dir = "web/_layouts"
+output_dir = "web/public"
+
+# Agentic discovery. Emits /agents.txt, /.well-known/ai-plugin.json and
+# /.well-known/mcp.json. noyalib ships a real MCP server (noyalib-mcp),
+# so an assistant that finds the manifest can install and use it.
+[agents]
+agents_txt = true
+ai_plugin = true
+
+[agents.mcp]
+enabled = true
+
+# Security headers for platforms that read `_headers`. GitHub Pages ignores
+# the file; it is kept for frame-ancestors, which a <meta> CSP cannot
+# express, and so that moving behind Cloudflare or Netlify later does not
+# mean rediscovering this.
+[edge_headers]
+targets = ["netlify", "cloudflare"]

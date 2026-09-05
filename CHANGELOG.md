@@ -1,19 +1,38 @@
 # Changelog
 
-All notable changes to `noyalib.github.io` will be documented in this file.
+All notable changes to noyalib.com.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [Unreleased]
 
-## [v0.0.1] - 2026-07-25
+### Changed
 
-### Added
-- Initial release of noyalib.github.io portal website powered by Static Site Generator SSG (v0.0.46).
-- Markdown posts in `_posts/` with complete YAML frontmatter metadata.
-- Modular Tera layout templates in `_layouts/` (`index.html`, `page.html`).
-- Integration of Skeletonic CSS v2.0.0 framework with dark and light theme switcher.
-- Interactive macOS Safari browser window code preview with active tab switcher.
-- Interactive client-side YAML to JSON converter simulator.
-- Comprehensive documentation pages (`getting-started`, `suite`, `use-cases`, `migration`, `benchmarks`, `security`, `rust-ecosystem`, `faq`, `about`).
-- 100% WCAG 2.1 AAA accessibility compliance.
-- Automated GitHub Actions deployment workflow targeting `docs/` with custom domain `noyalib.com`.
+- Rebuilt on the ssg configuration file and a curated theme: a base layout
+  with a strict content security policy and structured data, a five-category
+  navigation with one action, a six-column footer, a metrics band and a
+  consistent masthead on every page.
+- Seventeen pages written from the repositories' own documents: solutions,
+  migration, playground, developer docs, ecosystem, MCP, conformance,
+  security, FAQ, about, news, contact, legal and the 404.
+- The playground runs the published noyalib-wasm bundle in the page, with
+  YAML to JSON and back.
+- No third-party requests: the Google Fonts and animation stylesheets are
+  gone, the design uses the system font stack.
+- Real quality gates on every push and deploy: readability, search metadata,
+  sitemap, internal links, WCAG 2.2 AA with axe-core in every theme
+  combination, reflow, focus order, terminal swap and the browser console.
+- Agent discovery: agents.txt, mcp.json and ai-plugin.json at the root.
+- RSS, Atom and JSON feeds, a news sitemap, and NewsArticle and FAQPage
+  structured data read back from the built pages.
+
+### Removed
+
+- The tag pages that leaked other projects' tags, the hand-patched build
+  script, the root index.html with noyalib.github.io canonicals, and the
+  quality-gate workflow that installed tools it never ran.
+
+## [0.0.33] - 2026-09-05
+
+### Changed
+
+- Site version bumped to the v0.0.33 release; the demo switched to the real
+  engine through `parseJson`.

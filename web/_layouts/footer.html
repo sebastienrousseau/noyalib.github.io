@@ -1,0 +1,101 @@
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- Organised the way the site is: by what somebody is trying to do, not by
+         what we happen to have built. This is where people land when the page
+         above did not answer them. -->
+    <div class="footer-cols">
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="{{locale_path}}migration/">Replace serde_yaml</a></li>
+          <li><a href="{{locale_path}}playground/">Parse YAML in the browser</a></li>
+          <li><a href="{{locale_path}}docs/#cli">Format and validate in CI</a></li>
+          <li><a href="{{locale_path}}docs/#lsp">YAML in your editor</a></li>
+          <li><a href="{{locale_path}}mcp/">YAML edits by an AI agent</a></li>
+          <li><a href="{{locale_path}}solutions/">All solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Ecosystem</h2>
+        <ul>
+          <li><a href="{{locale_path}}ecosystem/">The six crates</a></li>
+          <li><a href="https://crates.io/crates/noyalib" rel="noopener noreferrer">noyalib on crates.io</a></li>
+          <li><a href="https://crates.io/crates/noyalib-serde-yaml" rel="noopener noreferrer">noyalib-serde-yaml</a></li>
+          <li><a href="https://crates.io/crates/noya-cli" rel="noopener noreferrer">noya-cli</a></li>
+          <li><a href="https://www.npmjs.com/package/@sebastienrousseau/noyalib-wasm" rel="noopener noreferrer">noyalib-wasm on npm</a></li>
+          <li><a href="https://www.npmjs.com/package/@sebastienrousseau/noyalib-mcp" rel="noopener noreferrer">noyalib-mcp on npm</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Developers</h2>
+        <ul>
+          <li><a href="{{locale_path}}docs/">Getting started</a></li>
+          <li><a href="https://docs.rs/noyalib" rel="noopener noreferrer">API reference on docs.rs</a></li>
+          <li><a href="https://sebastienrousseau.github.io/noyalib/manual/" rel="noopener noreferrer">The manual</a></li>
+          <li><a href="{{locale_path}}faq/">Frequently asked questions</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib" rel="noopener noreferrer">Source on GitHub</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib/releases" rel="noopener noreferrer">Releases</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="{{locale_path}}about/">Who builds noyalib</a></li>
+          <li><a href="{{locale_path}}news/">News and releases</a></li>
+          <li><a href="{{locale_path}}contact/">Contact</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib/blob/main/GOVERNANCE.md" rel="noopener noreferrer">Governance</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">Contributing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Why trust it</h2>
+        <ul>
+          <li><a href="{{locale_path}}conformance/">Conformance evidence</a></li>
+          <li><a href="{{locale_path}}security/">Security and supply chain</a></li>
+          <li><a href="https://github.com/sebastienrousseau/noyalib/blob/main/SECURITY.md" rel="noopener noreferrer">Security policy</a></li>
+          <li><a href="https://www.bestpractices.dev/projects/13057" rel="noopener noreferrer">OpenSSF Best Practices</a></li>
+          <li><a href="{{locale_path}}legal/">Legal and privacy</a></li>
+          <li><a href="{{site_path}}sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Stay connected</h2>
+        <ul>
+          <li><a href="https://github.com/sebastienrousseau/noyalib/discussions" rel="noopener noreferrer">Discussions</a></li>
+          <li><a href="{{locale_path}}news/">Release notes</a></li>
+          <li><a href="{{site_path}}rss.xml">RSS</a></li>
+          <li><a href="{{site_path}}atom.xml">Atom</a></li>
+          <li><a href="{{site_path}}feed.json">JSON Feed</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- The three questions an engineering team asks before adopting a
+         parser: where their data goes, whether it is safe to run on untrusted
+         input, and whether it is a licence risk. Stating them here means
+         nobody has to hunt for them. -->
+    <div class="footer-assurance">
+      <p><strong>Your YAML never leaves your machine.</strong> The library, the
+      command line and the editor tools run locally, and the browser playground
+      runs inside your tab. There is no noyalib-operated service that could
+      receive a document.</p>
+      <p><strong>Built to be handed untrusted input.</strong> No unsafe code,
+      bounded nesting, alias budgets and size limits by default, and fuzzing
+      and Miri on every change.</p>
+      <p><strong>Open source, permissively licensed.</strong> Apache-2.0 or MIT,
+      at your option, with no account, API key or licence server.</p>
+    </div>
+
+    <div class="footer-legal">
+      <!-- NOYALIB_RELEASE is replaced by `make web` with the version being
+           built, so the site always states which release it reflects. ssg does
+           not pass custom config keys to templates, so this is substituted in
+           the built output rather than rendered. -->
+      <span>&copy; {{copyright_year}} Sebastien Rousseau. noyalib NOYALIB_RELEASE, released under Apache-2.0 or MIT.</span>
+      <span>YAML is a specification of the YAML project. noyalib is an independent open-source project. <a href="{{locale_path}}legal/">Legal and privacy</a>.</span>
+      <span>WCAG 2.2 verified on every deploy.</span>
+    </div>
+
+  </div>
+</footer>

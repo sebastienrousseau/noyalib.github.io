@@ -1,38 +1,71 @@
-# noyalib.github.io
+<!-- SPDX-License-Identifier: Apache-2.0 OR MIT -->
 
-Official digital portal for **noyalib**, an enterprise-grade data and YAML engine written in 100% safe Rust featuring zero-copy SIMD parsing, parallel Rayon streaming, WebAssembly runtime, Model Context Protocol (MCP) AI server, and LSP support.
+# noyalib.com
 
-Built with **Static Site Generator SSG** (`ssg` v0.0.46) and **Skeletonic CSS Framework** (v2.0.0).
+The website for [noyalib](https://github.com/sebastienrousseau/noyalib), the
+YAML 1.2 library for Rust, and its five companion crates. Built with
+[ssg](https://crates.io/crates/ssg), published to GitHub Pages at
+<https://noyalib.com>.
 
-## Features
-
-- **Content-First SSG Architecture**: Markdown source files in `_posts/` with full YAML frontmatter metadata compiled via Tera templates in `_layouts/`.
-- **Skeletonic CSS & OKLCH Theme Engine**: 100% WCAG 2.1 AAA color contrast compliance in both dark and light modes.
-- **macOS Safari Browser Code Showcase**: Interactive hero code preview window with authentic top tabs and dynamic address bar updates.
-- **Interactive Playground Simulator**: Client-side YAML-to-JSON parser and schema validator running live in the browser.
-- **100% WCAG AAA Accessibility**: Keyboard navigation, screen-reader skip links, and ARIA landmarks.
-- **Automated GitHub Actions Deployment**: Continuous deployment targeting custom domain [`noyalib.com`](https://noyalib.com).
-
-## Local Development & Build
-
-Ensure `ssg` is installed:
+## Build
 
 ```bash
-cargo install ssg
+cargo install ssg --version 0.0.56 --locked
+make web            # web/public
+make serve          # http://127.0.0.1:8899
 ```
 
-Build the static site:
+`make web` runs ssg over `web/content` with the `web/_layouts` theme, then
+finishes the site: minified stylesheets, the vendored WebAssembly bundle for
+the playground, inlined theme bootstrap allowed by hash, FAQ and article
+structured data, the sitemap, the news sitemap, the agent manifests at the
+root, the 404 page and the release stamp from `VERSION`.
+
+## Gates
+
+Every check the deploy runs, against the build:
 
 ```bash
-./build.sh
+npm install --no-save puppeteer-core axe-core   # for the browser checks
+make gates
 ```
 
-Or using Makefile:
+| Gate | What it refuses |
+|---|---|
+| `readability` | A page outside Flesch ease 55 to 75 or grade 5 to 9 |
+| `seo` | A title over 60 or under 15 characters, a description over 160 or under 70, a missing canonical, a missing image alt, a duplicate title |
+| `sitemap-check` | A built page missing from the sitemap, or a noindex page listed in it |
+| `links` | Any internal reference that does not resolve in the build |
+| `a11y-axe` | Any WCAG 2.2 AA failure axe-core finds in a real browser, in every theme combination |
+| `reflow` | Horizontal overflow at phone widths |
+| `focus-order` | A tab order that disagrees with what is painted |
+| `terminal-swap` | Layout shift when a shell block becomes a terminal |
+| `web-console` | Any browser console error or warning |
+| ssg accessibility report | Any issue the generator's own WCAG pass reports |
 
-```bash
-make serve
+The browser checks skip when Chrome or puppeteer is absent; CI sets
+`NOYALIB_REQUIRE_BROWSER` so they fail there instead.
+
+## Layout
+
+```
+web/ssg.toml          site configuration
+web/content/          one Markdown file per page; news/ for release notes
+web/_layouts/         theme: base, header, footer, index, page, playground, 404
+                      styles.css (design system) + brand.css (noyalib tokens)
+web/wasm/             the published noyalib-wasm bundle the playground runs
+web/tests/            browser checks (puppeteer + axe-core)
+scripts/              build finishing steps and the text gates
+VERSION               the noyalib release the site names
 ```
 
-## License
+## Releasing
 
-Licensed under Apache-2.0 & MIT.
+When the crates release, bump `VERSION`, re-vendor `web/wasm/` from the
+matching npm package (see `web/wasm/README.md`), add a release note under
+`web/content/news/`, and merge. The deploy runs every gate before publishing.
+
+## Licence
+
+Apache-2.0 or MIT, at your option. The design system in `styles.css` is
+shared with the maintainer's other sites under the same terms.

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- `no-js` is removed by theme-init.js. Until then, and forever if
+     scripting is unavailable, the stylesheet uses it to keep every
+     JavaScript-dependent affordance in a usable state. -->
+<html lang="{{language}}" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>{{title}}</title>
+
+    <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
+         WebAssembly.instantiateStreaming run the playground bundle. It permits
+         WASM compilation only; it does not re-enable eval() for JavaScript,
+         which is why it exists as a separate keyword. Without it the engine
+         fails to load with a CompileError and the playground silently becomes
+         a static shell. There is no form endpoint: the site posts nothing. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               base-uri 'none';
+               object-src 'none';
+               script-src 'self' 'wasm-unsafe-eval';
+               style-src 'self';
+               img-src 'self' data:;
+               font-src 'self';
+               connect-src 'self';
+               manifest-src 'self';
+               form-action 'none'"
+    />
+
+    {{!primary}}
+    {{!opengraph}}
+    {{!twitter}}
+    {{!apple}}
+    {{!microsoft}}
+
+    <!-- Absolute URLs: Open Graph consumers do not resolve relative paths. -->
+    <meta property="og:image" content="{{site_url}}images/social-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{title}}" />
+    <meta name="twitter:image" content="{{site_url}}images/social-card.png" />
+
+    <link rel="canonical" href="{{permalink}}" />
+    <link rel="alternate" hreflang="{{language}}" href="{{permalink}}" />
+    <link rel="alternate" hreflang="x-default" href="{{permalink}}" />
+
+    <link rel="alternate" type="application/rss+xml" title="{{name}} — RSS" href="{{site_path}}rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="{{name}} — Atom" href="{{site_path}}atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="{{name}} — JSON Feed" href="{{site_path}}feed.json" />
+    <link rel="manifest" href="{{site_path}}manifest.json" />
+    <link rel="icon" href="{{site_path}}favicon.ico" sizes="any" />
+
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1014" media="(prefers-color-scheme: dark)" />
+
+    <!-- Native cross-document View Transitions. Browsers without support
+         ignore the hint and perform an ordinary navigation. -->
+    <meta name="view-transition" content="same-origin" />
+
+    <!-- Authored structured data; see README "Structured data". -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "{{site_url}}#website",
+            "url": "{{site_url}}",
+            "name": "{{name}}",
+            "description": "{{description}}",
+            "inLanguage": "{{language}}"
+          },
+          {
+            "@type": "Organization",
+            "@id": "{{site_url}}#organization",
+            "name": "noyalib",
+            "url": "{{site_url}}",
+            "logo": "{{site_url}}images/social-card.png",
+            "description": "Open-source YAML 1.2 tooling for Rust: a parser and serialiser with serde integration, a drop-in serde_yaml replacement, a CLI, a language server, an MCP server and a WebAssembly build.",
+            "sameAs": [
+              "https://github.com/sebastienrousseau/noyalib",
+              "https://crates.io/crates/noyalib",
+              "https://docs.rs/noyalib"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "{{permalink}}#webpage",
+            "url": "{{permalink}}",
+            "name": "{{title}}",
+            "description": "{{description}}",
+            "inLanguage": "{{language}}",
+            "isPartOf": { "@id": "{{site_url}}#website" },
+            "publisher": { "@id": "{{site_url}}#organization" },
+            "datePublished": "{{date}}"
+          }
+        ]
+      }
+    </script>
+
+    <!-- One stylesheet, built from styles.css then brand.css in that order —
+         brand.css overrides the design system and is unlayered, so it has to
+         follow it. Concatenated because both were render-blocking and the page
+         waited for the slower of two requests; minified because the sources are
+         half comments, which are worth their bytes in the repository and
+         nothing at all on the critical path. -->
+    <link rel="stylesheet" href="{{site_path}}site.css" />
+    <!-- Only the playground needs the app styles. Loading them on every page
+         would be a page-weight regression for the pages that never use them. -->
+    {{#if nav_playground}}<link rel="stylesheet" href="{{site_path}}playground.css" />{{/if}}
+    <!-- Fetched early so it is already in cache when the parser reaches its
+         tag at the end of the body. Without this the browser paints the plain
+         transcripts, waits a round trip for the script, and then replaces them
+         with taller terminals -- a layout shift that only appears over a real
+         network, which is why it did not show up locally. -->
+    <!-- The banner is the largest thing on the page and therefore what Largest
+         Contentful Paint measures. Left to be discovered when the parser reaches
+         the image element, it starts only after the stylesheets, and the whole
+         page waits on it. Preloading with the same srcset and sizes lets it begin with the
+         first bytes of the document and still pick the right candidate. -->
+    {{#if banner}}
+    <link rel="preload" as="image"
+          href="{{site_path}}images/banners/{{banner}}-1280.webp"
+          imagesrcset="{{site_path}}images/banners/{{banner}}-640.webp 640w,
+                       {{site_path}}images/banners/{{banner}}-1280.webp 1280w"
+          imagesizes="100vw"
+          fetchpriority="high" />
+    {{/if}}
+    <link rel="preload" href="{{site_path}}terminal.js" as="script" />
+    <script src="{{site_path}}theme-init.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    {{> header}}
+
+    <main id="main">
+      {{#block "main"}}{{/block}}
+    </main>
+
+    {{> footer}}
+
+    <script src="{{site_path}}main.js" defer></script>
+    {{#if nav_playground}}<script src="{{site_path}}playground.js" defer></script>{{/if}}
+    <!-- Wraps shell blocks in terminal chrome and types them out. Purely
+         additive: the commands are in the HTML with or without it.
+
+         Not deferred, deliberately. It is the last element in the body, so
+         everything it transforms is already parsed, and running before the
+         first paint is what stops the page shifting under the reader when a
+         transcript becomes a terminal. -->
+    <script src="{{site_path}}terminal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+---
+name: "noyalib"
+short_name: "noyalib"
+theme_color: "#ffffff"
+title: "News and releases — noyalib"
+description: "Release notes and announcements for noyalib and its five companion crates: a note when a release changes something that affects your documents."
+keywords: "noyalib news, noyalib releases, noyalib changelog, noyalib release notes"
+author: "Sebastien Rousseau"
+date: "2026-09-05"
+news_publication_date: "2026-09-05"
+layout: "page"
+language: "en-GB"
+schema: "page"
+changefreq: "weekly"
+copyright_year: "2026"
+nav_news: "true"
+eyebrow: "News"
+headline: "News and releases"
+lead: "A note when a release changes something that affects your documents. No schedule and no marketing."
+---
+
+## Latest
+
+- [v0.0.33: the family standard, a real browser demo and every satellite in lockstep](/news/noyalib-v0-0-33/) · 5 September 2026
+
+## Every release
+
+The full history lives in each repository's changelog:
+[noyalib](https://github.com/sebastienrousseau/noyalib/blob/main/CHANGELOG.md),
+[noyalib-serde-yaml](https://github.com/sebastienrousseau/noyalib-serde-yaml/blob/main/CHANGELOG.md),
+[noya-cli](https://github.com/sebastienrousseau/noya-cli/blob/main/CHANGELOG.md),
+[noyalib-lsp](https://github.com/sebastienrousseau/noyalib-lsp/blob/main/CHANGELOG.md),
+[noyalib-mcp](https://github.com/sebastienrousseau/noyalib-mcp/blob/main/CHANGELOG.md) and
+[noyalib-wasm](https://github.com/sebastienrousseau/noyalib-wasm/blob/main/CHANGELOG.md).
+Signed binaries and attestations are attached to each
+[GitHub release](https://github.com/sebastienrousseau/noyalib/releases).
+
+## Follow along
+
+Subscribe by [RSS](/rss.xml), [Atom](/atom.xml) or [JSON Feed](/feed.json).
+There is no mailing list, so nothing collects your address.

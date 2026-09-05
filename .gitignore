@@ -1,20 +1,4 @@
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
-
-# Files
-*.log
-*.tmp
-
-# IDE
-.vscode/
-.idea/
-
-# Dependencies / SSG Build Output
+# Build output: GitHub Pages publishes the artefact the workflow builds.
+web/public/
 node_modules/
-dist/
-build/
-output/
-public/
+.DS_Store
