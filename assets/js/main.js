@@ -53,7 +53,7 @@ function updateThemeIcon(btn, theme) {
    2. Hero macOS Browser Window Tab Switcher & Micro-Decision Segmenter
    -------------------------------------------------------------------------- */
 const HERO_SNIPPETS = {
-  rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.33", features = ["simd", "rayon"] }</span>
+  rust: `<span class="syn-comment">// Cargo.toml: noyalib = { version = "0.0.17", features = ["simd", "rayon"] }</span>
 <span class="syn-kw">use</span> noyalib::{parallel, Value, Result};
 
 <span class="syn-kw">fn</span> <span class="syn-fn">main</span>() -> Result&lt;()&gt; {
@@ -515,60 +515,43 @@ function initLiveParserDemo() {
 
   if (!yamlInput || !jsonOutput || !formatBtn) return;
 
-  const processParser = () => {
-    const startTime = performance.now();
+  // The real engine: the published @sebastienrousseau/noyalib-wasm bundle,
+  // vendored under /assets/wasm/ and instantiated once on first use.
+  let engine = null;
+  const loadEngine = () => {
+    engine ??= import('/assets/wasm/noyalib_wasm.js').then(m => m.default().then(() => m));
+    return engine;
+  };
+  let pending = 0;
+  const processParser = async () => {
     const rawVal = yamlInput.value.trim();
-
     if (!rawVal) {
       jsonOutput.textContent = '{\n}';
       statusText.className = 'status-valid';
       statusText.textContent = '✓ Empty Input';
       return;
     }
-
+    const ticket = ++pending;
     try {
-      const mockParsed = parseSimpleYaml(rawVal);
-      jsonOutput.textContent = JSON.stringify(mockParsed, null, 2);
-      const endTime = performance.now();
-
+      const noyalib = await loadEngine();
+      if (ticket !== pending) return;
+      const startTime = performance.now();
+      const parsed = noyalib.parseJson(rawVal);
+      const elapsed = performance.now() - startTime;
+      jsonOutput.textContent = JSON.stringify(parsed, null, 2);
       statusText.className = 'status-valid';
-      statusText.textContent = '✓ Valid YAML / Structured Data';
-      timeText.textContent = `Parsed in ${(endTime - startTime).toFixed(2)} ms (Real WASM SIMD Engine)`;
+      statusText.textContent = '✓ Valid YAML 1.2';
+      timeText.textContent = `Parsed in ${elapsed.toFixed(2)} ms by noyalib-wasm in this browser`;
     } catch (e) {
-      jsonOutput.textContent = `Error parsing YAML input:\n${e.message}`;
+      if (ticket !== pending) return;
+      jsonOutput.textContent = `Error parsing YAML input:\n${e && e.message ? e.message : e}`;
       statusText.className = 'status-invalid';
-      statusText.textContent = '✗ Syntax Error in Input';
+      statusText.textContent = '✗ Parse error';
+      timeText.textContent = '';
     }
   };
-
   yamlInput.addEventListener('input', processParser);
   formatBtn.addEventListener('click', processParser);
-}
-
-function parseSimpleYaml(str) {
-  const lines = str.split('\n');
-  const result = {};
-
-  lines.forEach(line => {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith('#')) return;
-
-    const colonIdx = trimmed.indexOf(':');
-    if (colonIdx !== -1) {
-      const key = trimmed.slice(0, colonIdx).trim();
-      let val = trimmed.slice(colonIdx + 1).trim();
-
-      if (val.startsWith('[') && val.endsWith(']')) {
-        val = val.slice(1, -1).split(',').map(s => s.trim());
-      } else if (val === 'true') val = true;
-      else if (val === 'false') val = false;
-      else if (!isNaN(Number(val)) && val !== '') val = Number(val);
-
-      if (key) result[key] = val;
-    }
-  });
-
-  return result;
 }
 
 /* --------------------------------------------------------------------------
