@@ -28,7 +28,7 @@
   "name": "noyalib Migration Guide",
   "subtitle": "Migrating from serde_yaml to noyalib",
   "hero_description": "Migration guide for moving from archived serde_yaml 0.9 to high-performance noyalib with zero breaking changes.",
-  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.17.zip",
+  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.33.zip",
   "image_width": "100vw",
   "copyright": "© 2026 noyalib (NOYALIB). All rights reserved.",
   "rating": "general",
