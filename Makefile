@@ -77,6 +77,7 @@ web:
 	@rm -rf $(WEB_OUT)/.meta $(WEB_OUT)/.ssg-cache $(WEB_OUT)/.ssg-plugin-cache.json
 	@python3 scripts/gen-sitemap.py $(WEB_OUT)
 	@python3 scripts/noindex.py $(WEB_OUT)
+	@python3 scripts/redirects.py $(WEB_OUT)
 	@python3 scripts/notfound.py $(WEB_OUT)
 	@printf 'site: %s page(s), %s\n' "$$(find $(WEB_OUT) -name '*.html' | wc -l | xargs)" "$$(du -sh $(WEB_OUT) | cut -f1)"
 
