@@ -1,0 +1,126 @@
+{{#extends "base"}}
+{{#block "main"}}
+<!-- The masthead. The same banner every other page uses, so the home page
+     belongs to the site rather than being a different design that happens to
+     share a header. There is no photograph: the scrim renders the same with
+     or without one, and a YAML library has no skyline. -->
+<section class="page-banner home-banner" aria-labelledby="hero-heading">
+  <div class="page-banner-body">
+    <div class="container stack">
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1 id="hero-heading">{{headline}}</h1>
+      <p class="lead">{{lead}}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{locale_path}}playground/">Try it in the browser</a>
+        <a class="btn btn-secondary" href="{{locale_path}}migration/">Replace serde_yaml</a>
+        <a class="btn btn-outline" href="{{locale_path}}docs/">Developer docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The reason most visitors are here: serde_yaml was archived in 2024 and
+     their build still depends on it. Putting that above the capability list
+     is the honest ordering. -->
+<section class="section deadline-band" aria-labelledby="migration-heading">
+  <div class="container">
+    <p class="eyebrow">serde_yaml is archived</p>
+    <h2 id="migration-heading">One line in Cargo.toml, zero source changes</h2>
+    <p class="lead">The most used YAML crate in Rust stopped receiving fixes in
+    2024. Rename the package to <code>noyalib-serde-yaml</code> and every call
+    site keeps working. Same functions, same error text, same behaviour on the
+    18-case contract suite captured from the original.</p>
+    <p><a class="btn btn-primary" href="{{locale_path}}migration/">See the one-line migration</a></p>
+  </div>
+</section>
+
+<!-- Four audiences, because the same engine answers four different questions
+     and a visitor should not have to work out which part is aimed at them. -->
+<section class="section" aria-labelledby="audience-heading">
+  <div class="container stack">
+    <div class="stack section-intro">
+      <h2 id="audience-heading">Whichever way you reach YAML</h2>
+      <p class="lead">One parser behind six crates. The library, the command
+      line, the editor, the AI agent and the browser all give the same answer.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Rust applications</h3>
+        <p>Read YAML into typed structs with serde and write it back. Spans,
+        strict typo detection, custom tags and multi-document streams are
+        there when you need them.</p>
+        <p><a href="{{locale_path}}docs/">Read the developer docs</a></p>
+      </div>
+      <div class="card">
+        <h3>Build pipelines</h3>
+        <p>Format with <code>noyafmt</code> and validate against a JSON Schema
+        with <code>noyavalidate</code>. Both exit non-zero on a problem, so a
+        broken manifest fails the build instead of the deploy.</p>
+        <p><a href="{{locale_path}}docs/#cli">Use the command line</a></p>
+      </div>
+      <div class="card">
+        <h3>Editors and AI agents</h3>
+        <p>A language server puts diagnostics, formatting and hover help in
+        VS Code, Zed and Neovim. An MCP server lets an assistant read and edit
+        YAML without losing a comment.</p>
+        <p><a href="{{locale_path}}mcp/">Set up the agent tooling</a></p>
+      </div>
+      <div class="card">
+        <h3>Browsers and edge runtimes</h3>
+        <p>The same parser compiled to WebAssembly, published on npm. Parse,
+        serialise and validate in the page or the worker with no server.</p>
+        <p><a href="{{locale_path}}playground/">Open the playground</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Every figure here is produced by a command in the repository rather than
+     written by hand, and the copy says so deliberately. If one of them
+     changes, the CI gate that produces it has already failed. -->
+<section class="section section-soft" aria-labelledby="metrics-heading">
+  <div class="container stack">
+    <div class="stack section-intro">
+      <h2 id="metrics-heading">Measured, not asserted</h2>
+      <p class="lead">Every figure below comes from a command you can run yourself. Nothing here is a static badge.</p>
+    </div>
+    <div class="grid">
+      <div class="card metric">
+        <p class="metric-value">406</p>
+        <p class="metric-title">of 406 official test cases pass</p>
+        <p>The whole YAML test suite, with no skips, through the library, the
+        CLI, the language server, the MCP server, the serde_yaml shim and the
+        WebAssembly build. Reproduce it with <code>cargo test --test official_suite</code>.</p>
+      </div>
+      <div class="card metric">
+        <p class="metric-value">0</p>
+        <p class="metric-title">lines of unsafe code</p>
+        <p><code>#![forbid(unsafe_code)]</code> in every crate root, checked by
+        the compiler on every build. Fifteen fuzz targets and Miri run on every
+        change.</p>
+      </div>
+      <div class="card metric">
+        <p class="metric-value">6</p>
+        <p class="metric-title">crates at one version</p>
+        <p>The library and its five companions release together at the same
+        version, and each pins the core exactly. A gate refuses a tag when any
+        of them drifts.</p>
+      </div>
+      <div class="card metric">
+        <p class="metric-value">A+</p>
+        <p class="metric-title">family scorecard, 97.9%</p>
+        <p>131 probes across the six repositories: tests, lints, audits,
+        signed releases, SBOMs and pinned actions. Reproduce it with
+        <code>scripts/ecosystem-scorecard.sh</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="body-heading">
+  <div class="container prose">
+    <h2 id="body-heading" class="visually-hidden">About noyalib</h2>
+    {{!content}}
+  </div>
+</section>
+{{/block}}

@@ -1,0 +1,59 @@
+{{#extends "base"}}
+{{#block "main"}}
+<section class="page-banner" aria-labelledby="page-heading">
+  <div class="page-banner-body">
+    <div class="container stack">
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1 id="page-heading">{{headline}}</h1>
+      <p class="lead">{{lead}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- The playground is the published WebAssembly bundle, vendored under
+     /wasm/ and instantiated once on first use. Everything on this page works
+     without scripting except the conversion itself: the textarea, the
+     example and the explanation are ordinary HTML, and the output panel says
+     what it is waiting for. -->
+<section class="section" aria-labelledby="playground-heading">
+  <div class="container stack">
+    <h2 id="playground-heading" class="visually-hidden">Playground</h2>
+    <div class="play-toolbar" role="group" aria-label="Playground actions">
+      <button class="btn btn-primary" id="playRun" type="button">Convert to JSON</button>
+      <button class="btn btn-secondary" id="playYaml" type="button">Back to YAML</button>
+      <button class="btn btn-outline" id="playExample" type="button">Load the example</button>
+      <p class="play-status" id="playStatus" role="status" aria-live="polite">Engine loads on first use.</p>
+    </div>
+    <div class="play-grid">
+      <div class="play-pane">
+        <label class="play-label" for="playInput">YAML</label>
+        <textarea class="play-input" id="playInput" spellcheck="false" autocapitalize="off" autocomplete="off" rows="22"># Paste YAML here, or load the example.
+service:
+  name: api
+  replicas: 3
+  ports: [8080, 8443]
+  env:
+    LOG_LEVEL: info
+    FEATURE_FLAGS: &amp;flags
+      beta: true
+      dark_mode: null
+  overrides:
+    &lt;&lt;: *flags
+    beta: false
+</textarea>
+      </div>
+      <div class="play-pane">
+        <p class="play-label" id="playOutputLabel">Result</p>
+        <pre class="play-output" id="playOutput" tabindex="0" role="region" aria-labelledby="playOutputLabel">Press "Convert to JSON" to run the parser in this tab.</pre>
+      </div>
+    </div>
+    <p class="play-note" id="playTiming"></p>
+  </div>
+</section>
+
+<article class="section">
+  <div class="container prose stack">
+    {{!content}}
+  </div>
+</article>
+{{/block}}
