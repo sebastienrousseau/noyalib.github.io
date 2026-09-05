@@ -10,7 +10,7 @@
   "cname": "noyalib.com",
   "banner": "https://kura.pro/noyalib/images/github/github-noyalib.webp",
   "title": "The Sebastien Rousseau Open Source Rust Ecosystem: Documentation Hub",
-  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.17.zip",
+  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.33.zip",
   "tags": "rust-ecosystem, dtt, kyberlib, hsh, rlg, vrd, libmake, sebastien-rousseau, docs.rs",
   "revisit-after": "7 days",
   "rating": "general",

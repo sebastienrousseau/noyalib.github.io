@@ -34,7 +34,7 @@
   "referrer": "strict-origin-when-cross-origin",
   "menu": "active",
   "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
-  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.17.zip",
+  "download_url": "https://github.com/sebastienrousseau/noyalib/archive/refs/tags/v0.0.33.zip",
   "short_name": "noyalib",
   "keywords": "noyalib benchmarks, performance, speed, simd, rayon, throughput, criterion, serde-saphyr, yaml-rust2, serde-norway",
   "logo_alt": "noyalib (NOYALIB)",
