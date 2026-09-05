@@ -24,6 +24,13 @@ All notable changes to noyalib.com.
 - RSS, Atom and JSON feeds, a news sitemap, and NewsArticle and FAQPage
   structured data read back from the built pages.
 
+### Fixed
+
+- The previous site's addresses (getting-started, suite, rust-ecosystem,
+  benchmarks, use-cases, tags) forward to their new pages instead of 404.
+- The old deploy workflow, which uploaded a directory that no longer
+  exists, is removed; the Website workflow is the only deploy.
+
 ### Removed
 
 - The tag pages that leaked other projects' tags, the hand-patched build
