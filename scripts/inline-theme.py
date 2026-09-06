@@ -45,7 +45,7 @@ PAGE_STYLESHEETS = ("playground.css",)
 # numerous, and would each carry their own copy.
 ENTRY_PAGES = {
     "index.html", "faq/index.html", "docs/index.html", "migration/index.html",
-    "conformance/index.html", "playground/index.html", "ecosystem/index.html",
+    "conformance/index.html", "compliance/index.html", "playground/index.html", "ecosystem/index.html",
 }
 
 

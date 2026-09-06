@@ -55,7 +55,7 @@ const VIEWPORTS = [
 ];
 
 const PAGES = ['', 'solutions/', 'migration/', 'playground/', 'docs/', 'ecosystem/',
-  'mcp/', 'conformance/', 'security/', 'faq/', 'about/', 'news/',
+  'mcp/', 'conformance/', 'compliance/', 'security/', 'faq/', 'about/', 'news/',
   'news/noyalib-v0-0-33/', 'contact/', 'legal/', '404/'];
 
 // axe reports three outcomes, not two, and the third is where a real failure

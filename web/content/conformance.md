@@ -67,6 +67,20 @@ exceeded. The limits are configurable per parser. The
 [policies document](https://github.com/sebastienrousseau/noyalib/blob/main/docs/POLICIES.md)
 lists them.
 
+## Head-to-head with serde-saphyr
+
+serde-saphyr is the other pure-Rust crate that passes the full official
+test suite, so it is the comparison that matters. One criterion run, one
+host, every crate in the same session (`make bench-compare` in the core;
+host and toolchain are disclosed in the benchmarks document):
+
+| Fixture | noyalib | serde-saphyr 1.2.0 | noyalib faster by |
+|---|---:|---:|---:|
+| Deserialise simple | 2.15 µs | 5.49 µs | 2.6× |
+| Deserialise nested | 13.3 µs | 38.3 µs | 2.9× |
+| Deserialise large list | 1.09 ms | 3.10 ms | 2.8× |
+| Deserialise GitHub Actions workflow | 76.7 µs | 250 µs | 3.3× |
+
 ## The family scorecard
 
 A script in the core runs 131 probes across the six repositories: tests,

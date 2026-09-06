@@ -41,7 +41,7 @@ const CHROME = process.env.CHROME_PATH
   || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 const PAGES = ['', 'solutions/', 'migration/', 'playground/', 'docs/', 'ecosystem/',
-  'mcp/', 'conformance/', 'security/', 'faq/', 'about/', 'news/',
+  'mcp/', 'conformance/', 'compliance/', 'security/', 'faq/', 'about/', 'news/',
   'news/noyalib-v0-0-33/', 'contact/', 'legal/', '404/'];
 
 // 320 is the criterion. 360 and 412 are the two widths most phones actually

@@ -60,6 +60,7 @@ AUTHORED = (
     "docs",
     "ecosystem",
     "conformance",
+    "compliance",
     "security",
     "faq",
     "about",
