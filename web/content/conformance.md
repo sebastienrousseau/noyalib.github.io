@@ -41,6 +41,14 @@ surface, from the same vendored suite at the same core commit:
 | `noyalib-serde-yaml` shim | 367 of 367 | 24 multi-document cases, 15 non-scalar keys the original also refused |
 | `noyalib-wasm` JSON model | 382 of 382 | 24 multi-document cases; `parse` is single-document |
 
+This site checks its own claim. `make suite` starts the same server the
+browser gates use, runs every case of the suite through the WebAssembly bundle
+under `/wasm/` (the bytes a visitor's browser downloads), and fails if the
+result differs from the row above. `make wasm-provenance` fails unless that
+bundle is the published `@sebastienrousseau/noyalib-wasm` package for this
+release, byte for byte, verified against the hash the npm registry publishes.
+Both run on every push.
+
 Since v0.0.36 every valid case also runs as a multi-document stream with a
 known-bad document injected first, in the middle and last: 7,488 streams whose
 error must land on the injected byte in every entry point. Since v0.0.38 a

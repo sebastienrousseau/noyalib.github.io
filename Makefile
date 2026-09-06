@@ -82,7 +82,7 @@ web:
 	@python3 scripts/notfound.py $(WEB_OUT)
 	@printf 'site: %s page(s), %s\n' "$$(find $(WEB_OUT) -name '*.html' | wc -l | xargs)" "$$(du -sh $(WEB_OUT) | cut -f1)"
 
-gates: readability seo sitemap-check links a11y-axe reflow focus-order terminal-swap web-console
+gates: readability seo sitemap-check links suite wasm-provenance a11y-axe reflow focus-order terminal-swap web-console
 	@issues="$$(python3 -c 'import json;print(json.load(open("$(WEB_OUT)/accessibility-report.json"))["total_issues"])')"; \
 	 echo "WCAG 2.2 issues reported by ssg: $$issues"; [ "$$issues" = "0" ]
 
@@ -132,6 +132,22 @@ terminal-swap:
 
 web-console:
 	$(call browser_check,web-console,console.mjs)
+
+# The playground bundle is the published package, byte for byte.
+wasm-provenance:
+	@command -v node >/dev/null || { echo "wasm-provenance: node is required"; exit 1; }
+	node scripts/wasm-provenance.mjs
+
+# The suite through the bundle the site serves: start the same server the
+# browser gates use, run every yaml-test-suite case through web/wasm/,
+# and check the conformance page's claim against the measured result.
+suite:
+	@command -v node >/dev/null || { echo "suite: node is required"; exit 1; }
+	@test -d $(WEB_OUT) || { echo "build the site first: make web"; exit 1; }
+	@(cd $(WEB_OUT) && python3 -m http.server 8899 >/dev/null 2>&1 & echo $$! > /tmp/noyalib-suite.pid); \
+	 sleep 2; \
+	 NOYALIB_BASE_URL=http://127.0.0.1:8899 node scripts/suite-conformance.mjs; \
+	 status=$$?; kill "$$(cat /tmp/noyalib-suite.pid)" 2>/dev/null; rm -f /tmp/noyalib-suite.pid; exit $$status
 
 serve:
 	@test -d $(WEB_OUT) || { echo "build the site first: make web"; exit 1; }

@@ -4,6 +4,23 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+### Added
+
+- **The site checks its own conformance claim.** `make suite` starts the
+  same server the browser gates use, runs every case of the official
+  yaml-test-suite through the WebAssembly bundle under `/wasm/` (the
+  bytes a visitor's browser downloads), and fails if the result differs
+  from the number on the conformance page: 382 of 382, with 24
+  multi-document cases outside `parseJson`, which is single-document.
+  The suite comes from the noyalib core at the tag `VERSION` names.
+- **The playground bundle must be the published package.**
+  `make wasm-provenance` fetches
+  `@sebastienrousseau/noyalib-wasm` at this release's version, verifies
+  the tarball against the hash the npm registry publishes, and fails
+  unless the two vendored files are byte-identical to it. Two earlier
+  releases vendored local builds while the npm package was broken;
+  nothing on the site would have caught that.
+
 ## [0.0.38] - 2026-09-06
 
 ### Changed
