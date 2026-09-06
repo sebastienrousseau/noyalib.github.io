@@ -4,6 +4,14 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+## [0.0.35] - 2026-09-06
+
+### Changed
+
+- Site version bumped to the v0.0.35 release; install snippets, the
+  migration pin and the playground example follow; a release note for
+  v0.0.35. The playground bundle is noyalib-wasm 0.0.35 from npm.
+
 ### Changed
 
 - The brand from cloudcdn.pro: the rosette mark in the header and as the
