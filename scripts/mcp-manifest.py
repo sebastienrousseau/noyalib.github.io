@@ -29,6 +29,18 @@ TOOLS = [
         "name": "noyalib_set_multidoc",
         "description": "Replace a value in one document of a multi-document YAML stream.",
     },
+    {
+        "name": "noyalib_parse",
+        "description": "Parse YAML text given in the request into its JSON data model. Stateless.",
+    },
+    {
+        "name": "noyalib_edit",
+        "description": "Set one value in YAML text given in the request, losslessly, and return the whole text. Stateless.",
+    },
+    {
+        "name": "noyalib_validate",
+        "description": "Parse-check YAML text, or validate it against a JSON Schema given in the request. Stateless.",
+    },
 ]
 
 

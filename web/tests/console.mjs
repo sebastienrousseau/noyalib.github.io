@@ -21,7 +21,7 @@ const browser = await puppeteer.launch({
   headless: 'new', args: ['--no-sandbox', '--disable-gpu'] });
 let fail = 0;
 for (const p of ['', 'solutions/', 'migration/', 'playground/', 'docs/', 'ecosystem/', 'mcp/',
-                 'conformance/', 'security/', 'faq/', 'about/', 'news/', 'news/noyalib-v0-0-33/',
+                 'conformance/', 'compliance/', 'security/', 'faq/', 'about/', 'news/', 'news/noyalib-v0-0-33/',
                  'contact/', 'legal/', '404/']) {
   const page = await browser.newPage();
   const errs = [];
