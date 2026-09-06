@@ -23,9 +23,11 @@ lead: "Every figure on this page comes from a command in a repository. If a numb
 
 ## The official test suite
 
-The YAML project publishes a suite of 406 cases: valid documents with the JSON
-they must produce, and invalid documents that must be refused. The core runs
-all of them on every push with no skip list. The result is 406 of 406.
+The YAML project publishes the [yaml-test-suite](https://github.com/yaml/yaml-test-suite),
+406 cases: valid documents with the JSON they must produce, and invalid
+documents that must be refused. The core vendors the suite and runs all of it
+on every push with no skip list. The result is 406 of 406, and every crate in
+the family claims nothing more than what its own run of that suite shows.
 
 Since September 2026 the same cases run through every companion crate's own
 surface, from the same vendored suite at the same core commit:
@@ -38,6 +40,14 @@ surface, from the same vendored suite at the same core commit:
 | `noyalib-mcp` tool result | 195 of 195 addressable | 211 cases have no top-level key to read |
 | `noyalib-serde-yaml` shim | 367 of 367 | 24 multi-document cases, 15 non-scalar keys the original also refused |
 | `noyalib-wasm` JSON model | 382 of 382 | 24 multi-document cases; `parse` is single-document |
+
+Since v0.0.36 every valid case also runs as a multi-document stream with a
+known-bad document injected first, in the middle and last: 7,488 streams whose
+error must land on the injected byte in every entry point. Since v0.0.38 a
+two-document configuration that uses most of YAML at once (anchors and merge
+keys at two depths, explicit tags including `!!pairs`, literal and folded block
+scalars, a sequence as a mapping key) runs through every crate and is the
+[playground](/playground/)'s second example.
 
 The first run of that gate found two real defects: the language server
 flagged valid multi-document files, and the MCP server reported a key with an

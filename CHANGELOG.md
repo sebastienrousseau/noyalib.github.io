@@ -4,6 +4,18 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+## [0.0.38] - 2026-09-06
+
+### Changed
+
+- The conformance page and the home page name and link the official
+  yaml-test-suite; the conformance page describes the stream property and
+  the ultra-complex fixture. The playground gains a second example, that
+  fixture's second document, which projects onto JSON exactly.
+- Site version bumped to the v0.0.38 release; install snippets, the
+  migration pin and the playground example follow; a release note for
+  v0.0.38. The playground bundle is noyalib-wasm 0.0.38 from npm.
+
 ## [0.0.37] - 2026-09-06
 
 ### Changed
