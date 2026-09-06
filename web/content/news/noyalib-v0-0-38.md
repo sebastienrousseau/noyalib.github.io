@@ -39,6 +39,21 @@ names one known set.
   checks, signed commits, code-owner review, conversation resolution,
   admins included.
 
+## Also
+
+- **An ultra-complex fixture through every crate.** A two-document
+  configuration with anchors and merge keys at two depths, explicit tags
+  including `!!pairs`, literal and folded block scalars and a sequence as
+  a mapping key parses to exactly its expected JSON in the core, the CLI,
+  the language server, the MCP server, the serde-yaml shim and the
+  WebAssembly package; it is the [playground](/playground/)'s second
+  example. Running it through `noyafmt` found three formatter defects
+  around explicit keys and lone properties, fixed in the core.
+- **Two diagnostics that name the mistake.** `!!!int` is refused with
+  "did you mean `!!int`?", and an alias that names an anchor from an
+  earlier document says where that anchor is defined and that anchors do
+  not cross `---`.
+
 ## Upgrading
 
 Bump every noyalib crate you use to `0.0.38`. Nothing else changes.
