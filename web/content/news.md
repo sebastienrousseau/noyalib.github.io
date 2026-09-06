@@ -21,6 +21,7 @@ lead: "A note when a release changes something that affects your documents. No s
 
 ## Latest
 
+- [v0.0.34: the reliability release, and the test suite through every crate](/news/noyalib-v0-0-34/) · 5 September 2026
 - [v0.0.33: the family standard, a real browser demo and every satellite in lockstep](/news/noyalib-v0-0-33/) · 5 September 2026
 
 ## Every release

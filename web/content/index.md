@@ -25,7 +25,7 @@ Add the crate and read a document into a struct. Writing it back is one more cal
 
 ```toml
 [dependencies]
-noyalib = "0.0.33"
+noyalib = "0.0.34"
 serde = { version = "1", features = ["derive"] }
 ```
 
