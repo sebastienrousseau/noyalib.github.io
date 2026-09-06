@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_mcp: "true"
-eyebrow: "AI agents"
-headline: "YAML edits by an assistant, without collateral damage"
-lead: "An agent that edits a manifest with string replacement will eventually break it. This one edits through the lossless tree."
+banner: "constellation-purple"
+banner_alt: "A network of connected points, drawn in blue and violet."
+eyebrow: "noyalib-mcp"
+headline: "YAML edits by an assistant. Byte-faithful."
+lead: "An agent that edits a manifest with string replacement will eventually break it. This one edits through the lossless tree, so it never can."
 ---
 
 ## What it does

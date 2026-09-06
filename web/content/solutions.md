@@ -14,65 +14,63 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_solutions: "true"
+banner: "getty-images-f9bcOaV5zbU"
+banner_alt: "Looking up between financial district towers against a clear sky."
 eyebrow: "Solutions"
-headline: "What noyalib does for you"
-lead: "Six ways to reach the same parser, each aimed at a job people actually have."
+headline: "Whatever you do with YAML. Done right."
+lead: "Six ways to reach one parser, each aimed at a job people actually have."
 ---
 
 ## Read and write YAML in Rust
 
-The data-binding API is what most projects need. `from_str` reads a document
-into a typed struct through serde, and `to_string` writes it back. It handles
-anchors, merge keys, block scalars, custom tags and multi-document streams. A
-strict mode reports a misspelt field with the name it probably meant.
+**Typed, fast, strict.** `from_str` reads a document into a struct through
+serde. `to_string` writes it back. Anchors, merge keys, block scalars,
+custom tags and multi-document streams, handled. Strict mode names the
+field you probably meant.
 
-Every deserialise fixture measured is faster than every other pure-Rust YAML
-crate, by 1.1 to 2 times. Serialising is 3 to 4 times faster than the closest
-maintained fork. The [benchmarks](https://github.com/sebastienrousseau/noyalib/blob/main/docs/BENCHMARKS.md)
-name the host, the toolchain and the command, so you can rerun them.
+Faster than every other pure-Rust YAML crate on every fixture measured.
+The [benchmarks](https://github.com/sebastienrousseau/noyalib/blob/main/docs/BENCHMARKS.md)
+name the host, the toolchain and the command.
 
 [Read the developer docs](/docs/).
 
 ## Replace serde_yaml without touching your source
 
-`serde_yaml` was archived in 2024. `noyalib-serde-yaml` keeps its API, its
-error text and its behaviour on the 18-case contract captured from the
-original, so a package rename in Cargo.toml is the whole migration. When you
-are ready, the native API is one import away.
+**One line. Zero changes.** `serde_yaml` was archived in 2024.
+`noyalib-serde-yaml` keeps its API, its error text and its behaviour.
+Rename the package in Cargo.toml and you are done.
 
 [See the one-line migration](/migration/).
 
 ## Format and validate in your build
 
-`noyafmt` formats a file or a tree in place, or checks it and exits non-zero.
-`noyavalidate` checks a document against a JSON Schema and can fix what it
-safely can. Both install with one Cargo command, ship as signed binaries for
-Linux, macOS and Windows, and run in a container.
+**Fail the build, not the deploy.** `noyafmt` formats a tree in place, or
+checks it and exits non-zero. `noyavalidate` checks a document against a
+JSON Schema and fixes what it safely can. Signed binaries, a container, and
+Homebrew, Scoop and AUR.
 
 [Set up the command line](/docs/#cli).
 
 ## See problems in your editor
 
-`noyalib-lsp` is a language server for VS Code, Zed, Neovim and anything else
-that speaks the protocol. It reports parse errors as you type, formats on
-save, and shows the description from a JSON Schema when you hover a key.
+**Diagnostics as you type.** `noyalib-lsp` works with VS Code, Zed, Neovim
+and any other client. Parse errors while you write. Formatting on save.
+Schema descriptions on hover.
 
 [Configure your editor](/docs/#lsp).
 
 ## Let an AI agent edit YAML safely
 
-`noyalib-mcp` is a Model Context Protocol server. An assistant can read a
-value at a path, set it, or update several documents in a stream. Edits go
-through the lossless tree, so a change to one line leaves every comment and
-every other line exactly as it was.
+**Byte-faithful edits.** `noyalib-mcp` gives an assistant three tools: read
+a value, set it, update a document in a stream. Every write goes through the
+lossless tree. One line changes. Every comment stays.
 
 [Set up the agent tooling](/mcp/).
 
 ## Parse in the browser or at the edge
 
-`noyalib-wasm` is the same parser compiled to WebAssembly and published on
-npm. It parses, serialises, validates against a JSON Schema and reads values
-at a path, with no server and no network. The [playground](/playground/) on
-this site is that bundle, unchanged.
+**The same parser, in the tab.** `noyalib-wasm` parses, serialises,
+validates and reads paths with no server and no network. The
+[playground](/playground/) is this package, unchanged.
 
 [Try it in the browser](/playground/).

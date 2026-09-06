@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_conformance: "true"
+banner: "chart-purple"
+banner_alt: "A chart drawn in blue over a dark background."
 eyebrow: "Evidence"
-headline: "Measured on every change"
-lead: "Each figure below comes from a command in a repository. If a number changed, a CI gate has already failed."
+headline: "Measured. Not asserted."
+lead: "Every figure on this page comes from a command in a repository. If a number changed, a gate has already failed."
 ---
 
 ## The official test suite

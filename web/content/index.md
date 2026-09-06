@@ -2,8 +2,8 @@
 name: "noyalib"
 short_name: "noyalib"
 theme_color: "#ffffff"
-title: "noyalib — YAML 1.2 for Rust, WebAssembly and AI agents"
-description: "A YAML 1.2 parser and serialiser for Rust with serde, zero unsafe code and a one-line serde_yaml replacement, plus a CLI, an editor, an agent and WebAssembly."
+title: "noyalib — Fearless YAML parsing in pure Rust"
+description: "The YAML 1.2 engine for Rust, WebAssembly and AI agents. Every official test case. Zero unsafe code. Six products at one version, drop-in to MCP server."
 keywords: "noyalib, rust yaml, yaml parser rust, serde_yaml replacement, serde yaml archived, yaml 1.2 rust, yaml webassembly, yaml mcp server, yaml language server"
 author: "Sebastien Rousseau"
 date: "2026-09-05"
@@ -14,62 +14,38 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_home: "true"
-eyebrow: "YAML 1.2 · Rust · zero unsafe code"
-headline: "YAML that behaves the same everywhere you use it"
-lead: "One parser behind a Rust library, a serde_yaml drop-in, a command line, an editor, an AI agent and the browser. It passes all 406 official test cases and has no unsafe code."
+banner: "freeman-zhou-oV9hp8wXkPE"
+banner_alt: "A financial district skyline at dawn, mirrored in still water."
+eyebrow: "noyalib"
+headline: "Fearless YAML. Pure Rust."
+lead: "The parser under your routing tables, your manifests and your pipelines. Every official test case. Zero unsafe code. One version across six products."
 ---
 
-## Start with ten lines of Rust
+## Why noyalib
 
-Add the crate and read a document into a struct. Writing it back is one more call.
+Configuration is code that nobody tests. It is read at start-up, trusted,
+and acted on. When the parser gets it wrong, the failure looks like a
+business decision. So the parser has to be right, every time, everywhere.
 
-```toml
-[dependencies]
-noyalib = "0.0.34"
-serde = { version = "1", features = ["derive"] }
-```
+That is the whole idea behind noyalib. Start from the YAML 1.2
+specification, not from a fork. Run every official test case on every
+change, through every product. Forbid unsafe code and let the compiler
+enforce it. Cap every limit a hostile document could exploit. Sign, attest
+and inventory every release.
 
-```rust
-use noyalib::{from_str, to_string};
+Then take that one parser everywhere people meet YAML. A Rust service. A
+build pipeline. An editor. A browser tab. An AI assistant. Six products,
+one engine, one version number.
 
-#[derive(serde::Serialize, serde::Deserialize)]
-struct Config {
-    name: String,
-    port: u16,
-    features: Vec<String>,
-}
+## Two APIs. One parser.
 
-fn main() -> Result<(), noyalib::Error> {
-    let config: Config = from_str("name: api\nport: 8080\nfeatures: [auth]\n")?;
-    println!("{}", to_string(&config)?);
-    Ok(())
-}
-```
+The data-binding API reads YAML into typed Rust values through serde and
+writes them back. It is the fast path, and what most services need.
 
-That is the data-binding API. It reads YAML into typed Rust values and writes
-them back. It is what most YAML work needs, and it is the fast path.
+The tooling API reads YAML into a tree that reproduces the source byte for
+byte. Change one value and every other byte stays. The language server,
+the agent server and every formatter in the family are built on it.
 
-## Two APIs over one parser
-
-The second API is for tools. It reads YAML into a lossless tree that reproduces
-the source byte for byte. You can change one value and every comment, blank
-line and indentation choice stays where it was. That is what a version bumper,
-a manifest patcher or an editor needs, and it is what the language server and
-the MCP server are built on.
-
-Both APIs share the same scanner and the same limits. A document the library
-rejects is rejected the same way by the command line, the editor and the
-browser build, because they are the same code.
-
-## Why a new YAML library
-
-The crate most Rust projects depend on, `serde_yaml`, was archived in March
-2024. Its forks kept the API but not the test coverage. noyalib started from
-the specification instead of from the fork, and measures itself against the
-official YAML test suite on every change. The result is a parser that is
-faster than every other pure-Rust YAML crate on every fixture measured, with
-no unsafe code and a documented set of limits for untrusted input.
-
-If you are on `serde_yaml` today, the [one-line migration](/migration/) keeps
-your source unchanged. If you are starting fresh, the
-[developer docs](/docs/) show the native API.
+Both share one scanner and one set of limits. Coming from serde_yaml? The
+[one-line migration](/migration/) keeps your source unchanged. Starting
+fresh? The [developer docs](/docs/) show the native API in ten lines.

@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_migration: "true"
-eyebrow: "Migration"
-headline: "Replace serde_yaml with one line"
-lead: "The crate most Rust projects parse YAML with stopped receiving fixes in March 2024. Moving off it does not have to mean touching your source."
+banner: "corporate-finance"
+banner_alt: "Financial reports and a tablet on a meeting-room table."
+eyebrow: "noyalib-serde-yaml"
+headline: "serde_yaml. Without the archive notice."
+lead: "One line in Cargo.toml. Zero changes to your source. Same functions, same errors, same behaviour, pinned by a contract suite captured from the original."
 ---
 
 ## The one-line version
