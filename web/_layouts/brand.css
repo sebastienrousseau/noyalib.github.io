@@ -1119,13 +1119,12 @@ h3 {
 
 /* The theme styles .brand-mark as a text pill (padding, accent fill); the
    image needs none of that or it is squeezed into the pill's content box. */
-img.brand-mark {
+.brand-mark {
   width: 2.1rem;
   height: 2.1rem;
   padding: 0;
   border-radius: 0;
-  background: none;
-  object-fit: contain;
+  background: url("/images/mark-96.webp") center / contain no-repeat;
 }
 
 /* The generator pins its search trigger to the viewport's right edge, which
@@ -2189,7 +2188,8 @@ pre.highlight:focus-visible {
   inset-inline-end: -6rem;
   inset-block-end: -8rem;
   width: clamp(18rem, 34vw, 32rem);
-  height: auto;
+  aspect-ratio: 1;
+  background: url("/images/mark-512.png") center / contain no-repeat;
   opacity: 0.35;
 }
 
