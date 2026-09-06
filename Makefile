@@ -52,7 +52,8 @@ web:
 	@python3 scripts/faq-schema.py $(WEB_OUT)/faq/index.html
 	@python3 scripts/article-schema.py $(WEB_OUT)
 	@python3 scripts/gen-news-sitemap.py web/content/news $(WEB_OUT)/news-sitemap.xml
-	@mkdir -p $(WEB_OUT)/images && cp -f web/_layouts/images/social-card.png $(WEB_OUT)/images/
+	@# Brand assets and banner photography, served from this origin.
+	@mkdir -p $(WEB_OUT)/images/banners && cp -f web/_layouts/images/social-card.png web/_layouts/images/mark-96.webp web/_layouts/images/mark-192.png web/_layouts/images/mark-512.png web/_layouts/images/wordmark.svg $(WEB_OUT)/images/ && cp -f web/_layouts/images/banners/*.webp $(WEB_OUT)/images/banners/ && cp -f web/_layouts/apple-touch-icon.png $(WEB_OUT)/
 	@# ssg fingerprints its syntax-highlighting stylesheet but emits the page
 	@# referencing the bare name, so /highlight.css was a 404 on every page
 	@# of the previous site.
@@ -85,12 +86,12 @@ gates: readability seo sitemap-check links a11y-axe reflow focus-order terminal-
 	@issues="$$(python3 -c 'import json;print(json.load(open("$(WEB_OUT)/accessibility-report.json"))["total_issues"])')"; \
 	 echo "WCAG 2.2 issues reported by ssg: $$issues"; [ "$$issues" = "0" ]
 
-# The band is a developer-documentation register: plain English a working
-# engineer reads quickly (Flesch ease 55 to 75, grade 5 to 9). It is wider
+# The band is a product-page register: short declarative sentences a
+# working engineer reads at a glance (Flesch ease 55 to 85, grade 4 to 9). It is wider
 # than an institutional site's band on purpose; the pages here explain code,
 # and a sentence that names three crates and a feature flag is dense enough.
 readability:
-	python3 scripts/readability.py $(WEB_OUT) --min-ease 55 --max-ease 75 --min-grade 5 --max-grade 9
+	python3 scripts/readability.py $(WEB_OUT) --min-ease 55 --max-ease 85 --min-grade 4 --max-grade 9
 
 seo:
 	python3 scripts/seocheck.py $(WEB_OUT)

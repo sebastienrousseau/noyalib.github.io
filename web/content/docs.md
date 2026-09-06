@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_docs: "true"
-eyebrow: "Reference"
-headline: "Developer docs"
-lead: "Every entry point, what it needs, and how to fit it into your project, your build, your editor and your assistant."
+banner: "datagrid-purple"
+banner_alt: "Lines of code and data rendered as a violet grid."
+eyebrow: "Developer docs"
+headline: "Ten lines to your first parse."
+lead: "Every product, what it needs, and how it fits your project, your build, your editor and your assistant."
 ---
 
 ## Install the library

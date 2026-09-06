@@ -14,6 +14,8 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 
+banner: "rosette"
+banner_alt: "The noyalib rosette mark on a dark ground."
 eyebrow: "Release · 5 September 2026"
 headline: "noyalib v0.0.34"
 lead: "Property tests, two new fuzzers, a parser fix the new fuzzer found in its first minute, and the official test suite running through every crate in the family."

@@ -1,126 +1,247 @@
 {{#extends "base"}}
 {{#block "main"}}
-<!-- The masthead. The same banner every other page uses, so the home page
-     belongs to the site rather than being a different design that happens to
-     share a header. There is no photograph: the scrim renders the same with
-     or without one, and a YAML library has no skyline. -->
+<!-- The masthead: the world this serves, behind the same scrim every other
+     page uses. The mark sits in the corner as a signature. -->
 <section class="page-banner home-banner" aria-labelledby="hero-heading">
+  {{#if banner}}
+  <img class="page-banner-image"
+       src="{{site_path}}images/banners/{{banner}}-1280.webp"
+       srcset="{{site_path}}images/banners/{{banner}}-640.webp 640w,
+               {{site_path}}images/banners/{{banner}}-1280.webp 1280w"
+       sizes="100vw"
+       width="1440" height="830"
+       alt="{{banner_alt}}"
+       fetchpriority="high" decoding="async" />
+  {{/if}}
+  <div class="hero-art" aria-hidden="true">
+    <img class="hero-mark-art" src="{{site_path}}images/mark-512.png" width="512" height="512" alt="" decoding="async" loading="lazy" />
+  </div>
   <div class="page-banner-body">
     <div class="container stack">
       <p class="eyebrow">{{eyebrow}}</p>
       <h1 id="hero-heading">{{headline}}</h1>
       <p class="lead">{{lead}}</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="{{locale_path}}playground/">Try it in the browser</a>
-        <a class="btn btn-secondary" href="{{locale_path}}migration/">Replace serde_yaml</a>
-        <a class="btn btn-outline" href="{{locale_path}}docs/">Developer docs</a>
+        <a class="btn btn-primary" href="{{locale_path}}docs/">Get started</a>
+        <a class="btn btn-secondary" href="{{locale_path}}playground/">Try it in the browser</a>
+      </div>
+      <p class="hero-install"><span class="prompt" aria-hidden="true">$</span> <code>cargo add noyalib</code></p>
+      <ul class="trust-strip" aria-label="At a glance">
+        <li>406 of 406 official test cases</li>
+        <li>Zero unsafe code</li>
+        <li>Six products. One version.</li>
+        <li>Apache-2.0 or MIT</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Three statements, one idea each. The rhythm is the message. -->
+<section class="section section-soft" aria-labelledby="pillars-heading">
+  <div class="container stack">
+    <h2 id="pillars-heading" class="statement">Every case. Zero unsafe. One version.</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="pillar-num">406<span>/406</span></p>
+        <h3>Every official test case. No skips.</h3>
+        <p>The whole YAML test suite runs on every change, through every product in the family. The same document gives the same answer in Rust, in the shell, in your editor, in the browser and in an agent.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">0</p>
+        <h3>Lines of unsafe code. Ever.</h3>
+        <p>The compiler enforces it in every crate. Miri checks for what the compiler cannot see. Fifteen fuzzers throw hostile documents at it on every push. A malicious file is an error, never a crash.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">6<span>×1</span></p>
+        <h3>Six products. One version number.</h3>
+        <p>The library, the drop-in, the command line, the language server, the agent server and the browser build release together. Which version you have has one answer.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- The reason most visitors are here: serde_yaml was archived in 2024 and
-     their build still depends on it. Putting that above the capability list
-     is the honest ordering. -->
-<section class="section deadline-band" aria-labelledby="migration-heading">
-  <div class="container">
-    <p class="eyebrow">serde_yaml is archived</p>
-    <h2 id="migration-heading">One line in Cargo.toml, zero source changes</h2>
-    <p class="lead">The most used YAML crate in Rust stopped receiving fixes in
-    2024. Rename the package to <code>noyalib-serde-yaml</code> and every call
-    site keeps working. Same functions, same error text, same behaviour on the
-    18-case contract suite captured from the original.</p>
-    <p><a class="btn btn-primary" href="{{locale_path}}migration/">See the one-line migration</a></p>
-  </div>
-</section>
-
-<!-- Four audiences, because the same engine answers four different questions
-     and a visitor should not have to work out which part is aimed at them. -->
-<section class="section" aria-labelledby="audience-heading">
+<!-- The family lineup. -->
+<section class="section" aria-labelledby="lineup-heading">
   <div class="container stack">
     <div class="stack section-intro">
-      <h2 id="audience-heading">Whichever way you reach YAML</h2>
-      <p class="lead">One parser behind six crates. The library, the command
-      line, the editor, the AI agent and the browser all give the same answer.</p>
+      <p class="eyebrow">The family</p>
+      <h2 id="lineup-heading">One parser. Six ways to reach it.</h2>
+      <p class="lead">Every product below is the same engine, wrapped for the place you meet YAML.</p>
     </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Rust applications</h3>
-        <p>Read YAML into typed structs with serde and write it back. Spans,
-        strict typo detection, custom tags and multi-document streams are
-        there when you need them.</p>
-        <p><a href="{{locale_path}}docs/">Read the developer docs</a></p>
+    <div class="lineup">
+      <a class="lineup-item" href="{{locale_path}}docs/">
+        <p class="lineup-name">noyalib</p>
+        <p class="lineup-tag">The library. Typed, lossless, fast.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}migration/">
+        <p class="lineup-name">noyalib-serde-yaml</p>
+        <p class="lineup-tag">serde_yaml, without the archive notice.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}docs/#cli">
+        <p class="lineup-name">noya-cli</p>
+        <p class="lineup-tag">Format. Validate. Fail the build, not the deploy.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}docs/#lsp">
+        <p class="lineup-name">noyalib-lsp</p>
+        <p class="lineup-tag">Diagnostics as you type. In any editor.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}mcp/">
+        <p class="lineup-name">noyalib-mcp</p>
+        <p class="lineup-tag">YAML edits by an assistant. Byte-faithful.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}playground/">
+        <p class="lineup-name">noyalib-wasm</p>
+        <p class="lineup-tag">The same parser, in the browser tab.</p>
+      </a>
+    </div>
+    <p class="section-link"><a href="{{locale_path}}ecosystem/">Explore the whole family</a></p>
+  </div>
+</section>
+
+<!-- Chapters: one capability, one big line, one proof. -->
+<section class="section section-soft" aria-labelledby="chapters-heading">
+  <div class="container stack">
+    <h2 id="chapters-heading" class="visually-hidden">What it does</h2>
+    <div class="chapter">
+      <div class="chapter-text">
+        <p class="eyebrow">Lossless editing</p>
+        <h3>Change one value. Keep every byte you did not touch.</h3>
+        <p>The lossless tree reproduces your file exactly. Comments, blank lines, quoting, indentation. A tool that bumps a version rewrites one span and nothing else. Your reviewer sees a one-line diff. Your auditor sees the same.</p>
+        <p><a href="{{locale_path}}docs/">See the editing API</a></p>
       </div>
-      <div class="card">
-        <h3>Build pipelines</h3>
-        <p>Format with <code>noyafmt</code> and validate against a JSON Schema
-        with <code>noyavalidate</code>. Both exit non-zero on a problem, so a
-        broken manifest fails the build instead of the deploy.</p>
-        <p><a href="{{locale_path}}docs/#cli">Use the command line</a></p>
+      <div class="chapter-code">
+<pre tabindex="0" role="region" aria-label="Lossless edit example, scrollable"><code>let mut doc = parse_document(text)?;
+doc.set("version", "0.0.35")?;
+// Everything else: untouched.</code></pre>
       </div>
-      <div class="card">
-        <h3>Editors and AI agents</h3>
-        <p>A language server puts diagnostics, formatting and hover help in
-        VS Code, Zed and Neovim. An MCP server lets an assistant read and edit
-        YAML without losing a comment.</p>
-        <p><a href="{{locale_path}}mcp/">Set up the agent tooling</a></p>
+    </div>
+    <div class="chapter chapter-reverse">
+      <div class="chapter-text">
+        <p class="eyebrow">Hostile input</p>
+        <h3>Refuses the wrong thing. Fast.</h3>
+        <p>A billion-laughs alias bomb. A hundred thousand levels of nesting. A two-thousand-link merge chain. Each one is refused in milliseconds with a line and a column. The limits are on by default and yours to tune.</p>
+        <p><a href="{{locale_path}}security/">Read the security page</a></p>
       </div>
-      <div class="card">
-        <h3>Browsers and edge runtimes</h3>
-        <p>The same parser compiled to WebAssembly, published on npm. Parse,
-        serialise and validate in the page or the worker with no server.</p>
-        <p><a href="{{locale_path}}playground/">Open the playground</a></p>
+      <div class="chapter-code">
+<pre tabindex="0" role="region" aria-label="Refusal example, scrollable"><code>error: alias expansion limit exceeded
+  --> config.yaml:12:5
+   = limit: 1000 expansions</code></pre>
+      </div>
+    </div>
+    <div class="chapter">
+      <div class="chapter-text">
+        <p class="eyebrow">Strict by design</p>
+        <h3>A misspelt key is an error. Not a default.</h3>
+        <p>Strict mode names the field it thinks you meant. Schema validation reports every violation with the exact path. A schema can be generated from your own types. Nothing is guessed on your behalf.</p>
+        <p><a href="{{locale_path}}docs/">Strict mode and schemas</a></p>
+      </div>
+      <div class="chapter-code">
+<pre tabindex="0" role="region" aria-label="Strict mode example, scrollable"><code>error: unknown field `retires`
+  did you mean `retries`?
+  --> limits.yaml:4:3</code></pre>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Every figure here is produced by a command in the repository rather than
-     written by hand, and the copy says so deliberately. If one of them
-     changes, the CI gate that produces it has already failed. -->
-<section class="section section-soft" aria-labelledby="metrics-heading">
+<!-- Where it runs. -->
+<section class="section" aria-labelledby="usecases-heading">
   <div class="container stack">
     <div class="stack section-intro">
-      <h2 id="metrics-heading">Measured, not asserted</h2>
-      <p class="lead">Every figure below comes from a command you can run yourself. Nothing here is a static badge.</p>
+      <p class="eyebrow">Where it runs</p>
+      <h2 id="usecases-heading">Built for the configuration that runs the business.</h2>
     </div>
-    <div class="grid">
-      <div class="card metric">
-        <p class="metric-value">406</p>
-        <p class="metric-title">of 406 official test cases pass</p>
-        <p>The whole YAML test suite, with no skips, through the library, the
-        CLI, the language server, the MCP server, the serde_yaml shim and the
-        WebAssembly build. Reproduce it with <code>cargo test --test official_suite</code>.</p>
+    <div class="usecases">
+      <a class="usecase" href="{{locale_path}}solutions/">
+        <img src="{{site_path}}images/banners/getty-images-f9bcOaV5zbU-640.webp" width="640" height="170" alt="" loading="lazy" decoding="async" />
+        <h3>Financial services</h3>
+        <p>Routing tables, limits and scheme profiles. Read strictly. Edited without touching a neighbouring line.</p>
+      </a>
+      <a class="usecase" href="{{locale_path}}solutions/">
+        <img src="{{site_path}}images/banners/digital-constellation-640.webp" width="640" height="170" alt="" loading="lazy" decoding="async" />
+        <h3>Platform and Kubernetes</h3>
+        <p>Multi-document manifests, parsed in parallel and validated on every commit.</p>
+      </a>
+      <a class="usecase" href="{{locale_path}}solutions/">
+        <img src="{{site_path}}images/banners/getty-images-dqHskSJDfe4-640.webp" width="640" height="170" alt="" loading="lazy" decoding="async" />
+        <h3>CI and build pipelines</h3>
+        <p>Pipeline definitions checked before they run. A non-zero exit the moment something is wrong.</p>
+      </a>
+      <a class="usecase" href="{{locale_path}}mcp/">
+        <img src="{{site_path}}images/banners/getty-images-LaU3HadwEeE-unsplash-640.webp" width="640" height="170" alt="" loading="lazy" decoding="async" />
+        <h3>Agents and automation</h3>
+        <p>Version bumps and policy edits made by assistants. Every other byte left alone.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Ready for what 2027 asks of software. -->
+<section class="section section-soft" aria-labelledby="ready-heading">
+  <div class="container stack">
+    <div class="stack section-intro">
+      <p class="eyebrow">Ready for 2027</p>
+      <h2 id="ready-heading">The evidence your buyers will ask for. Already in every release.</h2>
+    </div>
+    <div class="bento">
+      <div class="card">
+        <h3>A bill of materials</h3>
+        <p>A CycloneDX SBOM ships with every release, the artefact the EU Cyber Resilience Act requires from December 2027.</p>
       </div>
-      <div class="card metric">
-        <p class="metric-value">0</p>
-        <p class="metric-title">lines of unsafe code</p>
-        <p><code>#![forbid(unsafe_code)]</code> in every crate root, checked by
-        the compiler on every build. Fifteen fuzz targets and Miri run on every
-        change.</p>
+      <div class="card">
+        <h3>Memory safety, proven by the compiler</h3>
+        <p>No unsafe code in any crate. The roadmap regulators asked software makers for is already the whole codebase.</p>
       </div>
-      <div class="card metric">
-        <p class="metric-value">6</p>
-        <p class="metric-title">crates at one version</p>
-        <p>The library and its five companions release together at the same
-        version, and each pins the core exactly. A gate refuses a tag when any
-        of them drifts.</p>
+      <div class="card">
+        <h3>Signed and attested</h3>
+        <p>Every binary carries a sigstore signature and SLSA level 3 provenance. Every commit on main is signed.</p>
       </div>
-      <div class="card metric">
-        <p class="metric-value">A+</p>
-        <p class="metric-title">family scorecard, 97.9%</p>
-        <p>131 probes across the six repositories: tests, lints, audits,
-        signed releases, SBOMs and pinned actions. Reproduce it with
-        <code>scripts/ecosystem-scorecard.sh</code>.</p>
+      <div class="card">
+        <h3>Vetted dependencies</h3>
+        <p>Twelve runtime crates in the library, each audited or exempted on record, checked on every push.</p>
+      </div>
+    </div>
+    <p class="section-link"><a href="{{locale_path}}conformance/">See the full evidence</a></p>
+  </div>
+</section>
+
+<!-- The migration, plainly. -->
+<section class="section" aria-labelledby="migration-heading">
+  <div class="container stack">
+    <div class="chapter">
+      <div class="chapter-text">
+        <p class="eyebrow">Coming from serde_yaml</p>
+        <h3 id="migration-heading">One line. Zero source changes.</h3>
+        <p>The crate most Rust services depend on was archived in 2024. Rename the package and keep every call site. Same functions. Same error text. Same behaviour, pinned by a contract suite captured from the original.</p>
+        <p><a href="{{locale_path}}migration/">See the migration</a></p>
+      </div>
+      <div class="chapter-code">
+<pre tabindex="0" role="region" aria-label="Cargo.toml migration line, scrollable"><code>[dependencies]
+serde_yaml = { package = "noyalib-serde-yaml", version = "=0.0.34" }</code></pre>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" aria-labelledby="body-heading">
+<section class="section section-soft" aria-labelledby="body-heading">
   <div class="container prose">
     <h2 id="body-heading" class="visually-hidden">About noyalib</h2>
     {{!content}}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band">
+      <div class="stack">
+        <h2 id="cta-heading">Start with one line.</h2>
+        <p>Add the crate, or rename the one you already depend on. Either way, the parser under your configuration becomes one you can audit.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{locale_path}}docs/">Get started</a>
+        <a class="btn btn-outline" href="https://github.com/sebastienrousseau/noyalib" rel="noopener noreferrer">Source on GitHub</a>
+      </div>
+    </div>
   </div>
 </section>
 {{/block}}

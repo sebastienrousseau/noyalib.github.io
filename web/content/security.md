@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_security: "true"
+banner: "getty-images-f9bcOaV5zbU"
+banner_alt: "Looking up between financial district towers against a clear sky."
 eyebrow: "Security"
-headline: "Safe to hand untrusted input, safe to depend on"
-lead: "A YAML parser sits between the network and your program. These are the measures that keep that seat honest."
+headline: "Safe to hand untrusted input. Safe to depend on."
+lead: "A parser sits between the network and your program. These are the measures that keep that seat honest."
 ---
 
 ## Handling hostile documents

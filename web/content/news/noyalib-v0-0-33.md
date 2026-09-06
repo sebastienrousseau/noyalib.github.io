@@ -14,6 +14,8 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 
+banner: "rosette"
+banner_alt: "The noyalib rosette mark on a dark ground."
 eyebrow: "Release · 5 September 2026"
 headline: "noyalib v0.0.33"
 lead: "Six crates at one version, one standard across all six repositories, and a browser demo that finally runs the real engine."

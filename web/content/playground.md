@@ -14,9 +14,11 @@ schema: "page"
 changefreq: "weekly"
 copyright_year: "2026"
 nav_playground: "true"
-eyebrow: "Playground"
-headline: "Try the parser in your browser"
-lead: "The published WebAssembly build, unchanged, running in this tab. Paste a document and see what the library sees."
+banner: "getty-images-dqHskSJDfe4"
+banner_alt: "Lines of code and data rendered as a grid."
+eyebrow: "noyalib-wasm"
+headline: "The parser. In your browser."
+lead: "The published WebAssembly build, unchanged, running in this tab. Paste a document. See exactly what the library sees. Nothing leaves your machine."
 ---
 
 ## What you are looking at

@@ -4,6 +4,20 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+### Changed
+
+- The brand from cloudcdn.pro: the rosette mark in the header and as the
+  touch icon, the wordmark purple as the accent, the official social image.
+- Photograph banners on every page (the askiso set, licensed to the
+  maintainer) behind the scrim; the rosette as a signature in the hero.
+- A product-led home page: statement band with three pillars, the six-
+  product lineup, capability chapters with code proofs, use-case cards,
+  a "Ready for 2027" evidence block and the one-line migration.
+- Every masthead rewritten in a short declarative register; the family
+  page carries a tech-specs table; the readability band widened to
+  ease 55 to 85 for that register.
+- The search trigger aligns with the content column on wide screens.
+
 ## [0.0.34] - 2026-09-05
 
 ### Changed
