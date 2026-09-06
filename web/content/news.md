@@ -23,6 +23,7 @@ lead: "A note when a release changes something that affects your documents. No s
 
 ## Latest
 
+- [v0.0.37: the npm package returns, gated](/news/noyalib-v0-0-37/) · 6 September 2026
 - [v0.0.36: stream error positions, the test suite as streams, three scanner fixes](/news/noyalib-v0-0-36/) · 6 September 2026
 - [v0.0.35: proofs, a wasip2 build, an Action, a VS Code extension and stateless agent tools](/news/noyalib-v0-0-35/) · 6 September 2026
 - [v0.0.34: the reliability release, and the test suite through every crate](/news/noyalib-v0-0-34/) · 5 September 2026
