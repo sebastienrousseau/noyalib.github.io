@@ -2,7 +2,7 @@
 name: "noyalib"
 short_name: "noyalib"
 theme_color: "#ffffff"
-title: "noyalib v0.0.41 — dependency bumps, and a note on what v0.0.40 fixed"
+title: "noyalib v0.0.41: dependency bumps and a look back"
 description: "Release notes for noyalib v0.0.41: the September GitHub Actions bumps across the family, and a look at the three defects the corpus tests caught in v0.0.40."
 keywords: "noyalib v0.0.41, yaml formatter correctness, yaml serialiser tags, dependency updates"
 author: "Sebastien Rousseau"
