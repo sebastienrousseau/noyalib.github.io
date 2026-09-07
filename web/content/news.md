@@ -23,6 +23,7 @@ lead: "A note when a release changes something that affects your documents. No s
 
 ## Latest
 
+- [v0.0.40: every crate in the family is now an OpenSSF passing project](/news/noyalib-v0-0-40/) · 7 September 2026
 - [v0.0.39: twenty documents that break parsers, and the three defects they found](/news/noyalib-v0-0-39/) · 7 September 2026
 - [v0.0.38: every dependency pinned, on every workflow](/news/noyalib-v0-0-38/) · 6 September 2026
 - [v0.0.37: the npm package returns, gated](/news/noyalib-v0-0-37/) · 6 September 2026
