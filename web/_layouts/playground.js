@@ -21,7 +21,7 @@
 
   var EXAMPLE = [
     "# A release manifest with the things YAML gets wrong elsewhere.",
-    "version: 0.0.41",
+    "version: 0.0.42",
     "hex: 0x2A            # core schema integer",
     "sci: 1.23e-4         # float",
     "empty:               # implicit null",
