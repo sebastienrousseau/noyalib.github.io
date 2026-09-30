@@ -4,6 +4,11 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+### Changed
+
+- The footer reads "© 2026 Sebastien Rousseau", with the name linked
+  to https://sebastienrousseau.com/ (`rel="author"`), on every page.
+
 ## [0.0.43] - 2026-09-08
 
 ### Changed
