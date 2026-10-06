@@ -21,6 +21,9 @@ page uses. Merging them into the shared stylesheet would make every other page
 carry them; inlining puts them where they are needed and nowhere else.
 
     python3 scripts/inline-theme.py web/public web/_layouts/theme-init.js
+
+The script tag may name a fingerprinted copy (`theme-init.<hash>.js`), as
+ssg 0.0.63 and later emit; the inlined bytes are read from that file.
 """
 
 from __future__ import annotations
@@ -102,20 +105,29 @@ def main() -> int:
         print("site directory or script missing", file=sys.stderr)
         return 2
 
-    source = script.read_text(encoding="utf-8")
-    digest = base64.b64encode(hashlib.sha256(source.encode("utf-8")).digest()).decode()
-    token = f"'sha256-{digest}'"
+    # ssg 0.0.63 and later fingerprint and minify the script it copies
+    # (`theme-init.6e337882.js`, with an integrity attribute), so the page
+    # names a file the layout does not. Inline the bytes the page actually
+    # references, read from the built site, and hash exactly those; the
+    # layout source is the fallback for a page that still names it plainly.
+    tag = re.compile(r'<script src="([^"]*theme-init(?:\.[0-9a-f]+)?\.js)"[^>]*></script>')
 
-    tag = re.compile(r'<script src="[^"]*theme-init\.js"></script>')
-    inline = f"<script>{source}</script>"
+    def served(src: str) -> str:
+        built = root / src.lstrip("/")
+        return built.read_text(encoding="utf-8") if built.is_file() else script.read_text(encoding="utf-8")
 
+    digest = ""
     changed = 0
     for page in root.rglob("*.html"):
         html = page.read_text(encoding="utf-8")
-        if not tag.search(html):
+        m = tag.search(html)
+        if not m:
             continue
 
-        html = tag.sub(lambda _: inline, html, count=1)
+        source = served(m.group(1))
+        digest = base64.b64encode(hashlib.sha256(source.encode("utf-8")).digest()).decode()
+        token = f"'sha256-{digest}'"
+        html = tag.sub(lambda _: f"<script>{source}</script>", html, count=1)
 
         # Widen script-src by exactly this hash. Without it the browser blocks
         # the script it just inlined, and every visitor gets the default theme.

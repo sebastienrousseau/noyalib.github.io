@@ -17,7 +17,7 @@ VERSION ?= $(shell cat VERSION)
 CHROME ?= $(if $(CHROME_PATH),$(CHROME_PATH),$(shell for c in "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" /usr/bin/google-chrome /usr/bin/google-chrome-stable; do [ -x "$$c" ] && { echo "$$c"; break; }; done))
 
 web:
-	@command -v ssg >/dev/null || { echo "ssg is required: cargo install ssg --version 0.0.56 --locked"; exit 1; }
+	@command -v ssg >/dev/null || { echo "ssg is required: cargo install ssg --locked"; exit 1; }
 	@# Always from empty. ssg keeps a plugin cache in its output directory and
 	@# an incremental run skips the agentic-discovery files, so a local rebuild
 	@# would otherwise produce a different site from CI.
@@ -31,14 +31,21 @@ web:
 	done); \
 	if [ -n "$$bad" ]; then echo "unclosed code fence:"; echo "$$bad" | sed 's/^/  /'; exit 1; fi
 	ssg build -f web/ssg.toml
+	@# ssg 0.0.63+ spills integrity/crossorigin into JSON-LD, meta and img
+	@# by plain text replacement; keep the fingerprinted paths, drop the
+	@# attributes where they are invalid (see scripts/fix-sri-spill.py).
+	@python3 scripts/fix-sri-spill.py $(WEB_OUT)
+	@# ...and its JS minifier collapses whitespace inside string literals,
+	@# so the layout scripts are put back from source behind the names and
+	@# integrity hashes the pages carry (see scripts/restore-scripts.py).
+	@python3 scripts/restore-scripts.py $(WEB_OUT) web/_layouts
 	@# The stylesheet the pages load: both sources, in order, minified.
 	@python3 scripts/minify-css.py $(WEB_OUT)/site.css web/_layouts/styles.css web/_layouts/brand.css
 	@python3 scripts/minify-css.py $(WEB_OUT)/playground.css web/_layouts/playground.css
-	@for a in main.js theme-init.js logo.svg favicon.ico; do cp -f "web/_layouts/$$a" "$(WEB_OUT)/$$a"; done
-	@# terminal.js is loaded without defer, so it is on the critical path;
-	@# playground.js runs on one page. Both are minified; main.js is left as
-	@# is because it is referenced with an integrity hash from its bytes.
-	@for a in terminal.js playground.js; do python3 scripts/minify-js.py "web/_layouts/$$a" "$(WEB_OUT)/$$a"; done
+	@# The layout scripts (theme-init, main, terminal, playground) are copied,
+	@# minified and fingerprinted by ssg itself, with an integrity attribute
+	@# on every reference; only the two static assets are copied here.
+	@for a in logo.svg favicon.ico; do cp -f "web/_layouts/$$a" "$(WEB_OUT)/$$a"; done
 	@if command -v node >/dev/null 2>&1; then \
 	  for a in $(WEB_OUT)/*.js; do node --check "$$a" >/dev/null 2>&1 || { echo "web: $$a does not parse"; exit 1; }; done; \
 	fi

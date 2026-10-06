@@ -47,7 +47,7 @@ for (const pg of PAGES) {
   const bare = await browser.newPage();
   await bare.setViewport({ width: 1280, height: 900 });
   await bare.setRequestInterception(true);
-  bare.on('request', r => (r.url().endsWith('/terminal.js') ? r.abort() : r.continue()));
+  bare.on('request', r => (/\/terminal(?:\.[0-9a-f]+)?\.js$/.test(r.url()) ? r.abort() : r.continue()));
   await bare.goto(`${BASE}/${pg}`, { waitUntil: 'networkidle0' });
   const pre = await bare.evaluate(() => {
     const el = [...document.querySelectorAll('pre')]

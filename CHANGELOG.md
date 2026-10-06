@@ -13,6 +13,20 @@ All notable changes to noyalib.com.
   v0.0.53. The playground bundle is noyalib-wasm 0.0.53 from npm.
 - The footer reads "© 2026 Sebastien Rousseau", with the name linked
   to https://sebastienrousseau.com/ (`rel="author"`), on every page.
+- The site builds with the latest ssg (0.0.66) instead of a pinned
+  0.0.56. ssg now copies, minifies and fingerprints the layout scripts
+  itself, so the build no longer copies or minifies them; the theme
+  bootstrap is inlined from the fingerprinted file the page names.
+  Two ssg defects are worked around after the build until they are fixed
+  upstream: its fingerprint pass appends `integrity`/`crossorigin` to
+  every quoted asset path, including inside JSON-LD and on `<meta>` and
+  `<img>` (`scripts/fix-sri-spill.py` strips them where invalid), and
+  its JS minifier collapses whitespace inside string literals
+  (`scripts/restore-scripts.py` puts the site's scripts back from
+  source and recomputes their SHA-384 integrity).
+- The search trigger's accessible name now includes the shortcut badge
+  it shows ("Search ⌘K" or "Search Ctrl K"), which axe-core 4.14 checks
+  under WCAG 2.5.3 Label in Name.
 
 ## [0.0.43] - 2026-09-08
 

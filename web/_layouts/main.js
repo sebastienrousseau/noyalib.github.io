@@ -109,6 +109,15 @@
         navigator.platform || '';
       var apple = /mac|iphone|ipad|ipod/i.test(platform);
       shortcutHint.textContent = apple ? '\u2318K' : 'Ctrl K';
+
+      /* The generator labels the trigger `aria-label="Search"` while its visible
+         text reads "Search" plus the badge. WCAG 2.5.3 (Label in Name) wants the
+         visible text inside the accessible name, and axe-core 4.14 checks it
+         (label-content-name-mismatch), so the label is widened to say exactly
+         what a sighted visitor reads. */
+      if (searchTrigger) {
+        searchTrigger.setAttribute('aria-label', 'Search ' + shortcutHint.textContent);
+      }
     }
 
     /* ---------------- theme toggle ---------------- */
