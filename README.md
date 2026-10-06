@@ -10,7 +10,7 @@ YAML 1.2 library for Rust, and its five companion crates. Built with
 ## Build
 
 ```bash
-cargo install ssg --version 0.0.56 --locked
+cargo install ssg --locked
 make web            # web/public
 make serve          # http://127.0.0.1:8899
 ```
