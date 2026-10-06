@@ -10,8 +10,7 @@ All notable changes to noyalib.com.
 
 - Site version bumped to the v0.0.53 release; install snippets, the
   migration pin and the playground example follow; a release note for
-  v0.0.53. The playground bundle stays noyalib-wasm 0.0.43 from npm
-  until 0.0.53 is published, then it is vendored the same way.
+  v0.0.53. The playground bundle is noyalib-wasm 0.0.53 from npm.
 - The footer reads "© 2026 Sebastien Rousseau", with the name linked
   to https://sebastienrousseau.com/ (`rel="author"`), on every page.
 
