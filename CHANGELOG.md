@@ -4,14 +4,16 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
-### Fixed
+## [0.0.54] - 2026-10-07
 
-- The MCP page, the docs and the ecosystem page said the server has three
-  tools and runs no network service. It has had six tools since v0.0.35
-  (`noyalib_parse`, `noyalib_edit` and `noyalib_validate` work on text in
-  the request) and has offered opt-in HTTP transports, bound to loopback by
-  default, since v0.0.53. The generated `/.well-known/mcp.json` already
-  listed all six.
+### Changed
+
+- Site version bumped to the v0.0.54 release; install snippets, the
+  migration pin and the playground example follow; a release note for
+  v0.0.54. The playground bundle is noyalib-wasm 0.0.54 from npm.
+- The MCP page and the docs describe v0.0.54: the file tools confined to
+  a root (`--root`), strict parsing by default (`--profile`), and the
+  CLI's `--strict` and atomic writes.
 
 ## [0.0.53] - 2026-10-06
 

@@ -25,7 +25,7 @@ lead: "Every product, what it needs, and how it fits your project, your build, y
 
 ```toml
 [dependencies]
-noyalib = "0.0.53"
+noyalib = "0.0.54"
 ```
 
 noyalib needs Rust 1.86 or newer and builds on every tier-1 platform. With
@@ -58,8 +58,8 @@ docs.rs.
 use noyalib::cst::parse_document;
 
 let mut doc = parse_document("# release\nversion: 0.0.41\n")?;
-doc.set("version", "0.0.53")?;
-assert_eq!(doc.to_string(), "# release\nversion: 0.0.53\n");
+doc.set("version", "0.0.54")?;
+assert_eq!(doc.to_string(), "# release\nversion: 0.0.54\n");
 ```
 
 The lossless tree keeps comments, blank lines and indentation. It can rename
@@ -76,7 +76,9 @@ noyavalidate deploy.yaml --schema schema.json
 ```
 
 Both binaries exit non-zero on a problem, so a broken manifest fails the
-build. Signed tarballs for Linux, macOS and Windows are attached to every
+build. `noyavalidate --strict` also rejects duplicate keys and odd
+indentation. `noyafmt --write` and `noyavalidate --fix` replace a file in
+one step, so an interrupted run never leaves it half written. Signed tarballs for Linux, macOS and Windows are attached to every
 [release](https://github.com/sebastienrousseau/noya-cli/releases), and
 `ghcr.io/sebastienrousseau/noya-cli` runs them in a container. Homebrew,
 Scoop and the AUR carry the same binaries.
