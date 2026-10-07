@@ -100,9 +100,10 @@ npx @sebastienrousseau/noyalib-mcp
 ```
 
 No Rust toolchain is needed; the wrapper downloads the signed binary for your
-platform. Add it to your client's server list and the assistant gains three
-tools: read a value at a path, set one, and update several documents in a
-stream. The [MCP page](/mcp/) has the client configurations.
+platform. Add it to your client's server list and the assistant gains six
+tools: read, set and multi-document set on files, and parse, edit and
+validate on text it sends. The [MCP page](/mcp/) has the client
+configurations.
 
 <h2 id="wasm">Parse in the browser</h2>
 

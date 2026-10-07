@@ -23,13 +23,22 @@ lead: "An agent that edits a manifest with string replacement will eventually br
 
 ## What it does
 
-`noyalib-mcp` is a Model Context Protocol server. It speaks JSON-RPC over
-standard input and output, which is what Claude Desktop, Zed, Continue and
-most other clients expect. It exposes three tools:
+`noyalib-mcp` is a Model Context Protocol server. By default it speaks
+JSON-RPC over standard input and output, which is what Claude Desktop, Zed,
+Continue and most other clients expect. It exposes six tools.
+
+Three of them work on files:
 
 - **noyalib_get** reads the value at a dotted path, exactly as written.
 - **noyalib_set** replaces the value at a path and writes the file back.
 - **noyalib_set_multidoc** does the same for one document in a stream.
+
+Three take YAML in the request and touch nothing on disk:
+
+- **noyalib_parse** returns the JSON data model of the text.
+- **noyalib_edit** sets a value in the text and returns the new text.
+- **noyalib_validate** checks the text parses and, given a JSON Schema,
+  that it conforms.
 
 Every write goes through the lossless editor. The changed span is rewritten
 and nothing else moves: comments, blank lines, quoting style and indentation
@@ -85,8 +94,10 @@ tool schemas, the resources and the error codes.
 
 ## What it does not do
 
-It does not run a network service, so there is nothing to expose or
-authenticate. It does not read files the client did not name. It does not
+It does not open a port unless you ask it to. The streamable HTTP and SSE
+transports are opt-in with `--transport`, bind to `127.0.0.1` by default, and
+do not authenticate: keep them on the loopback interface or behind a gateway
+you trust. It does not read files the client did not name. It does not
 reformat a file as a side effect of an edit. And it does not accept a change
 that would leave the file invalid.
 
