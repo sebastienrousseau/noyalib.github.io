@@ -64,7 +64,7 @@ and anything else that speaks the protocol.
 
 ## noyalib-mcp
 
-**YAML edits by an assistant. Byte-faithful.** Three tools over the
+**YAML edits by an assistant. Byte-faithful.** Six tools over the
 Model Context Protocol, every write through the lossless tree. On npm and
 as a container, no Rust toolchain required.
 
