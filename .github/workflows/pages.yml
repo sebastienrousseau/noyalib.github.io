@@ -62,6 +62,15 @@ jobs:
         if: github.event_name != 'pull_request'
         with:
           path: web/public
+          # v4+ drops dot-paths by default; the agent discovery manifests
+          # live under .well-known/ and .nojekyll must ship too.
+          include-hidden-files: true
+      - name: Verify the artifact carries the discovery files
+        if: github.event_name != 'pull_request'
+        run: |
+          for f in ./.nojekyll ./.well-known/mcp.json ./.well-known/ai-plugin.json ./mcp.json ./agents.txt; do
+            if tar -tf "$RUNNER_TEMP/artifact.tar" | grep -qxF "$f"; then echo "ok      $f"; else echo "::error::artifact is missing $f"; exit 1; fi
+          done
 
   deploy:
     name: Deploy
