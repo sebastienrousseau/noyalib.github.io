@@ -40,6 +40,17 @@ Three take YAML in the request and touch nothing on disk:
 - **noyalib_validate** checks the text parses and, given a JSON Schema,
   that it conforms.
 
+The file tools only reach files under one directory, the server root: the
+working directory, or the one you pass with `--root`. A path that resolves
+outside it is refused before the file is opened, and a symbolic link that
+points outside counts as outside.
+
+`noyalib_parse` and `noyalib_validate` parse under the strict YAML 1.2
+profile, the one built for untrusted input. A duplicate key is an error
+rather than a silent overwrite, only `true` and `false` are booleans,
+indentation must be even, and the tighter size and depth limits apply.
+Start the server with `--profile standard` to use the library defaults.
+
 Every write goes through the lossless editor. The changed span is rewritten
 and nothing else moves: comments, blank lines, quoting style and indentation
 stay as they were. An invalid result is refused before the file is touched.
@@ -97,7 +108,8 @@ tool schemas, the resources and the error codes.
 It does not open a port unless you ask it to. The streamable HTTP and SSE
 transports are opt-in with `--transport`, bind to `127.0.0.1` by default, and
 do not authenticate: keep them on the loopback interface or behind a gateway
-you trust. It does not read files the client did not name. It does not
+you trust. It does not read files the client did not name, and it does not
+read or write anything outside its root. It does not
 reformat a file as a side effect of an edit. And it does not accept a change
 that would leave the file invalid.
 

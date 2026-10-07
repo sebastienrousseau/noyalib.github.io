@@ -4,6 +4,17 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+## [0.0.54] - Unreleased
+
+### Changed
+
+- The MCP page and the docs describe the v0.0.54 behaviour: the file tools
+  confined to a root (`--root`), strict parsing by default (`--profile`),
+  and the CLI's `--strict` and atomic writes; a release note for v0.0.54.
+  VERSION, the install snippets and the playground bundle move to 0.0.54
+  at the cut, once the crates and `@sebastienrousseau/noyalib-wasm`
+  0.0.54 are published.
+
 ### Fixed
 
 - The MCP page, the docs and the ecosystem page said the server has three

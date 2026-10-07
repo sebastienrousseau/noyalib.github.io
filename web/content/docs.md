@@ -76,7 +76,9 @@ noyavalidate deploy.yaml --schema schema.json
 ```
 
 Both binaries exit non-zero on a problem, so a broken manifest fails the
-build. Signed tarballs for Linux, macOS and Windows are attached to every
+build. `noyavalidate --strict` also rejects duplicate keys and odd
+indentation. `noyafmt --write` and `noyavalidate --fix` replace a file in
+one step, so an interrupted run never leaves it half written. Signed tarballs for Linux, macOS and Windows are attached to every
 [release](https://github.com/sebastienrousseau/noya-cli/releases), and
 `ghcr.io/sebastienrousseau/noya-cli` runs them in a container. Homebrew,
 Scoop and the AUR carry the same binaries.
