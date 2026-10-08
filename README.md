@@ -10,7 +10,7 @@ YAML 1.2 library for Rust, and its five companion crates. Built with
 ## Build
 
 ```bash
-cargo install ssg --locked
+cargo install ssg --locked --version 0.0.66   # the version CI pins (SSG_VERSION in pages.yml)
 make web            # web/public
 make serve          # http://127.0.0.1:8899
 ```
@@ -26,7 +26,7 @@ root, the 404 page and the release stamp from `VERSION`.
 Every check the deploy runs, against the build:
 
 ```bash
-npm install --no-save puppeteer-core axe-core   # for the browser checks
+npm ci --ignore-scripts   # browser-check tooling, from package-lock.json
 make gates
 ```
 

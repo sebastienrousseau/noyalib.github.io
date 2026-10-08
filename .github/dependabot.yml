@@ -22,3 +22,22 @@ updates:
       actions:
         patterns:
           - "actions/*"
+    cooldown:
+      default-days: 7
+
+  # The browser-check tooling pinned in package.json / package-lock.json.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: UTC
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: scope
+    labels:
+      - dependencies
+    cooldown:
+      default-days: 7
