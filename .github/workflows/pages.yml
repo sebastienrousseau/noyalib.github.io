@@ -28,25 +28,55 @@ jobs:
     env:
       NOYALIB_REQUIRE_BROWSER: "1"
       CHROME_PATH: /usr/bin/google-chrome
+      # The ssg release this site builds with. The site tracks the
+      # latest ssg, so this is bumped the way Dependabot would bump a
+      # dependency, as a one-line change; Dependabot itself cannot see
+      # a `cargo install` line, so "Report a newer ssg" below warns on
+      # every main build once crates.io has a newer release. Until
+      # v0.0.55 the job ran `cargo install ssg` unpinned, so the
+      # deployed site was built by whatever ssg was newest that minute.
+      SSG_VERSION: "0.0.66"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: dtolnay/rust-toolchain@7e38f4b43b4db5c8dd498af069a4f6196df1d067 # master
+      - uses: dtolnay/rust-toolchain@7e38f4b43b4db5c8dd498af069a4f6196df1d067
         with:
           toolchain: stable
+      # Keyed on the pinned version. The old key carried the run id, so
+      # it never hit and every run rebuilt ssg anyway.
       - name: Cache the ssg binary
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cargo/bin/ssg
-          key: cargo-ssg-${{ runner.os }}-latest-${{ github.run_id }}
-      - name: Install ssg
-        run: command -v ssg || cargo install ssg --locked
+          key: cargo-ssg-${{ runner.os }}-${{ env.SSG_VERSION }}
+      - name: Install ssg ${{ env.SSG_VERSION }}
+        run: |
+          set -euo pipefail
+          have=$(ssg --version 2>/dev/null | awk '{print $2}' || true)
+          if [ "$have" != "$SSG_VERSION" ]; then
+            cargo install ssg --locked --version "$SSG_VERSION" --force
+          fi
+          [ "$(ssg --version | awk '{print $2}')" = "$SSG_VERSION" ] \
+            || { echo "::error::ssg is not ${SSG_VERSION}"; exit 1; }
+      - name: Report a newer ssg
+        if: github.event_name != 'pull_request'
+        run: |
+          latest=$(curl -fsS --max-time 20 \
+            -A 'noyalib.com CI (https://github.com/sebastienrousseau/noyalib.github.io)' \
+            https://crates.io/api/v1/crates/ssg | jq -r '.crate.max_stable_version') || exit 0
+          if [ -n "$latest" ] && [ "$latest" != "$SSG_VERSION" ]; then
+            echo "::warning::ssg ${latest} is on crates.io; pages.yml builds with ${SSG_VERSION}. Bump SSG_VERSION."
+          fi
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: "22"
+      # Exact versions from the committed package-lock.json, with npm
+      # lifecycle scripts off. It was `npm install --no-save
+      # puppeteer-core@23 axe-core@4`: unpinned, unlocked, scripts on, in
+      # the job that builds the deployed artefact.
       - name: Install the browser test tooling
-        run: npm install --no-save puppeteer-core@23 axe-core@4
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Build the site
         run: make web
       - name: Run every gate
