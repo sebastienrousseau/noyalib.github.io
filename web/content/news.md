@@ -23,6 +23,7 @@ lead: "A note when a release changes something that affects your documents. No s
 
 ## Latest
 
+- [v0.0.56: no value too deep to drop](/news/noyalib-v0-0-56/) · 8 October 2026
 - [v0.0.55: limits on every loader](/news/noyalib-v0-0-55/) · 8 October 2026
 - [v0.0.54: safer defaults for untrusted input](/news/noyalib-v0-0-54/) · 7 October 2026
 - [v0.0.53: green on Rust 1.99](/news/noyalib-v0-0-53/) · 6 October 2026
