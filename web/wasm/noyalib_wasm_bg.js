@@ -289,6 +289,10 @@ export function __wbg_Error_30c8987f7c2ed4e2(arg0, arg1) {
     const ret = Error(getStringFromWasm0(arg0, arg1));
     return ret;
 }
+export function __wbg_Number_14af1003b8dd5ead(arg0) {
+    const ret = Number(arg0);
+    return ret;
+}
 export function __wbg_String_8564e559799eccda(arg0, arg1) {
     const ret = String(arg1);
     const ptr1 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
@@ -372,6 +376,27 @@ export function __wbg_entries_fb6397112b1de25f(arg0) {
     const ret = Object.entries(arg0);
     return ret;
 }
+export function __wbg_forEach_7ad975c8e42636ed(arg0, arg1, arg2) {
+    try {
+        var state0 = {a: arg1, b: arg2};
+        var cb0 = (arg0, arg1) => {
+            const a = state0.a;
+            state0.a = 0;
+            try {
+                return wasm_bindgen_36f319cbb35a5907___convert__closures_____invoke___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined_______true_(a, state0.b, arg0, arg1);
+            } finally {
+                state0.a = a;
+            }
+        };
+        arg0.forEach(cb0);
+    } finally {
+        state0.a = 0;
+    }
+}
+export function __wbg_from_296ca31f8d0f1c52(arg0) {
+    const ret = Array.from(arg0);
+    return ret;
+}
 export function __wbg_get_658f6698067d9515() { return handleError(function (arg0, arg1) {
     const ret = Reflect.get(arg0, arg1);
     return ret;
@@ -420,6 +445,10 @@ export function __wbg_isArray_e15a2ff68ffdbef2(arg0) {
 }
 export function __wbg_isSafeInteger_717808ad6a54bd9e(arg0) {
     const ret = Number.isSafeInteger(arg0);
+    return ret;
+}
+export function __wbg_is_4b278c0bd3caba97(arg0, arg1) {
+    const ret = Object.is(arg0, arg1);
     return ret;
 }
 export function __wbg_iterator_e3c31c892080e444() {
@@ -504,6 +533,10 @@ export function __wbindgen_init_externref_table() {
     table.set(offset + 2, true);
     table.set(offset + 3, false);
 }
+function wasm_bindgen_36f319cbb35a5907___convert__closures_____invoke___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined_______true_(arg0, arg1, arg2, arg3) {
+    wasm.wasm_bindgen_36f319cbb35a5907___convert__closures_____invoke___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined___js_sys_7f3ecdb60bb74b68___Function_fn_wasm_bindgen_36f319cbb35a5907___JsValue_____wasm_bindgen_36f319cbb35a5907___sys__Undefined_______true_(arg0, arg1, arg2, arg3);
+}
+
 const WasmDocumentFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_wasmdocument_free(ptr, 1));
