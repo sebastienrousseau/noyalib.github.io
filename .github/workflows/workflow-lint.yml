@@ -22,4 +22,4 @@ jobs:
   zizmor:
     uses: sebastienrousseau/noyalib/.github/workflows/shared-zizmor.yml@139a826ba273b8f9feffff54795711f4df321928
   single-publisher:
-    uses: sebastienrousseau/noyalib/.github/workflows/shared-single-publisher.yml@139a826ba273b8f9feffff54795711f4df321928
+    uses: sebastienrousseau/noyalib/.github/workflows/shared-single-publisher.yml@7529f1b3557ec62be0ae6c3a1cd968863a0fbe28
