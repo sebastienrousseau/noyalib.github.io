@@ -35,7 +35,7 @@ jobs:
       # every main build once crates.io has a newer release. Until
       # v0.0.55 the job ran `cargo install ssg` unpinned, so the
       # deployed site was built by whatever ssg was newest that minute.
-      SSG_VERSION: "0.0.66"
+      SSG_VERSION: "0.0.76"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

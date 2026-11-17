@@ -73,7 +73,8 @@ def main() -> int:
         new = html
         for fname, sri in replaced.items():
             new = re.sub(
-                rf'(<script src="[^"]*/{re.escape(fname)}" integrity=")[^"]*(")',
+                # ssg 0.0.76 writes `defer` between src and integrity.
+                rf'(<script src="[^"]*/{re.escape(fname)}"[^>]*? integrity=")[^"]*(")',
                 lambda m, s=sri: m.group(1) + s + m.group(2),
                 new,
             )

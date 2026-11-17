@@ -24,9 +24,9 @@ lead: "Six ways to reach one parser, each aimed at a job people actually have."
 ## Read and write YAML in Rust
 
 **Typed, fast, strict.** `from_str` reads a document into a struct through
-serde. `to_string` writes it back. Anchors, merge keys, block scalars,
-custom tags and multi-document streams, handled. Strict mode names the
-field you probably meant.
+serde, and `to_string` writes it back. It handles anchors, merge keys,
+block scalars, custom tags and multi-document streams, and strict mode
+names the field you probably meant.
 
 Faster than every other pure-Rust YAML crate on every fixture measured.
 The [benchmarks](https://github.com/sebastienrousseau/noyalib/blob/main/docs/BENCHMARKS.md)
@@ -36,7 +36,7 @@ name the host, the toolchain and the command.
 
 ## Replace serde_yaml without touching your source
 
-**One line. Zero changes.** `serde_yaml` was archived in 2024.
+**One line, no source changes.** `serde_yaml` was archived in 2024.
 `noyalib-serde-yaml` keeps its API, its error text and its behaviour.
 Rename the package in Cargo.toml and you are done.
 
@@ -54,8 +54,8 @@ Homebrew, Scoop and AUR.
 ## See problems in your editor
 
 **Diagnostics as you type.** `noyalib-lsp` works with VS Code, Zed, Neovim
-and any other client. Parse errors while you write. Formatting on save.
-Schema descriptions on hover.
+and any other client. It reports parse errors while you write, formats on
+save and shows schema descriptions on hover.
 
 [Configure your editor](/docs/#lsp).
 
@@ -63,7 +63,7 @@ Schema descriptions on hover.
 
 **Byte-faithful edits.** `noyalib-mcp` gives an assistant three tools: read
 a value, set it, update a document in a stream. Every write goes through the
-lossless tree. One line changes. Every comment stays.
+lossless tree, so only the edited line changes and every comment stays.
 
 [Set up the agent tooling](/mcp/).
 
