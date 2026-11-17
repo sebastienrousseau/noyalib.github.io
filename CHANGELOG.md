@@ -4,6 +4,17 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+## [0.0.62] - 2026-11-17
+
+### Changed
+
+- Site version bumped to the v0.0.62 release (from 0.0.57: the site
+  skipped 0.0.58 to 0.0.60); install snippets, the migration pin and the
+  playground example follow; a release note for v0.0.62 that summarises
+  v0.0.58 to v0.0.60. The playground bundle is noyalib-wasm 0.0.62 from
+  npm.
+- CodeQL `init` and `analyze` 4.39.3 (#53, #54).
+
 ## [0.0.57] - 2026-10-09
 
 ### Changed
