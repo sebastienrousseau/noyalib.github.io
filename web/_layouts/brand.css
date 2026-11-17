@@ -2067,6 +2067,58 @@ pre.highlight,
   color: var(--ink-soft);
 }
 
+/* ssg 0.0.76 also colours the tokens, again on prefers-color-scheme alone, so
+   a dark choice on a light system put #a0111f keywords on #100f26 (2.32:1)
+   and a light choice on a dark system put #ffb757 variables on #f6f4fb
+   (1.58:1). Same fix as the block above: the generator's two palettes become
+   variables that follow the theme in effect. Every pair clears 7:1 on the
+   matching --bg-soft. The extra :root raises these rules over the
+   generator's, which load later with the same selectors. */
+:root {
+  --hl-comment: #4b535d;
+  --hl-string: #032563;
+  --hl-constant: #023b95;
+  --hl-keyword: #a0111f;
+  --hl-entity: #622cbc;
+  --hl-tag: #024c1a;
+  --hl-variable: #702c00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --hl-comment: #a2acb7;
+    --hl-string: #addcff;
+    --hl-constant: #91cbff;
+    --hl-keyword: #ff9492;
+    --hl-entity: #dbb7ff;
+    --hl-tag: #72f088;
+    --hl-variable: #ffb757;
+  }
+}
+
+:root[data-theme="dark"] {
+  --hl-comment: #a2acb7;
+  --hl-string: #addcff;
+  --hl-constant: #91cbff;
+  --hl-keyword: #ff9492;
+  --hl-entity: #dbb7ff;
+  --hl-tag: #72f088;
+  --hl-variable: #ffb757;
+}
+
+:root pre.highlight .comment { color: var(--hl-comment); }
+:root pre.highlight .string { color: var(--hl-string); }
+:root pre.highlight .constant,
+:root pre.highlight .support.type { color: var(--hl-constant); }
+:root pre.highlight .keyword,
+:root pre.highlight .storage,
+:root pre.highlight .invalid { color: var(--hl-keyword); }
+:root pre.highlight .entity.name,
+:root pre.highlight .support.function { color: var(--hl-entity); }
+:root pre.highlight .entity.name.tag { color: var(--hl-tag); }
+:root pre.highlight .variable,
+:root pre.highlight .entity.other.attribute-name { color: var(--hl-variable); }
+
 /* A code block scrolls horizontally, so it is a scroll region, and a scroll
    region a keyboard user cannot focus holds content they cannot reach. The
    attribute is added at build time; this is the visible half of the same fix. */
