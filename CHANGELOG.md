@@ -4,6 +4,14 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
+## [0.0.63] - 2026-11-20
+
+### Changed
+
+- Site version bumped to the v0.0.63 release; install snippets, the
+  migration pin and the playground example follow, with a release note
+  for v0.0.63. The playground bundle is noyalib-wasm 0.0.63 from npm.
+
 ## [0.0.62] - 2026-11-17
 
 ### Changed
