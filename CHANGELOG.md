@@ -4,7 +4,7 @@ All notable changes to noyalib.com.
 
 ## [Unreleased]
 
-## [0.0.63] - 2026-11-19
+## [0.0.63] - 2026-11-20
 
 ### Changed
 
