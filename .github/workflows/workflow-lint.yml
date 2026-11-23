@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   actionlint:
-    uses: sebastienrousseau/noyalib/.github/workflows/shared-actionlint.yml@7529f1b3557ec62be0ae6c3a1cd968863a0fbe28
+    uses: sebastienrousseau/noyalib/.github/workflows/shared-actionlint.yml@2b3966235352c44b70071390faf6f06ec8b4d65d
   zizmor:
     uses: sebastienrousseau/noyalib/.github/workflows/shared-zizmor.yml@7529f1b3557ec62be0ae6c3a1cd968863a0fbe28
   single-publisher:
